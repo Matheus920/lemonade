@@ -1,0 +1,29 @@
+@import "@material/radio/mdc-radio";
+@import "@material/ripple/mdc-ripple";
+@import "@material/toolbar/mdc-toolbar";
+@import "@material/typography/mdc-typography";
+@import "@material/button/mdc-button";
+@import "@material/layout-grid/mdc-layout-grid";
+
+$small: 300px;
+
+.mdc-toolbar{
+    @include mdc-toolbar-fill-color(#00897b);
+}
+
+.mdc-button{
+    @include mdc-button-icon-color(#00897b);
+    @include mdc-states-base-color(#00897b);
+}
+
+.arrow-button{
+    width: 5px;
+
+
+    @media screen and (max-width: $small){
+        @include mdc-button-horizontal-padding(0);
+        transform: scaleX(0.5); 
+
+    }
+
+}

@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <html lang="pt-br">
+
 <head>
     <meta charset="utf-8">
     <script src="bundle.js" async></script>
     <link rel="stylesheet" href="bundle.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+    <link href="fontes-google.css" rel="stylesheet">
+    <link href="icons-google.css" rel="stylesheet">
 
 </head>
 
-<body>
+<body class="mdc-typography">
     <header class="mdc-toolbar mdc-toolbar--fixed mdc-typography">
         <div class="mdc-toolbar__row">
             <section class="mdc-toolbar__section mdc-toolbar__section--align-start mdc-toolbar__section--shrink-to-fit">
@@ -40,18 +41,109 @@
 
     </header>
 
-    <section class = "mdc-toolbar-fixed-adjust">
-        <div class="mdc-layout-grid mdc-layout-grid--align-center">
-            <div style="text-align: center;" class="mdc-typography mdc-layout-grid__cell mdc-layout-grid__cell-span-12">
+    <section class="mdc-toolbar-fixed-adjust">
+
+        <div class="flex">
+            <div class="content">
                 <button class="mdc-button arrow-button">
-                    <i class="material-icons mdc-button__icon">chevron_left</i>
+                    <i class="material-icons big-arrow-icon mdc-button__icon">keyboard_arrow_left</i>
                 </button>
-                <span class=mdc-typography--subheading1>Segunda, 09/04</span>
+                <span class="mdc-typography--title">Segunda, 09/04</span>
                 <button class="mdc-button arrow-button">
-                    <i class="material-icons mdc-button__icon">chevron_right</i>
+                    <i class="material-icons big-arrow-icon mdc-button__icon">chevron_right</i>
                 </button>
             </div>
         </div>
     </section>
+
+    <section>
+        <div class="central-container">
+            <div class="mdc-form-field central-container">
+                <span class="mdc-typography--subheading2">Horários</span>
+                <div class="mdc-checkbox">
+                    <input type="checkbox" id="matutino_id" class="mdc-checkbox__native-control" />
+                    <div class="mdc-checkbox__background">
+                        <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                            <path class="mdc-checkbox__checkmark-path" fill="none" stroke="white" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
+                        </svg>
+                        <div class="mdc-checkbox__mixedmark"></div>
+                    </div>
+                </div>
+
+                <label for="matutino_id" class="checkbox-label"></label>
+
+                <div class="mdc-checkbox">
+                    <input type="checkbox" id="vespertino_id" class="mdc-checkbox__native-control" />
+                    <div class="mdc-checkbox__background">
+                        <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                            <path class="mdc-checkbox__checkmark-path" fill="none" stroke="white" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
+                        </svg>
+                        <div class="mdc-checkbox__mixedmark"></div>
+                    </div>
+                </div>
+
+                <label for="vespertino_id" class="checkbox-label"></label>
+
+                <div class="mdc-checkbox">
+                    <input type="checkbox" id="noturno_id" class="mdc-checkbox__native-control" />
+                    <div class="mdc-checkbox__background">
+                        <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                            <path class="mdc-checkbox__checkmark-path" fill="none" stroke="white" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
+                        </svg>
+                        <div class="mdc-checkbox__mixedmark"></div>
+                    </div>
+                </div>
+                <label for="noturno_id" class="checkbox-label"></label>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <span class="mdc-typography--subheading2">Exibir por</span>
+        <div class="mdc-select">
+            <select class="mdc-select__native-control">
+                <option value="vegetables">
+                    Vegetables
+                </option>
+                <option value="fruit">
+                    Fruit
+                </option>
+                <option value="dairy" selected>
+                    Milk, Yogurt, and Cheese
+                </option>
+            </select>
+            <div class="mdc-select__label mdc-select__label--float-above">Pick a Food Group</div>
+            <div class="mdc-select__bottom-line"></div>
+        </div>
+    </section>
+
+    <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
+    <script>
+
+        let a = $('label.checkbox-label');
+        a[0].innerText = 'M';
+        a[1].innerText = 'V';
+        a[2].innerText = 'N';
+
+        if (window.screen.width >= 408) {
+            a[0].innerText = "Matutino";
+            a[1].innerText = "Vespertino";
+            a[2].innerText = "Noturno";
+
+        }
+
+        window.onresize = function () {
+            if (window.screen.width >= 408) {
+                a[0].innerText = "Matutino";
+                a[1].innerText = "Vespertino";
+                a[2].innerText = "Noturno";
+            } else {
+                a[0].innerText = 'M';
+                a[1].innerText = 'V';
+                a[2].innerText = 'N';
+            }
+        }
+    </script>
 </body>
+
 </html>

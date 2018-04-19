@@ -4,8 +4,18 @@
 @import "@material/typography/mdc-typography";
 @import "@material/button/mdc-button";
 @import "@material/layout-grid/mdc-layout-grid";
+@import "@material/form-field/mdc-form-field";
+@import "@material/checkbox/mdc-checkbox";
+@import "@material/select/mdc-select";
 
-$small: 300px;
+$small: 408px;
+
+@mixin flex{
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+}
 
 .mdc-toolbar{
     @include mdc-toolbar-fill-color(#00897b);
@@ -16,14 +26,24 @@ $small: 300px;
     @include mdc-states-base-color(#00897b);
 }
 
+.flex {
+    @include flex;
+    .content{
+        margin-top: 10px;
+    }
+}
+
 .arrow-button{
-    width: 5px;
-
-
-    @media screen and (max-width: $small){
-        @include mdc-button-horizontal-padding(0);
-        transform: scaleX(0.5); 
+    i{
+        transform: scale(3);
 
     }
+}
 
+
+.central-container{
+    
+    @media screen and (max-width: $small) {
+        @include flex;
+    }
 }

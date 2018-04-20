@@ -6,9 +6,9 @@
     <meta charset="utf-8">
     <script src="bundle.js" async></script>
     <link rel="stylesheet" href="bundle.css">
+    <!--<link rel="stylesheet" href="custom.css">-->
     <link href="fontes-google.css" rel="stylesheet">
     <link href="icons-google.css" rel="stylesheet">
-
 </head>
 
 <body class="mdc-typography">
@@ -42,7 +42,6 @@
     </header>
 
     <section class="mdc-toolbar-fixed-adjust">
-
         <div class="flex">
             <div class="content">
                 <button class="mdc-button arrow-button">
@@ -57,65 +56,65 @@
     </section>
 
     <section>
-        <div class="central-container">
-            <div class="mdc-form-field central-container">
-                <span class="mdc-typography--subheading2">Horários</span>
-                <div class="mdc-checkbox">
-                    <input type="checkbox" id="matutino_id" class="mdc-checkbox__native-control" />
-                    <div class="mdc-checkbox__background">
-                        <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
-                            <path class="mdc-checkbox__checkmark-path" fill="none" stroke="white" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
-                        </svg>
-                        <div class="mdc-checkbox__mixedmark"></div>
+        <div class ="breaker">
+
+            <div class="central-container">
+                <div class="mdc-form-field central-container">
+                    <span class="mdc-typography--subheading2">Horários</span>
+                    <div class="mdc-checkbox">
+                        <input type="checkbox" id="matutino_id" class="mdc-checkbox__native-control" />
+                        <div class="mdc-checkbox__background">
+                            <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                <path class="mdc-checkbox__checkmark-path" fill="none" stroke="white" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
+                            </svg>
+                            <div class="mdc-checkbox__mixedmark"></div>
+                        </div>
                     </div>
-                </div>
 
-                <label for="matutino_id" class="checkbox-label"></label>
+                    <label for="matutino_id" class="checkbox-label"></label>
 
-                <div class="mdc-checkbox">
-                    <input type="checkbox" id="vespertino_id" class="mdc-checkbox__native-control" />
-                    <div class="mdc-checkbox__background">
-                        <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
-                            <path class="mdc-checkbox__checkmark-path" fill="none" stroke="white" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
-                        </svg>
-                        <div class="mdc-checkbox__mixedmark"></div>
+                    <div class="mdc-checkbox">
+                        <input type="checkbox" id="vespertino_id" class="mdc-checkbox__native-control" />
+                        <div class="mdc-checkbox__background">
+                            <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                <path class="mdc-checkbox__checkmark-path" fill="none" stroke="white" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
+                            </svg>
+                            <div class="mdc-checkbox__mixedmark"></div>
+                        </div>
                     </div>
-                </div>
 
-                <label for="vespertino_id" class="checkbox-label"></label>
+                    <label for="vespertino_id" class="checkbox-label"></label>
 
-                <div class="mdc-checkbox">
-                    <input type="checkbox" id="noturno_id" class="mdc-checkbox__native-control" />
-                    <div class="mdc-checkbox__background">
-                        <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
-                            <path class="mdc-checkbox__checkmark-path" fill="none" stroke="white" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
-                        </svg>
-                        <div class="mdc-checkbox__mixedmark"></div>
+                    <div class="mdc-checkbox">
+                        <input type="checkbox" id="noturno_id" class="mdc-checkbox__native-control" />
+                        <div class="mdc-checkbox__background">
+                            <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                <path class="mdc-checkbox__checkmark-path" fill="none" stroke="white" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
+                            </svg>
+                            <div class="mdc-checkbox__mixedmark"></div>
+                        </div>
                     </div>
+                    <label for="noturno_id" class="checkbox-label"></label>
                 </div>
-                <label for="noturno_id" class="checkbox-label"></label>
+            </div>
+
+            <div class="wrap">
+                <span id="exibirId" class="mdc-typography--subheading2">Exibir por</span>
+
+                <form class="mui-form" id="form-id">
+                    <div class="mui-select">
+                        <select id="select-status">
+                            <option id="todos" value="1">Todos</option>
+                            <option id="disponiveis" value="2">Disponíveis</option>
+                            <option id="reservados" value="3">Reservados</option>
+                        </select>
+                        <label>Status</label>
+                    </div>
+                </form>
             </div>
         </div>
     </section>
 
-    <section>
-        <span class="mdc-typography--subheading2">Exibir por</span>
-        <div class="mdc-select">
-            <select class="mdc-select__native-control">
-                <option value="vegetables">
-                    Vegetables
-                </option>
-                <option value="fruit">
-                    Fruit
-                </option>
-                <option value="dairy" selected>
-                    Milk, Yogurt, and Cheese
-                </option>
-            </select>
-            <div class="mdc-select__label mdc-select__label--float-above">Pick a Food Group</div>
-            <div class="mdc-select__bottom-line"></div>
-        </div>
-    </section>
 
     <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
     <script>
@@ -143,6 +142,7 @@
                 a[2].innerText = 'N';
             }
         }
+
     </script>
 </body>
 

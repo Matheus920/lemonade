@@ -2,6 +2,7 @@ import {MDCRipple} from '@material/ripple';
 import {MDCToolbar} from '@material/toolbar';
 import {MDCCheckbox} from '@material/checkbox';
 import {MDCSelect} from '@material/select';
+import {mui} from 'muicss/dist/js/mui';
 
 var buttons1 = [];
 
@@ -20,3 +21,14 @@ for(var i = 0; i < document.querySelectorAll('.mdc-checkbox').length; i++){
 
 const select = new MDCSelect(document.querySelector('.mdc-select'));
 console.log(select);
+
+b.click(function() {
+    if(!b.is('glayson')){
+    console.log('glayson existe')
+    b.attr('glayson', 'rola')
+    setTimeout(() => $('div.mui-select__menu'), 300)
+    }else{
+    b.prop('glayson', null)
+    console.log('glayson foi removido')
+    }
+    })

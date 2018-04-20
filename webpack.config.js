@@ -30,7 +30,8 @@ module.exports = [{
             ]
         }]
     },
-}];
+},
+];
 
 module.exports.push({
     entry: "./app.js",

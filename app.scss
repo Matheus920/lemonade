@@ -7,14 +7,15 @@
 @import "@material/form-field/mdc-form-field";
 @import "@material/checkbox/mdc-checkbox";
 @import "@material/select/mdc-select";
+@import "custom.scss";
 
 $small: 408px;
 
-@mixin flex{
+@mixin flex($justify:center, $flow:row nowrap ){
     display: flex;
-    flex-flow: row nowrap;
+    flex-flow: $flow;
     align-items: center;
-    justify-content: center;
+    justify-content: $justify;
 }
 
 .mdc-toolbar{
@@ -33,17 +34,31 @@ $small: 408px;
     }
 }
 
+.wrap{
+    @include flex(flex-start);
+}
+
 .arrow-button{
     i{
         transform: scale(3);
-
     }
 }
 
+.breaker{
+    @include flex(space-between);
+
+    @media screen and (max-width:650px){
+        @include flex(central, column wrap);        
+    }
+}
 
 .central-container{
     
     @media screen and (max-width: $small) {
         @include flex;
     }
+}
+
+#exibirId{
+    margin-right: 10px;
 }

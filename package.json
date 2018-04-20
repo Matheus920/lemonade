@@ -27,6 +27,7 @@
         "@material/top-app-bar": "^0.34.1",
         "jquery": "^3.3.1",
         "material-components-web": "^0.34.1",
-        "material-design-icons": "^3.0.1"
+        "material-design-icons": "^3.0.1",
+        "muicss": "^0.9.39-rc1"
     }
 }

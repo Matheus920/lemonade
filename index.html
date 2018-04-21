@@ -6,7 +6,6 @@
     <meta charset="utf-8">
     <script src="bundle.js" async></script>
     <link rel="stylesheet" href="bundle.css">
-    <!--<link rel="stylesheet" href="custom.css">-->
     <link href="fontes-google.css" rel="stylesheet">
     <link href="icons-google.css" rel="stylesheet">
 </head>
@@ -44,11 +43,11 @@
     <section class="mdc-toolbar-fixed-adjust">
         <div class="flex">
             <div class="content">
-                <button class="mdc-button arrow-button">
+                <button class="mdc-button arrow-button" id="minus-day">
                     <i class="material-icons big-arrow-icon mdc-button__icon">keyboard_arrow_left</i>
                 </button>
-                <span class="mdc-typography--title">Segunda, 09/04</span>
-                <button class="mdc-button arrow-button">
+                <span class="mdc-typography--title" id="date-label"></span>
+                <button class="mdc-button arrow-button" id="plus-day">
                     <i class="material-icons big-arrow-icon mdc-button__icon">chevron_right</i>
                 </button>
             </div>
@@ -56,7 +55,7 @@
     </section>
 
     <section>
-        <div class ="breaker">
+        <div class="breaker">
 
             <div class="central-container">
                 <div class="mdc-form-field central-container">
@@ -118,6 +117,57 @@
 
     <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
     <script>
+        var datelabel = $('#date-label');
+        var curDate = new Date();
+        
+
+        var weekday = new Array(7);
+
+        weekday[0] = "Domingo";
+        weekday[1] = "Segunda";
+        weekday[2] = "Terça";
+        weekday[3] = "Quarta";
+        weekday[4] = "Quinta";
+        weekday[5] = "Sexta";
+        weekday[6] = "Sábado";
+        
+        setDateLabel(new Date());
+
+        function setDateLabel(date) {
+            curDate = date;
+            if (date.getDate() < 10) {
+                var dateString = "0" + date.getDate();
+            } else {
+                var dateString = date.getDate();
+            }
+
+            if ((date.getMonth() + 1) < 10) {
+                var monthString = "0" + (date.getMonth() + 1);
+            } else {
+                var monthString = (date.getMonth() + 1).toString();
+            }
+
+            datelabel.text(weekday[date.getDay()] + ', ' + dateString + '/' +
+                monthString);
+        }
+        
+        $('#minus-day').click(function(){
+            var temp = new Date();
+            temp.setDate((curDate.getDate() - 1));
+            setDateLabel(temp);
+
+            if($('#plus-day').is(':disabled'))
+                $('#plus-day').attr('disabled', false);
+        });
+
+        $('#plus-day').click(function(){
+            var temp = new Date();
+            temp.setDate((curDate.getDate() + 1));
+            setDateLabel(temp);
+            if((curDate.getDate() - new Date().getDate()) > 6){
+                $('#plus-day').attr('disabled', true);
+            }
+        });
 
         let a = $('label.checkbox-label');
         a[0].innerText = 'M';
@@ -142,7 +192,6 @@
                 a[2].innerText = 'N';
             }
         }
-
     </script>
 </body>
 

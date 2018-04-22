@@ -7,6 +7,8 @@
 @import "@material/form-field/mdc-form-field";
 @import "@material/checkbox/mdc-checkbox";
 @import "@material/select/mdc-select";
+@import "@material/textfield/mdc-text-field";
+@import "@material/elevation/mdc-elevation";
 @import "custom.scss";
 
 $small: 408px;
@@ -61,4 +63,23 @@ $small: 408px;
 
 #exibirId{
     margin-right: 10px;
+}
+
+.no-link{
+    color: #fff;
+    &:hover{
+        text-decoration: none;
+    }
+}
+
+#fieldset{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#buttons{
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
 }

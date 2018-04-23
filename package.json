@@ -23,6 +23,7 @@
         "@material/radio": "^0.34.1",
         "@material/ripple": "^0.34.1",
         "@material/select": "^0.34.1",
+        "@material/theme": "^0.34.0",
         "@material/toolbar": "^0.34.1",
         "@material/top-app-bar": "^0.34.1",
         "jquery": "^3.3.1",

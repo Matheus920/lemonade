@@ -1,0 +1,36 @@
+@import "@material/radio/mdc-radio";
+@import "@material/ripple/mdc-ripple";
+@import "@material/toolbar/mdc-toolbar";
+@import "@material/typography/mdc-typography";
+@import "@material/button/mdc-button";
+@import "@material/layout-grid/mdc-layout-grid";
+@import "@material/form-field/mdc-form-field";
+@import "@material/checkbox/mdc-checkbox";
+@import "@material/select/mdc-select";
+@import "@material/textfield/mdc-text-field";
+@import "@material/elevation/mdc-elevation";
+
+$mdc-theme-primary: #00897b;
+
+@import "@material/theme/mdc-theme";
+
+.mdc-toolbar{
+    @include mdc-toolbar-fill-color(#00897b);
+}
+
+.mdc-button{
+    @include mdc-button-icon-color(#00897b);
+    @include mdc-states-base-color(#00897b);
+
+    @include mdc-button-container-fill-color(#00897b);
+}
+
+.mdc-text-field{
+    @include  mdc-text-field-line-ripple-color(#00897b);
+}
+
+.mdc-floating-label--float-above{
+    @include mdc-floating-label-ink-color(#00897b);
+
+}
+

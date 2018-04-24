@@ -7,6 +7,7 @@ import {MDCTextField} from '@material/textfield';
 
 var buttons1 = [];
 
+
 for (var j = 0; j < document.querySelectorAll('.mdc-button').length; j++) {
     buttons1[j] = new MDCRipple(document.querySelectorAll('.mdc-button')[j]);
 }
@@ -39,4 +40,3 @@ b.click(function () {
         console.log('glayson foi removido')
     }
 });
-

@@ -31,6 +31,8 @@ $mdc-theme-primary: #00897b;
 
 .mdc-floating-label--float-above{
     @include mdc-floating-label-ink-color(#00897b);
-
 }
 
+.dark-ripple{
+    @include mdc-states-base-color(#000000);
+}

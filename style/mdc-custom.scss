@@ -36,3 +36,18 @@ $mdc-theme-primary: #00897b;
 .dark-ripple{
     @include mdc-states-base-color(#000000);
 }
+
+
+
+.form-fieldset{
+    background-color: white;
+    box-shadow: 0px 0px 2px 1px rgba(105, 105, 105, 0.3);
+    border-width: 1px;
+    border-color:rgb(197, 195, 195);
+    border-style: solid;
+
+    > *{
+        padding: 15px;
+
+    }
+}

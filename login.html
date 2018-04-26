@@ -63,9 +63,28 @@
                 </div>
             </div>
             <div id="login-buttonsId">
+                <button class="mdc-button" id="help-button-id">Ajuda</button>
                 <button class="mdc-button mdc-button--raised dark-ripple">Login</button>
             </div>
         </div>
     </section>
+    <aside id="login-help-dialog-id" class="mdc-dialog" role="alertdialog" aria-labelledby="title-label-id" aria-describedby="description-dialog-id">
+        <div class="mdc-dialog__surface">
+            <header class="mdc-dialog__header">
+                <h2 id="title-label-id" class="mdc-dialog__header__title">
+                    Não está cadastrado?
+                </h2>
+            </header>
+            <section id="description-dialog-id" class="mdc-dialog__body">
+                Dirija-se até à CTU para requisitar o cadastro no sistema. Só assim
+                será possível acessar suas funcionalidades avançadas.
+            </section>
+            <footer class="mdc-dialog__footer">
+                <button type="button" class="mdc-button mdc-dialog__footer__button mdc-dialog__footer__button--accept" id="close-button-id">Fechar</button>
+            </footer>
+        </div>
+        <div class="mdc-dialog__backdrop"></div>
+    </aside>
 </body>
+
 </html>

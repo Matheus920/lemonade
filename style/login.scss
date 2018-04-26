@@ -20,9 +20,15 @@
 
 #login-buttonsId{
     width: 80% !important;
-    margin-top: 45px;
+    margin-top: 0;
     display: flex;
     justify-content: space-between;
-    flex-direction: row-reverse;
-
 }
+
+#help-button-id{
+    @include mdc-button-container-fill-color(#fff);
+}
+
+#close-button-id{
+    color: #fff !important;
+}   

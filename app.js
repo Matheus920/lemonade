@@ -4,9 +4,29 @@ import { MDCCheckbox } from '@material/checkbox';
 import { MDCSelect } from '@material/select';
 import { mui } from 'muicss/dist/js/mui';
 import {MDCTextField} from '@material/textfield';
+import {MDCDialog, MDCDialogFoundation, util} from '@material/dialog';
+
+
+var dialog = document.querySelector('#login-help-dialog-id');
+var dialogMDC = new MDCDialog(dialog);
+
+dialogMDC.initialize();
+
+dialogMDC.listen('MDCDialog:accept', function() {
+    console.log('accepted');
+  })
+  
+  dialogMDC.listen('MDCDialog:cancel', function() {
+    console.log('canceled');
+  })
+  
+  document.querySelector('#help-button-id').addEventListener('click', function (evt) {
+    dialogMDC.lastFocusedTarget = evt.target;
+    dialogMDC.show();
+  })
+  
 
 var buttons1 = [];
-
 
 for (var j = 0; j < document.querySelectorAll('.mdc-button').length; j++) {
     buttons1[j] = new MDCRipple(document.querySelectorAll('.mdc-button')[j]);

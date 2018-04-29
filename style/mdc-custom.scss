@@ -16,8 +16,9 @@ $mdc-theme-primary: #00897b;
 @import "@material/textfield/mdc-text-field";
 @import "@material/elevation/mdc-elevation";
 
-
-
+.material-icons.yellow500 { color: #FFEB3B; }
+.material-icons.lightgreenA700 {color: #64DD17;}
+.material-icons.redA700 {color: #D50000;}
 
 .mdc-toolbar{
     @include mdc-toolbar-fill-color(#00897b);

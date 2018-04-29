@@ -7,6 +7,7 @@ import {MDCTextField} from '@material/textfield';
 import {MDCDialog, MDCDialogFoundation, util} from '@material/dialog';
 
 
+
 var dialog = document.querySelector('#login-help-dialog-id');
 var dialogMDC = new MDCDialog(dialog);
 

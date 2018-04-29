@@ -5,12 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="./node_modules/metro4/build/css/metro.css">
     <script src="bundle.js" async></script>
+    <link rel="stylesheet" href="./node_modules/materialize-css/dist/css/materialize.css">
     <link rel="stylesheet" href="bundle.css">
-    <link href="fontes-google.css" rel="stylesheet">
-    <link href="icons-google.css" rel="stylesheet">
-    <meta name="metro4:init" content="false">
+    <link href="style/fontes-google.css" rel="stylesheet">
+    <link href="style/icons-google.css" rel="stylesheet">
     <title>Fazer Reserva</title>
 
 </head>
@@ -48,8 +47,11 @@
 
     <section id="reserve-form-containerId" class="form-fieldset">
         <div id="fieldsetId">
-            <h3 class="mdc-typography--headline3">Reservar</h3>
-            <input data-role="datepicker" id="reserva-id" data-locale="pt-BR" data-format="%d/%m/%Y">
+            <h5 class="mdc-typography--headline5">Reservar</h5>
+            <div class="input-field">
+                <input type="text" class="datepicker" id="date-id">
+                <label for="date-id">Data</label>
+            </div>
             <form class="mui-form" id="reserve-formId">
                 <div id="select-labsId" class="mui-select fix-width">
                     <select id="select-laboratorios" class="fix-width">
@@ -132,9 +134,7 @@
                             <div>Matutino 4</div>
                         </label>
                     </div>
-
                 </div>
-
             </form>
             <div id="reserve-buttonsId">
                 <button class="mdc-button mdc-button--raised dark-ripple">Confirmar</button>
@@ -142,14 +142,9 @@
         </div>
     </section>
     <script src="./node_modules/jquery/dist/jquery.js"></script>
-    <script src="./node_modules/metro4/build/js/metro.js"></script>
-    <script src="metro-custom.js"></script>
-    <script>
-        Metro.init();
-    </script>
     <script src="reserva.js">
     </script>
-
+    <script src= "./node_modules/materialize-css/dist/js/materialize.js"></script>
+    <script src="material-date.js"></script>
 </body>
-
 </html>

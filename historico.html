@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html class="grey-section-html">
+
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Histórico</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="bundle.js" async></script>
+    <script src="node_modules/jquery/dist/jquery.js"></script>
     <link rel="stylesheet" href="bundle.css">
     <link href="style/fontes-google.css" rel="stylesheet">
     <link href="style/icons-google.css" rel="stylesheet">
 </head>
+
 <body class="mdc-typography">
     <header visible="1" class="mdc-toolbar mdc-toolbar--fixed mdc-typography">
         <div class="mdc-toolbar__row">
@@ -45,35 +48,74 @@
         <h4 class="mdc-typography--headline4">Histórico</h4>
         <table class="centered highlight">
             <thead>
-              <tr>
-                  <th>Lab</th>
-                  <th>Período</th>
-                  <th>Data</th>
-                  <th>Status</th>
-              </tr>
+                <tr>
+                    <th>Lab</th>
+                    <th>Período</th>
+                    <th>Data</th>
+                    <th>Status</th>
+                </tr>
             </thead>
-    
+
             <tbody>
-              <tr>
-                <td>1</td>
-                <td>M1, M2, M3</td>
-                <td>02/04/2018</td>
-                <td><i class="material-icons yellow500">hourglass_empty</i></td>
-              </tr>
-              <tr>
-                <td>1</td>
-                <td>M1, M2, M3</td>
-                <td>01/04/2018</td>
-                <td><i class="material-icons lightgreenA700">done</i></td>
-              </tr>
-              <tr>
-                <td>1</td>
-                <td>M1, M2, M3, M4, M5, M6, V1</td>
-                <td>29/03/2018</td>
-                <td><i class="material-icons redA700">clear</i></td>
-              </tr>
+                <tr>
+                    <td>1</td>
+                    <td>M1, M2, M3</td>
+                    <td>02/04/2018</td>
+                    <td>
+                        <i class="material-icons yellow500">hourglass_empty</i>
+                    </td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>M1, M2, M3</td>
+                    <td>01/04/2018</td>
+                    <td>
+                        <i class="material-icons lightgreenA700">done</i>
+                    </td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>M1, M2, M3, M4, M5, M6, V1</td>
+                    <td>29/03/2018</td>
+                    <td>
+                        <i class="material-icons redA700">clear</i>
+                    </td>
+                </tr>
             </tbody>
-          </table>
+        </table>
     </section>
 </body>
+
+
+<script>
+    var tableHeader = $('thead');
+    var tableBody = $('tbody');
+
+    if (window.screen.width >= 450) {
+        tableHeader.addClass('mdc-typography--headline6');
+        tableBody.addClass('mdc-typography--body1');
+        
+    }
+    
+    window.onresize = function () {
+        if (window.screen.width >= 450) {
+            tableHeader.addClass('mdc-typography--headline6');
+            tableBody.addClass('mdc-typography--body1');
+
+        } else {
+            if(tableHeader.hasClass('mdc-typography--headline6')){
+                tableHeader.removeClass('mdc-typography--headline6');
+            }
+            
+            if(tableBody.hasClass('mdc-typography--body1')){
+                tableBody.removeClass('mdc-typography--body1');
+            }
+        }
+    }
+
+
+
+</script>
+
+
 </html>

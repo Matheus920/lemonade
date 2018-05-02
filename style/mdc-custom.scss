@@ -15,6 +15,8 @@ $mdc-theme-primary: #00897b;
 @import "@material/select/mdc-select";
 @import "@material/textfield/mdc-text-field";
 @import "@material/elevation/mdc-elevation";
+@import "@material/grid-list/mdc-grid-list";
+
 
 .material-icons.yellow500 { color: #FFEB3B; }
 .material-icons.lightgreenA700 {color: #64DD17;}
@@ -56,4 +58,16 @@ $mdc-theme-primary: #00897b;
         padding: 15px;
 
     }
+}
+
+.mdc-grid-tile{
+    --mdc-grid-list-tile-width: 200px;
+
+
+
+}
+.mdc-grid-list__tiles {
+    margin: 0px !important;
+
+    padding-left: 15px !important;
 }

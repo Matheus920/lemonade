@@ -21,5 +21,6 @@ var options = {
     maxDate: new Date(new Date().setTime(new Date().getTime() + 7 * day))
 }
 
+
 var elem = document.querySelector('.datepicker');
 var instance = M.Datepicker.init(elem, options);

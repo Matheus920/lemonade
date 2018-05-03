@@ -14,7 +14,7 @@
 }
 
 #fieldsetId{
-    height: 380px;
+    height: max-content;
     width: 310px;
 
     > *{
@@ -80,4 +80,20 @@
 #select-labsId .mui-select__menu{
     top: 10px !important;
     height: 210px !important;
+}
+
+#checkboxes{
+    position: absolute !important;
+
+    top: 350px !important;
+    z-index: 100000 !important;
+}
+
+#reserve-form-container-id{
+    margin-top:150px;
+    width:340px;
+}
+
+.html-resize.no-v-align{
+    justify-content: flex-start;
 }

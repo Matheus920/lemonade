@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br" class="html-resize">
+<html lang="pt-br" class="html-resize no-v-align">
 
 <head>
     <meta charset="UTF-8">
@@ -45,15 +45,36 @@
         </div>
     </header>
 
-    <section id="reserve-form-containerId" class="form-fieldset">
+    <section id="reserve-form-container-id" class="form-fieldset">
         <div id="fieldsetId">
             <h5 class="mdc-typography--headline5">Reservar</h5>
-            
+
+            <span class="mdc-typography--subtitle">Tipo de reserva</span>
+            <section>
+                <div class="mdc-radio">
+                    <input class="mdc-radio__native-control" type="radio" id="avulse-radio-id" name="reserve-type" checked>
+                    <div class="mdc-radio__background">
+                        <div class="mdc-radio__outer-circle"></div>
+                        <div class="mdc-radio__inner-circle"></div>
+                    </div>
+
+                </div>
+                <label id="avulse-radio-label-id" for="avulse-radio-id">Avulsa </label>
+                <div class="mdc-radio">
+                    <input class="mdc-radio__native-control" type="radio" id="fixed-radio-id" name="reserve-type">
+                    <div class="mdc-radio__background">
+                        <div class="mdc-radio__outer-circle"></div>
+                        <div class="mdc-radio__inner-circle"></div>
+                    </div>
+                </div>
+                <label id="fixed-radio-label-id" for="fixed-radio-id">Fixa </label>
+            </section>
+
             <form class="mui-form" id="reserve-formId">
-                    <div class="input-field">
-                            <input type="text" class="datepicker" id="date-id">
-                            <label for="date-id">Data</label>
-                        </div>
+                <div id="date-picker-id" class="input-field">
+                    <input type="text" class="datepicker" id="date-id">
+                    <label for="date-id">Data</label>
+                </div>
                 <div id="select-labsId" class="mui-select fix-width">
                     <select id="select-laboratorios" class="fix-width">
                         <option id="selecione" value="" selected disabled>Selecione</option>
@@ -100,7 +121,7 @@
                         </label>
                         <label class="vali">
                             <div class="mdc-checkbox">
-                                <input type="checkbox" id="m1Id" class="mdc-checkbox__native-control" />
+                                <input type="checkbox" id="m2Id" class="mdc-checkbox__native-control" />
                                 <div class="mdc-checkbox__background">
                                     <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
                                         <path class="mdc-checkbox__checkmark-path" fill="none" stroke="white" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
@@ -112,7 +133,7 @@
                         </label>
                         <label class="vali" visible="1">
                             <div class="mdc-checkbox">
-                                <input type="checkbox" id="m1Id" class="mdc-checkbox__native-control" />
+                                <input type="checkbox" id="m3Id" class="mdc-checkbox__native-control" />
                                 <div class="mdc-checkbox__background">
                                     <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
                                         <path class="mdc-checkbox__checkmark-path" fill="none" stroke="white" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
@@ -124,7 +145,7 @@
                         </label>
                         <label class="vali">
                             <div class="mdc-checkbox">
-                                <input type="checkbox" id="m1Id" class="mdc-checkbox__native-control" />
+                                <input type="checkbox" id="m4Id" class="mdc-checkbox__native-control" />
                                 <div class="mdc-checkbox__background">
                                     <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
                                         <path class="mdc-checkbox__checkmark-path" fill="none" stroke="white" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
@@ -134,9 +155,178 @@
                             </div>
                             <div>Matutino 4</div>
                         </label>
+                        <label class="vali">
+                            <div class="mdc-checkbox">
+                                <input type="checkbox" id="m5Id" class="mdc-checkbox__native-control" />
+                                <div class="mdc-checkbox__background">
+                                    <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                        <path class="mdc-checkbox__checkmark-path" fill="none" stroke="white" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
+                                    </svg>
+                                    <div class="mdc-checkbox__mixedmark"></div>
+                                </div>
+                            </div>
+                            <div>Matutino 5</div>
+                        </label>
+                        <label class="vali">
+                            <div class="mdc-checkbox">
+                                <input type="checkbox" id="m6Id" class="mdc-checkbox__native-control" />
+                                <div class="mdc-checkbox__background">
+                                    <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                        <path class="mdc-checkbox__checkmark-path" fill="none" stroke="white" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
+                                    </svg>
+                                    <div class="mdc-checkbox__mixedmark"></div>
+                                </div>
+                            </div>
+                            <div>Matutino 6</div>
+                        </label>
+                        <label class="vali">
+                            <div class="mdc-checkbox">
+                                <input type="checkbox" id="v1Id" class="mdc-checkbox__native-control" />
+                                <div class="mdc-checkbox__background">
+                                    <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                        <path class="mdc-checkbox__checkmark-path" fill="none" stroke="white" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
+                                    </svg>
+                                    <div class="mdc-checkbox__mixedmark"></div>
+                                </div>
+                            </div>
+                            <div>Vespertino 1</div>
+                        </label>
+                        <label class="vali">
+                            <div class="mdc-checkbox">
+                                <input type="checkbox" id="v2Id" class="mdc-checkbox__native-control" />
+                                <div class="mdc-checkbox__background">
+                                    <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                        <path class="mdc-checkbox__checkmark-path" fill="none" stroke="white" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
+                                    </svg>
+                                    <div class="mdc-checkbox__mixedmark"></div>
+                                </div>
+                            </div>
+                            <div>Vespertino 2</div>
+                        </label>
+                        <label class="vali">
+                            <div class="mdc-checkbox">
+                                <input type="checkbox" id="v3Id" class="mdc-checkbox__native-control" />
+                                <div class="mdc-checkbox__background">
+                                    <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                        <path class="mdc-checkbox__checkmark-path" fill="none" stroke="white" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
+                                    </svg>
+                                    <div class="mdc-checkbox__mixedmark"></div>
+                                </div>
+                            </div>
+                            <div>Vespertino 3</div>
+                        </label>
+                        <label class="vali">
+                            <div class="mdc-checkbox">
+                                <input type="checkbox" id="v4Id" class="mdc-checkbox__native-control" />
+                                <div class="mdc-checkbox__background">
+                                    <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                        <path class="mdc-checkbox__checkmark-path" fill="none" stroke="white" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
+                                    </svg>
+                                    <div class="mdc-checkbox__mixedmark"></div>
+                                </div>
+                            </div>
+                            <div>Vespertino 4</div>
+                        </label>
+                        <label class="vali">
+                            <div class="mdc-checkbox">
+                                <input type="checkbox" id="v5Id" class="mdc-checkbox__native-control" />
+                                <div class="mdc-checkbox__background">
+                                    <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                        <path class="mdc-checkbox__checkmark-path" fill="none" stroke="white" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
+                                    </svg>
+                                    <div class="mdc-checkbox__mixedmark"></div>
+                                </div>
+                            </div>
+                            <div>Vespertino 5</div>
+                        </label>
+                        <label class="vali">
+                            <div class="mdc-checkbox">
+                                <input type="checkbox" id="v6Id" class="mdc-checkbox__native-control" />
+                                <div class="mdc-checkbox__background">
+                                    <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                        <path class="mdc-checkbox__checkmark-path" fill="none" stroke="white" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
+                                    </svg>
+                                    <div class="mdc-checkbox__mixedmark"></div>
+                                </div>
+                            </div>
+                            <div>Vespertino 6</div>
+                        </label>
+
+                        <label class="vali">
+                            <div class="mdc-checkbox">
+                                <input type="checkbox" id="n1Id" class="mdc-checkbox__native-control" />
+                                <div class="mdc-checkbox__background">
+                                    <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                        <path class="mdc-checkbox__checkmark-path" fill="none" stroke="white" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
+                                    </svg>
+                                    <div class="mdc-checkbox__mixedmark"></div>
+                                </div>
+                            </div>
+                            <div>Noturno 1</div>
+                        </label>
+                        <label class="vali">
+                            <div class="mdc-checkbox">
+                                <input type="checkbox" id="n2Id" class="mdc-checkbox__native-control" />
+                                <div class="mdc-checkbox__background">
+                                    <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                        <path class="mdc-checkbox__checkmark-path" fill="none" stroke="white" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
+                                    </svg>
+                                    <div class="mdc-checkbox__mixedmark"></div>
+                                </div>
+                            </div>
+                            <div>Noturno 2</div>
+                        </label>
+                        <label class="vali">
+                            <div class="mdc-checkbox">
+                                <input type="checkbox" id="n3Id" class="mdc-checkbox__native-control" />
+                                <div class="mdc-checkbox__background">
+                                    <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                        <path class="mdc-checkbox__checkmark-path" fill="none" stroke="white" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
+                                    </svg>
+                                    <div class="mdc-checkbox__mixedmark"></div>
+                                </div>
+                            </div>
+                            <div>Noturno 3</div>
+                        </label>
+                        <label class="vali">
+                            <div class="mdc-checkbox">
+                                <input type="checkbox" id="n4Id" class="mdc-checkbox__native-control" />
+                                <div class="mdc-checkbox__background">
+                                    <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                        <path class="mdc-checkbox__checkmark-path" fill="none" stroke="white" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
+                                    </svg>
+                                    <div class="mdc-checkbox__mixedmark"></div>
+                                </div>
+                            </div>
+                            <div>Noturno 4</div>
+                        </label>
+                        <label class="vali">
+                            <div class="mdc-checkbox">
+                                <input type="checkbox" id="n5Id" class="mdc-checkbox__native-control" />
+                                <div class="mdc-checkbox__background">
+                                    <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                        <path class="mdc-checkbox__checkmark-path" fill="none" stroke="white" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
+                                    </svg>
+                                    <div class="mdc-checkbox__mixedmark"></div>
+                                </div>
+                            </div>
+                            <div>Noturno 5</div>
+                        </label>
                     </div>
                 </div>
+
             </form>
+            <div id="justification-container-id" class="row">
+                <form class="col s12">
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <textarea id="justification-textarea-id" class="materialize-textarea"></textarea>
+                            <label for="justification-textarea-id">Justificativa da reserva</label>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
             <div id="reserve-buttonsId">
                 <button class="mdc-button mdc-button--raised dark-ripple">Confirmar</button>
             </div>
@@ -145,7 +335,48 @@
     <script src="./node_modules/jquery/dist/jquery.js"></script>
     <script src="reserva.js">
     </script>
-    <script src= "./node_modules/materialize-css/dist/js/materialize.js"></script>
+    <script src="./node_modules/materialize-css/dist/js/materialize.js"></script>
     <script src="material-date.js"></script>
 </body>
+
+<script>
+    $('#reserve-form-container-id').css('transition', 'all 0.2s');
+
+
+    $('#avulse-radio-id').change(function () {
+
+        setTimeout(function () {
+            $('#reserve-form-container-id').css('transform', 'scale(0)');
+            setTimeout(function () {
+                $('#date-picker-id').css('display', 'block')
+                $('#justification-container-id').css('display', 'none');
+                setTimeout(function () {
+                    $('#reserve-form-container-id').css('transform', 'scale(1)');
+                }, 1);
+            }, 200);
+        }, 1);  
+        
+
+
+    });
+
+    $('#fixed-radio-id').change(function () {
+
+        setTimeout(function () {
+            $('#reserve-form-container-id').css('transform', 'scale(0)');
+            setTimeout(function () {
+                $('#date-picker-id').css('display', 'none')
+                $('#justification-container-id').css('display', 'block');
+                setTimeout(function () {
+                    $('#reserve-form-container-id').css('transform', 'scale(1)');
+                }, 1);
+            }, 200);
+        }, 1);  
+    });
+
+    $('#avulse-radio-id').click();
+
+
+</script>
+
 </html>

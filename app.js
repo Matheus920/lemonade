@@ -5,6 +5,13 @@ import { MDCSelect } from '@material/select';
 import { mui } from 'muicss/dist/js/mui';
 import {MDCTextField} from '@material/textfield';
 import {MDCDialog, MDCDialogFoundation, util} from '@material/dialog';
+import {MDCRadio} from '@material/radio';
+
+var radios = [];
+
+for (var z = 0; z < document.querySelectorAll('.mdc-radio').length; z++) {
+    radios[z] = new MDCRadio(document.querySelectorAll('.mdc-radio')[z]);
+}
 
 
 

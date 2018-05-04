@@ -51,53 +51,29 @@
 
             <span class="mdc-typography--subtitle">Tipo de reserva</span>
             <section>
-                <div class="mdc-radio">
-                    <input class="mdc-radio__native-control" type="radio" id="avulse-radio-id" name="reserve-type" checked>
-                    <div class="mdc-radio__background">
-                        <div class="mdc-radio__outer-circle"></div>
-                        <div class="mdc-radio__inner-circle"></div>
-                    </div>
 
-                </div>
-                <label id="avulse-radio-label-id" for="avulse-radio-id">Avulsa </label>
-                <div class="mdc-radio">
-                    <input class="mdc-radio__native-control" type="radio" id="fixed-radio-id" name="reserve-type">
-                    <div class="mdc-radio__background">
-                        <div class="mdc-radio__outer-circle"></div>
-                        <div class="mdc-radio__inner-circle"></div>
+                <label id="avulse-radio-label-id">
+                    <div class="mdc-radio">
+                        <input class="mdc-radio__native-control" type="radio" id="avulse-radio-id" name="reserve-type" checked>
+                        <div class="mdc-radio__background">
+                            <div class="mdc-radio__outer-circle"></div>
+                            <div class="mdc-radio__inner-circle"></div>
+                        </div>
                     </div>
-                </div>
-                <label id="fixed-radio-label-id" for="fixed-radio-id">Fixa </label>
+                    Avulsa
+                </label>
+                <label id="fixed-radio-label-id">
+                    <div class="mdc-radio">
+                        <input class="mdc-radio__native-control" type="radio" id="fixed-radio-id" name="reserve-type">
+                        <div class="mdc-radio__background">
+                            <div class="mdc-radio__outer-circle"></div>
+                            <div class="mdc-radio__inner-circle"></div>
+                        </div>
+                    </div>
+                    Fixa </label>
             </section>
 
             <form class="mui-form" id="reserve-formId">
-                <div id="date-picker-id" class="input-field">
-                    <input type="text" class="datepicker" id="date-id">
-                    <label for="date-id">Data</label>
-                </div>
-                <div id="select-labsId" class="mui-select fix-width">
-                    <select id="select-laboratorios" class="fix-width">
-                        <option id="selecione" value="" selected disabled>Selecione</option>
-                        <option id="lab1" value="2">Laboratório 1</option>
-                        <option id="lab2" value="3">Laboratório 2</option>
-                        <option id="lab3" value="4">Laboratório 3</option>
-                        <option id="lab4" value="5">Laboratório 4</option>
-                        <option id="lab5" value="6">Laboratório 5</option>
-                        <option id="lab6" value="7">Laboratório 6</option>
-                        <option id="lab7" value="8">Laboratório 7</option>
-                        <option id="lab8" value="9">Laboratório 8</option>
-                        <option id="lab9" value="10">Laboratório 9</option>
-                        <option id="lab10" value="11">Laboratório 10</option>
-                        <option id="lab11" value="12">Laboratório 11</option>
-                        <option id="lab12" value="13">Laboratório 12</option>
-                        <option id="lab13" value="14">Laboratório 13</option>
-                        <option id="lab14" value="15">Laboratório 14</option>
-                        <option id="lab15" value="16">Laboratório 15</option>
-                        <option id="lab16" value="17">Laboratório 16</option>
-                    </select>
-                    <label>Laboratório</label>
-                </div>
-
                 <div class="multiselect">
                     <div id="multiSelectId" class="selectBox mui-select">
                         <select style="width: 150px;">
@@ -105,7 +81,6 @@
                         </select>
                         <div class="overSelect"></div>
                     </div>
-
                     <div id="checkboxes">
                         <label class="vali">
                             <div class="mdc-checkbox">
@@ -313,9 +288,51 @@
                             <div>Noturno 5</div>
                         </label>
                     </div>
+
+                </div>
+
+                <div id="select-labsId" class="mui-select fix-width">
+                    <select id="select-laboratorios" class="fix-width">
+                        <option id="selecione" value="" selected disabled>Selecione</option>
+                        <option id="lab1" value="2">Laboratório 1</option>
+                        <option id="lab2" value="3">Laboratório 2</option>
+                        <option id="lab3" value="4">Laboratório 3</option>
+                        <option id="lab4" value="5">Laboratório 4</option>
+                        <option id="lab5" value="6">Laboratório 5</option>
+                        <option id="lab6" value="7">Laboratório 6</option>
+                        <option id="lab7" value="8">Laboratório 7</option>
+                        <option id="lab8" value="9">Laboratório 8</option>
+                        <option id="lab9" value="10">Laboratório 9</option>
+                        <option id="lab10" value="11">Laboratório 10</option>
+                        <option id="lab11" value="12">Laboratório 11</option>
+                        <option id="lab12" value="13">Laboratório 12</option>
+                        <option id="lab13" value="14">Laboratório 13</option>
+                        <option id="lab14" value="15">Laboratório 14</option>
+                        <option id="lab15" value="16">Laboratório 15</option>
+                        <option id="lab16" value="17">Laboratório 16</option>
+                    </select>
+                    <label>Laboratório</label>
+                </div>
+
+
+                <div id="date-picker-id" class="input-field">
+                    <input type="text" class="datepicker" id="date-id">
+                    <label for="date-id">Data</label>
                 </div>
 
             </form>
+
+            <div id="discipline-field-container-id" class="row">
+                <div class="col s12">
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input type="text" id="discipline-field-id" class="autocomplete">
+                            <label for="disciplines-field-id">Disciplina</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <div id="justification-container-id" class="row">
                 <form class="col s12">
                     <div class="row">
@@ -350,14 +367,20 @@
             setTimeout(function () {
                 $('#date-picker-id').css('display', 'block')
                 $('#justification-container-id').css('display', 'none');
+                $('#select-labsId').css('display', 'block');
+                $('#discipline-field-container-id').css('display', 'none');
                 setTimeout(function () {
                     $('#reserve-form-container-id').css('transform', 'scale(1)');
                 }, 1);
             }, 200);
-        }, 1);  
-        
+        }, 1);
 
 
+
+    });
+
+    $('#avulse-radio-id').click(function () {
+        console.log('teste');
     });
 
     $('#fixed-radio-id').change(function () {
@@ -367,14 +390,27 @@
             setTimeout(function () {
                 $('#date-picker-id').css('display', 'none')
                 $('#justification-container-id').css('display', 'block');
+                $('#select-labsId').css('display', 'none');
+                $('#discipline-field-container-id').css('display', 'block');
                 setTimeout(function () {
                     $('#reserve-form-container-id').css('transform', 'scale(1)');
                 }, 1);
             }, 200);
-        }, 1);  
+        }, 1);
     });
 
-    $('#avulse-radio-id').click();
+    $('#avulse-radio-id').change();
+
+
+    $(document).ready(function () {
+        $('#discipline-field-id').autocomplete({
+            data: {
+                "Matemática": null,
+                "Língua Portuguesa e Literatura": null,
+                "Física": null
+            },
+        });
+    });
 
 
 </script>

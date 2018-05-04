@@ -59,3 +59,11 @@ $small: 408px;
     }
 }
 
+section > *{
+    padding: 20px;
+}
+
+#lab-panel-id ul{
+    display: flex;
+    justify-content: center;
+}

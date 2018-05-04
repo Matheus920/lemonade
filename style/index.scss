@@ -63,7 +63,40 @@ section > *{
     padding: 20px;
 }
 
-#lab-panel-id ul{
-    display: flex;
-    justify-content: center;
+#lab-panel-id {
+    
+    ul{
+        
+        display: flex;
+        justify-content: center;
+    }
+    
+    li{
+        margin-right: 10px;
+        margin-bottom: 10px;
+        
+        
+        .mdc-grid-tile__primary {
+
+            
+
+
+            border-width: 1px;
+            border-color: rgba(0,0,0,0.1);
+            border-style: solid;
+            transition: all 0.3s;
+            box-shadow: 1px 3px 3px rgba(0,0,0,0.4);
+            
+            overflow-y: scroll;
+            
+            table {
+                position: relative;
+                top:50px;
+                tbody {
+                    filter: brightness(1.6);
+                }
+            }
+        }
+    }
 }
+

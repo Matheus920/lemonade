@@ -5,14 +5,15 @@
     box-shadow: 0 0 0 0 !important;
 }
 
+
 .select-block, .select-wrapper{
     z-index: 24 !important;
 }
 
 .datepicker{
     width: 150px !important;
-    overflow: visible ;
 }
+
 
 
 #fieldsetId{
@@ -98,4 +99,8 @@
 
 .html-resize.no-v-align{
     justify-content: flex-start;
+}
+
+.modal.datepicker-modal{
+    width: 500px;
 }

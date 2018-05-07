@@ -4,7 +4,7 @@
 }
 
 
-#login-fieldsetId, .html-resize{
+#login-fieldset-id, .html-resize{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -13,22 +13,22 @@
 
 
 
-#login-fieldsetId{
+#login-fieldset-id{
     width: 300px;
-    height: 300px;
+    height: max-content;
     
 }
 
 
-#login-buttonsId{
+#login-buttons-id{
     width: 80% !important;
     margin-top: 0;
     display: flex;
     justify-content: space-between;
-}
-
-#help-button-id{
-    @include mdc-button-container-fill-color(#fff);
+ 
+    #cadastrar-button-id{
+        @include mdc-button-container-fill-color(#fff);
+    }
 }
 
 #close-button-id{

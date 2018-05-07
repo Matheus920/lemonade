@@ -3,9 +3,9 @@ import { MDCToolbar } from '@material/toolbar';
 import { MDCCheckbox } from '@material/checkbox';
 import { MDCSelect } from '@material/select';
 import { mui } from 'muicss/dist/js/mui';
-import {MDCTextField} from '@material/textfield';
-import {MDCDialog, MDCDialogFoundation, util} from '@material/dialog';
-import {MDCRadio} from '@material/radio';
+import { MDCTextField } from '@material/textfield';
+import { MDCDialog, MDCDialogFoundation, util } from '@material/dialog';
+import { MDCRadio } from '@material/radio';
 
 var radios = [];
 
@@ -13,26 +13,6 @@ for (var z = 0; z < document.querySelectorAll('.mdc-radio').length; z++) {
     radios[z] = new MDCRadio(document.querySelectorAll('.mdc-radio')[z]);
 }
 
-
-
-var dialog = document.querySelector('#login-help-dialog-id');
-var dialogMDC = new MDCDialog(dialog);
-
-dialogMDC.initialize();
-
-dialogMDC.listen('MDCDialog:accept', function() {
-    console.log('accepted');
-  })
-  
-  dialogMDC.listen('MDCDialog:cancel', function() {
-    console.log('canceled');
-  })
-  
-  document.querySelector('#help-button-id').addEventListener('click', function (evt) {
-    dialogMDC.lastFocusedTarget = evt.target;
-    dialogMDC.show();
-  })
-  
 
 var buttons1 = [];
 
@@ -51,7 +31,7 @@ for (var i = 0; i < document.querySelectorAll('.mdc-checkbox').length; i++) {
 
 var textfields = [];
 
-for(var k = 0; k < document.querySelectorAll('.mdc-text-field').length; k++){
+for (var k = 0; k < document.querySelectorAll('.mdc-text-field').length; k++) {
     textfields[i] = new MDCTextField(document.querySelectorAll('.mdc-text-field')[k]);
 }
 

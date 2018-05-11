@@ -104,3 +104,15 @@
 .modal.datepicker-modal{
     width: 500px;
 }
+
+#reserve-type-radios-container-id{
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+#description-problem{
+    *{
+        margin-top: 10px;
+    }    
+
+}

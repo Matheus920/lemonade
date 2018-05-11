@@ -40,51 +40,52 @@ for (var k = 0; k < document.querySelectorAll('.mdc-text-field').length; k++) {
     textfields[i] = new MDCTextField(document.querySelectorAll('.mdc-text-field')[k]);
 }
 
-var dialog = new MDCDialog(document.querySelector('#evaluation-dialog'));
-var dialog2 = new MDCDialog(document.querySelector('#special-evaluation-dialog'));
-var dialog3 = new MDCDialog(document.querySelector('#feedback-dialog'));
+if(document.querySelector('#evaluation-dialog') !== null){
+    var dialog = new MDCDialog(document.querySelector('#evaluation-dialog'));
+    var dialog2 = new MDCDialog(document.querySelector('#special-evaluation-dialog'));
+    var dialog3 = new MDCDialog(document.querySelector('#feedback-dialog'));
 
+    dialog.listen('MDCDialog:accept', function () {
+        console.log('accepted');
+    });
+    
+    dialog.listen('MDCDialog:cancel', function () {
+        console.log('canceled');
+    });
+    
+    dialog2.listen('MDCDialog:accept', function () {
+        console.log('accepted');
+    });
+    
+    dialog2.listen('MDCDialog:cancel', function () {
+        console.log('canceled');
+    });
+    
+    dialog3.listen('MDCDialog:accept', function () {
+        console.log('accepted');
+    });
+    
+    dialog3.listen('MDCDialog:cancel', function () {
+        console.log('canceled');
+    });
 
-dialog.listen('MDCDialog:accept', function () {
-    console.log('accepted');
-});
-
-dialog.listen('MDCDialog:cancel', function () {
-    console.log('canceled');
-});
-
-dialog2.listen('MDCDialog:accept', function () {
-    console.log('accepted');
-});
-
-dialog2.listen('MDCDialog:cancel', function () {
-    console.log('canceled');
-});
-
-dialog3.listen('MDCDialog:accept', function () {
-    console.log('accepted');
-});
-
-dialog3.listen('MDCDialog:cancel', function () {
-    console.log('canceled');
-});
-
-for (var le = 0; le < document.querySelectorAll('.button-confirm').length; le++) {
-    document.querySelectorAll('.button-confirm')[le].onclick = function (evt) {
-        if (this.innerHTML === 'Feedback') {
-            dialog3.lastFocusedTarget = evt.target;
-            dialog3.show();
-        } else {
-            if (this.parentElement.parentElement.children[4].innerHTML === 'Avulsa') {
-                dialog.lastFocusedTarget = evt.target;
-                dialog.show();
+    for (var le = 0; le < document.querySelectorAll('.button-confirm').length; le++) {
+        document.querySelectorAll('.button-confirm')[le].onclick = function (evt) {
+            if (this.innerHTML === 'Feedback') {
+                dialog3.lastFocusedTarget = evt.target;
+                dialog3.show();
             } else {
-                dialog2.lastFocusedTarget = evt.target;
-                dialog2.show();
+                if (this.parentElement.parentElement.children[4].innerHTML === 'Avulsa') {
+                    dialog.lastFocusedTarget = evt.target;
+                    dialog.show();
+                } else {
+                    dialog2.lastFocusedTarget = evt.target;
+                    dialog2.show();
+                }
             }
         }
     }
-}
+
 
 document.querySelector('#problema_id').onclick = function () {
     if (checkboxs[0].checked) {
@@ -95,6 +96,28 @@ document.querySelector('#problema_id').onclick = function () {
         document.querySelector('#description-problem').textContent = 'Caso não haja nenhum problema, clique em confirmar.';
     }
 }
+}
+
+if(document.querySelector('#fixed-dialog') !== null){
+    var dialog4 = new MDCDialog(document.querySelector('#fixed-dialog'));
+
+    dialog4.listen('MDCDialog:accept', function () {
+        console.log('accepted');
+    });
+    
+    dialog4.listen('MDCDialog:cancel', function () {
+        console.log('canceled');
+    });
+
+    for (var ca = 0; ca < document.querySelectorAll('.button-fixed-confirm').length; ca++) {
+        document.querySelectorAll('.button-fixed-confirm')[ca].onclick = function (evt) {
+            dialog4.lastFocusedTarget = evt.target;
+            dialog4.show();
+        }
+    }
+}   
+
+
 
 
 const select = new MDCSelect(document.querySelector('.mdc-select'));

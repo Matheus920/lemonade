@@ -1,19 +1,20 @@
 <!DOCTYPE html>
-<html lang="pt-br" class="html-resize">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="bundle.js" async></script>
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <link rel="stylesheet" href="./node_modules/materialize-css/dist/css/materialize.css">
     <link rel="stylesheet" href="bundle.css">
     <link href="style/fontes-google.css" rel="stylesheet">
     <link href="style/icons-google.css" rel="stylesheet">
-    <title>Login</title>
+    <title>Reservas</title>
 </head>
 
-<body class="mdc-typography">
-    <header class="mdc-toolbar mdc-toolbar--fixed mdc-typography">
+<body>
+    <header visible="1" class="mdc-toolbar mdc-toolbar--fixed mdc-typography">
         <div class="mdc-toolbar__row">
             <section class="mdc-toolbar__section mdc-toolbar__section--align-start mdc-toolbar__section--shrink-to-fit">
                 <a href="index.html" class="mdc-toolbar__menu-icon">
@@ -42,138 +43,112 @@
                 <a class="mdc-toolbar__icon mdc-typography--button no-link" href="#">LOGIN</a>
             </section>
         </div>
-
     </header>
 
-    <section>
-        <div id="cadastro-fieldset-id" class="form-fieldset">
+    <section class="mdc-toolbar-fixed-adjust">
+        <h4 class="mdc-typography--headline4">Reservas</h4>
+        <table class="centered highlight">
+            <thead>
+                <tr>
+                    <th>Professor</th>
+                    <th>Departamento</th>
+                    <th>Período</th>
+                    <th>Disciplina</th>
+                    <th>Dia da semana</th>
+                    <th>Duração</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
 
-            <div class="pg1 mdc-form-field" id="nome-container-id">
-                <div class="mdc-text-field">
-                    <input type="text" id="nome-id" class="mdc-text-field__input" aria-controls="nome-helper-text" required minlength="7">
-                    <label class="mdc-floating-label" for="nome-id">Nome</label>
-                    <div class="mdc-line-ripple"></div>
-
-                </div>
-            </div>
-
-            <div class="pg1 mdc-form-field" id="prontuario-container-id">
-                <div class="mdc-text-field">
-                    <input type="text" id="prontuario-id" class="mdc-text-field__input" aria-controls="prontuario-helper-text" required minlength="7">
-                    <label class="mdc-floating-label" for="prontuario-id">Prontuário</label>
-                    <div class="mdc-line-ripple"></div>
-
-                </div>
-            </div>
-
-            <div class="pg1 mdc-form-field" id="email-container-id">
-                <div class="mdc-text-field">
-                    <input type="email" id="email-id" class="mdc-text-field__input" aria-controls="email-helper-text" required minlength="7">
-                    <label class="mdc-floating-label" for="email-id">Email</label>
-                    <div class="mdc-line-ripple"></div>
-
-                </div>
-            </div>
-
-            <div class="pg1 mdc-form-field" id="senha-container-id">
-                <div class="mdc-text-field">
-                    <input type="password" id="senha-id" class="mdc-text-field__input" required>
-                    <label class="mdc-floating-label" for="senha-id">Senha</label>
-                    <div class="mdc-line-ripple"></div>
-                </div>
-            </div>
-
-
-
-            
-            <div class="pg1" id="botao-proximo-container-id">
-                <button class="mdc-button arrow-button" id="plus-day">
-                    <i class="material-icons big-arrow-icon mdc-button__icon">chevron_right</i>
-                </button>
-            </div>
-            
-            <div class="pg2" id="botao-anterior-container-id">
-                <button class="mdc-button arrow-button" id="minus-day">
-                    <i class="material-icons big-arrow-icon mdc-button__icon">keyboard_arrow_left</i>
-                </button>
-                
-            </div>
-            
-            <div class="pg2 mdc-form-field" id="celular-container-id">
-                <div class="mdc-text-field">
-                    <input type="text" id="celular-id" class="mdc-text-field__input" aria-controls="celular-helper-text" required minlength="7">
-                    <label class="mdc-floating-label" for="celular-id">Telefone Celular</label>
-                    <div class="mdc-line-ripple"></div>
-
-                </div>
-            </div>
-
-            <div class="pg2 cadastro-professor mdc-form-field" id="siape-container-id">
-                <div class="mdc-text-field">
-                    <input type="text" id="siape-id" class="mdc-text-field__input" aria-controls="siape-helper-text" required minlength="7">
-                    <label class="mdc-floating-label" for="siape-id">SIAPE</label>
-                    <div class="mdc-line-ripple"></div>
-
-                </div>
-            </div>
-
-            <div class="pg2 cadastro-professor mdc-form-field" id="departamento-container-id">
-                <div class="mdc-text-field">
-                    <input type="text" id="departamento-id" class="mdc-text-field__input" aria-controls="departamento-helper-text" required minlength="7">
-                    <label class="mdc-floating-label" for="departamento-id">Departamento</label>
-                    <div class="mdc-line-ripple"></div>
-
-                </div>
-            </div>
-
-            <div class="pg2" id="cadastrar-buttons-id">
-                <button class="mdc-button mdc-button--raised dark-ripple" id="cadastrar-button-id">Cadastrar</button>
-            </div>
-        </div>
-
-
+            <tbody>
+                <tr>
+                    <td>Luk Cho Man</td>
+                    <td>DIT</td>
+                    <td>M1, M2, M3</td>
+                    <td>RDI</td>
+                    <td>Segunda-feira</td>
+                    <td>Semestral</td>
+                    <td>
+                        <button class="mdc-button button-fixed-confirm mdc-button--raised dark-ripple">Avaliar</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Leandro Santana</td>
+                    <td>DIT</td>
+                    <td>M1, M2, M3</td>
+                    <td>PJI</td>
+                    <td>Segunda-feira</td>
+                    <td>Anual</td>
+                    <td>
+                        <button class="mdc-button button-fixed-confirm mdc-button--raised dark-ripple">Avaliar</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Odair</td>
+                    <td>DHU</td>
+                    <td>M1, M2, M3</td>
+                    <td>LPL</td>
+                    <td>Segunda-feira</td>
+                    <td>Anual</td>
+                    <td>
+                        <button class="mdc-button button-fixed-confirm mdc-button--raised dark-ripple">Avaliar</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     </section>
-    <script src="node_modules/jquery/dist/jquery.js"></script>
-    <script>
-        $('#cadastro-fieldset-id').css('transition', 'all 0.2s');
+    <aside id="fixed-dialog" class="mdc-dialog" role="alertdialog" aria-labelledby="my-mdc-dialog-label" aria-describedby="my-mdc-dialog-description">
+        <div class="mdc-dialog__surface">
+            <header class="mdc-dialog__header">
+                <h2 id="my-mdc-dialog-label" class="mdc-dialog__header__title">
+                    Avaliação
+                </h2>
+            </header>
+            <section id="my-mdc-dialog-description" class="mdc-dialog__body">
+                <p class="request-justification">
+                    Justificativa: Eu preciso de computadores para que meus alunos desempenhem atividades técnicas de desenvolvimento e pesquisas.
+                </p>
 
+                Selecione um laboratório para a reserva
 
-        $('.pg2').css('display', 'none');
+                <div id="select-labs-id" class="avulsa mui-select fix-width">
+                    <select id="select-laboratorios" class="fix-width">
+                        <option id="selecione" value="" selected disabled>Selecione</option>
+                        <option id="lab1" value="2">Laboratório 1</option>
+                        <option id="lab2" value="3">Laboratório 2</option>
+                        <option id="lab3" value="4">Laboratório 3</option>
+                        <option id="lab4" value="5">Laboratório 4</option>
+                        <option id="lab5" value="6">Laboratório 5</option>
+                        <option id="lab6" value="7">Laboratório 6</option>
+                        <option id="lab7" value="8">Laboratório 7</option>
+                        <option id="lab8" value="9">Laboratório 8</option>
+                        <option id="lab9" value="10">Laboratório 9</option>
+                        <option id="lab10" value="11">Laboratório 10</option>
+                        <option id="lab11" value="12">Laboratório 11</option>
+                        <option id="lab12" value="13">Laboratório 12</option>
+                        <option id="lab13" value="14">Laboratório 13</option>
+                        <option id="lab14" value="15">Laboratório 14</option>
+                        <option id="lab15" value="16">Laboratório 15</option>
+                        <option id="lab16" value="17">Laboratório 16</option>
+                    </select>
+                    <label>Laboratório</label>
+                </div>
+                Caso a reserva esteja de acordo, clique em OK. Caso contrário, selecione a opção Reprovar.
 
-        $('#botao-proximo-container-id button').click(function () {
-            setTimeout(function () {
-                $('#cadastro-fieldset-id').css('transform', 'scale(0)');
-                setTimeout(function () {
-                    $('.pg1').css('display', 'none');
-                    $('.pg2').css('display', 'block');
-                    $('.pg2').css('opacity', '1');
-
-                    setTimeout(function () {
-                        $('#cadastro-fieldset-id').css('transform', 'scale(1)');
-                    }, 1);
-                }, 200);
-            }, 1);
-        });
-
-        $('#botao-anterior-container-id button').click(function () {
-            setTimeout(function () {
-                $('#cadastro-fieldset-id').css('transform', 'scale(0)');
-                setTimeout(function () {
-                    $('.pg2').css('display', 'none');
-                    $('.pg1').css('display', 'block');
-
-                    setTimeout(function () {
-                        $('#cadastro-fieldset-id').css('transform', 'scale(1)');
-                    }, 1);
-                }, 200);
-            }, 1);
-        });
-
-        $('#cadastro-fieldset-id').css('transform', 'scale(1)');
-
-
-    </script>
+            </section>
+            <footer class="mdc-dialog__footer">
+                <button type="button" class="mdc-button white-button mdc-dialog__footer__button mdc-dialog__footer__button--cancel">Reprovar</button>
+                <button type="button" class="mdc-button white-button mdc-dialog__footer__button mdc-dialog__footer__button--accept">OK</button>
+            </footer>
+        </div>
+        <div class="mdc-dialog__backdrop"></div>
+    </aside>
 
 </body>
+<script src="bundle.js" async></script>
+<script src="./node_modules/materialize-css/dist/js/materialize.js"></script>
+<script>
+
+</script>
 
 </html>

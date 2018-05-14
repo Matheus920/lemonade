@@ -39,7 +39,7 @@
                 </span>
             </section>
             <section class="mdc-toolbar__section mdc-toolbar__section--align-end mdc-toolbar__section--shrink-to-fit">
-                <a class="mdc-toolbar__icon mdc-typography--button no-link" href="#">LOGIN</a>
+                <a class="mdc-toolbar__icon mdc-typography--button no-link" href="login.html">LOGIN</a>
             </section>
         </div>
     </header>
@@ -85,37 +85,5 @@
         </table>
     </section>
 </body>
-
-
-<script>
-    var tableHeader = $('thead');
-    var tableBody = $('tbody');
-
-    if (window.screen.width >= 450) {
-        tableHeader.addClass('mdc-typography--headline6');
-        tableBody.addClass('mdc-typography--body1');
-        
-    }
-    
-    window.onresize = function () {
-        if (window.screen.width >= 450) {
-            tableHeader.addClass('mdc-typography--headline6');
-            tableBody.addClass('mdc-typography--body1');
-
-        } else {
-            if(tableHeader.hasClass('mdc-typography--headline6')){
-                tableHeader.removeClass('mdc-typography--headline6');
-            }
-            
-            if(tableBody.hasClass('mdc-typography--body1')){
-                tableBody.removeClass('mdc-typography--body1');
-            }
-        }
-    }
-
-
-
-</script>
-
-
+<script src="script/historico.js"></script>
 </html>

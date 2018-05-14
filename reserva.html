@@ -41,7 +41,7 @@
                 </span>
             </section>
             <section class="mdc-toolbar__section mdc-toolbar__section--align-end mdc-toolbar__section--shrink-to-fit">
-                <a class="mdc-toolbar__icon mdc-typography--button no-link" href="#">LOGIN</a>
+                <a class="mdc-toolbar__icon mdc-typography--button no-link" href="login.html">LOGIN</a>
             </section>
         </div>
     </header>
@@ -332,6 +332,11 @@
                     <label for="date-id">Data</label>
                 </div>
 
+                <div id="date-picker-reitoria" class="especial input-field">
+                    <input type="text" class="datepicker" id="date-reitoria-id">
+                    <label for="date-reitoria-id">Data</label>
+                </div>
+
 
             </form>
 
@@ -387,83 +392,10 @@
     </section>
 
     <script src="./node_modules/jquery/dist/jquery.js"></script>
-    <script src="reserva.js">
     </script>
     <script src="./node_modules/materialize-css/dist/js/materialize.js"></script>
-    <script src="material-date.js"></script>
+    <script src="script/material-date.js"></script>
 </body>
 
-<script>
-    $('#reserve-form-container-id').css('transition', 'all 0.2s');
-
-
-    $('#avulse-radio-id').change(function () {
-
-        setTimeout(function () {
-            $('#reserve-form-container-id').css('transform', 'scale(0)');
-            setTimeout(function () {
-                $('.especial').css('display', 'none');
-                $('.nao-especial').css('display', 'block');
-                $('.avulsa').css('display', 'block')
-                $('.fixa').css('display', 'none');
-                $('.especial').css('display', 'none');
-                setTimeout(function () {
-                    $('#reserve-form-container-id').css('transform', 'scale(1)');
-                }, 1);
-            }, 200);
-        }, 1);
-
-
-
-    });
-
-    $('#fixed-radio-id').change(function () {
-
-        setTimeout(function () {
-            $('#reserve-form-container-id').css('transform', 'scale(0)');
-            setTimeout(function () {
-                $('.especial').css('display', 'none');
-                $('.nao-especial').css('display', 'block');
-                $('.avulsa').css('display', 'none')
-                $('.fixa').css('display', 'block');
-                setTimeout(function () {
-                    $('#reserve-form-container-id').css('transform', 'scale(1)');
-                }, 1);
-            }, 200);
-        }, 1);
-    });
-
-    $('#special-radio-id').change(function () {
-
-        setTimeout(function () {
-            $('#reserve-form-container-id').css('transform', 'scale(0)');
-            setTimeout(function () {
-                $('.fixa, .avulsa').css('display', 'block');
-
-                $('.especial').css('display', 'block');
-                $('.nao-especial').css('display', 'none');
-                setTimeout(function () {
-                    $('#reserve-form-container-id').css('transform', 'scale(1)');
-                }, 1);
-            }, 200);
-        }, 1);
-    });
-
-
-    $('#avulse-radio-id').change();
-
-
-    $(document).ready(function () {
-        $('#discipline-field-id').autocomplete({
-            data: {
-                "Matemática": null,
-                "Língua Portuguesa e Literatura": null,
-                "Física": null
-            },
-        });
-    });
-
-
-</script>
-
+<script src="script/reserva.js"></script>
 </html>

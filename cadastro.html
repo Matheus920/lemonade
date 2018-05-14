@@ -39,7 +39,7 @@
                 </span>
             </section>
             <section class="mdc-toolbar__section mdc-toolbar__section--align-end mdc-toolbar__section--shrink-to-fit">
-                <a class="mdc-toolbar__icon mdc-typography--button no-link" href="#">LOGIN</a>
+                <a class="mdc-toolbar__icon mdc-typography--button no-link" href="login.html">LOGIN</a>
             </section>
         </div>
 
@@ -134,46 +134,6 @@
 
     </section>
     <script src="node_modules/jquery/dist/jquery.js"></script>
-    <script>
-        $('#cadastro-fieldset-id').css('transition', 'all 0.2s');
-
-
-        $('.pg2').css('display', 'none');
-
-        $('#botao-proximo-container-id button').click(function () {
-            setTimeout(function () {
-                $('#cadastro-fieldset-id').css('transform', 'scale(0)');
-                setTimeout(function () {
-                    $('.pg1').css('display', 'none');
-                    $('.pg2').css('display', 'block');
-                    $('.pg2').css('opacity', '1');
-
-                    setTimeout(function () {
-                        $('#cadastro-fieldset-id').css('transform', 'scale(1)');
-                    }, 1);
-                }, 200);
-            }, 1);
-        });
-
-        $('#botao-anterior-container-id button').click(function () {
-            setTimeout(function () {
-                $('#cadastro-fieldset-id').css('transform', 'scale(0)');
-                setTimeout(function () {
-                    $('.pg2').css('display', 'none');
-                    $('.pg1').css('display', 'block');
-
-                    setTimeout(function () {
-                        $('#cadastro-fieldset-id').css('transform', 'scale(1)');
-                    }, 1);
-                }, 200);
-            }, 1);
-        });
-
-        $('#cadastro-fieldset-id').css('transform', 'scale(1)');
-
-
-    </script>
-
+    <script src="script/cadastro.js"></script>
 </body>
-
 </html>

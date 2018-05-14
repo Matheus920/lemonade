@@ -16,6 +16,8 @@ $mdc-theme-primary: #00897b;
 @import "@material/textfield/mdc-text-field";
 @import "@material/elevation/mdc-elevation";
 @import "@material/grid-list/mdc-grid-list";
+@import "@material/menu/mdc-menu";
+@import "@material/list/mdc-list";
 
 
 .material-icons.yellow500 { color: #FFEB3B; }
@@ -74,4 +76,72 @@ $mdc-theme-primary: #00897b;
     margin: 0px !important;
 
     padding-left: 15px !important;
+}
+
+.mdc-toolbar{
+    display: flex;
+    justify-content: center;
+
+    section{
+        width: 30%;   
+    }
+
+    section:nth-child(3), section:nth-child(4){
+        width:15%;
+    }
+
+    .toolbar-links{
+        display: inline-block;
+        width:50%;
+        height: min-content;
+        display:flex;
+        justify-content:space-between;
+    }
+
+    // work in progress
+    // @media screen and (max-width:650px){
+    //     width:100%;
+     
+    //     .mdc-menu{
+    //         width:100%;
+    //         position:absolute;
+            
+    //         top:15px;
+    //         left:0px;
+            
+            
+    //         .mdc-list-item{
+    //             height:120px;
+    //         }
+    //     }
+
+    // }
+}
+
+
+.mdc-menu{
+    margin-top: 45px !important;
+
+    z-index: 0;
+    
+    background-color:#00897b;
+    
+    @media screen and (max-width:650px){
+        position:absolute;
+
+        top:15px;
+        left:0px;
+        
+        width:100%;
+
+        .mdc-list-item{
+            height:120px;
+        }
+
+    }
+    .mdc-list-item{
+        background-color:#00897b;
+        color: #fff;
+
+    }
 }

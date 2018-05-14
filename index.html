@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
+    <script src="script/jquery.slim.min.js"></script>
     <script src="bundle.js" async></script>
     <link rel="stylesheet" href="bundle.css">
     <link href="style/fontes-google.css" rel="stylesheet">
@@ -34,8 +34,25 @@
             <section class="mdc-toolbar__section mdc-toolbar__section--align-center">
                 <span class="mdc-toolbar__title" id="title">LEMONADE</span>
             </section>
+
+
             <section class="mdc-toolbar__section mdc-toolbar__section--align-end mdc-toolbar__section--shrink-to-fit">
                 <a class="mdc-toolbar__icon mdc-typography--button no-link" href="login.html">LOGIN</a>
+            </section>
+
+            <section class="mdc-toolbar__section mdc-toolbar__section--align-end mdc-toolbar__section--shrink-to-fit">
+                <a class="mdc-menu-anchor user-menu-link mdc-toolbar__icon mdc-typography--button no-link" href="#">USER</a>
+                <div class="mdc-menu" tabindex="-1">
+                    <ul class="mdc-menu__items mdc-list" role="menu" aria-hidden="true">
+                        <li class="mdc-list-item" role="menuitem" tabindex="0">
+                            <a class="mdc-typography--button no-link">MENU ITEM</a>
+                        </li>
+
+                        <li class="mdc-list-item" role="menuitem" tabindex="-1">
+                            <a class="mdc-typography--button no-link">ANOTHER MENU ITEM</a>
+                        </li>
+                    </ul>
+                </div>
             </section>
         </div>
 
@@ -128,7 +145,7 @@
                                 <th>Nome</th>
                                 <th>Departamento</th>
                             </thead>
-                            <tbody  style="color:white;">
+                            <tbody style="color:white;">
                                 <tr style="background: red;">
                                     <td>
                                         M1

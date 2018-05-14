@@ -6,6 +6,8 @@ import { mui } from 'muicss/dist/js/mui';
 import { MDCTextField } from '@material/textfield';
 import { MDCDialog, MDCDialogFoundation, util } from '@material/dialog';
 import { MDCRadio } from '@material/radio';
+import { MDCMenu } from '@material/menu';
+
 
 
 var radios = [];
@@ -40,7 +42,7 @@ for (var k = 0; k < document.querySelectorAll('.mdc-text-field').length; k++) {
     textfields[i] = new MDCTextField(document.querySelectorAll('.mdc-text-field')[k]);
 }
 
-if(document.querySelector('#evaluation-dialog') !== null){
+if (document.querySelector('#evaluation-dialog') !== null) {
     var dialog = new MDCDialog(document.querySelector('#evaluation-dialog'));
     var dialog2 = new MDCDialog(document.querySelector('#special-evaluation-dialog'));
     var dialog3 = new MDCDialog(document.querySelector('#feedback-dialog'));
@@ -48,23 +50,23 @@ if(document.querySelector('#evaluation-dialog') !== null){
     dialog.listen('MDCDialog:accept', function () {
         console.log('accepted');
     });
-    
+
     dialog.listen('MDCDialog:cancel', function () {
         console.log('canceled');
     });
-    
+
     dialog2.listen('MDCDialog:accept', function () {
         console.log('accepted');
     });
-    
+
     dialog2.listen('MDCDialog:cancel', function () {
         console.log('canceled');
     });
-    
+
     dialog3.listen('MDCDialog:accept', function () {
         console.log('accepted');
     });
-    
+
     dialog3.listen('MDCDialog:cancel', function () {
         console.log('canceled');
     });
@@ -87,24 +89,24 @@ if(document.querySelector('#evaluation-dialog') !== null){
     }
 
 
-document.querySelector('#problema_id').onclick = function () {
-    if (checkboxs[0].checked) {
-        console.log('teste');
-        document.querySelector('#description-problem').innerHTML = '<span class="mdc-typography--subtitle">Tipo de problema</span><section><label id="ocorrencia-radio-label-id"><div class="mdc-radio"><input class="mdc-radio__native-control" type="radio" id="ocorrencia-radio-id" name="reserve-type" checked><div class="mdc-radio__background"><div class="mdc-radio__outer-circle"></div><div class="mdc-radio__inner-circle"></div></div></div>Ocorrência</label><label id="anormalidade-radio-label-id"><div class="mdc-radio"><input class="mdc-radio__native-control" type="radio" id="anormalidade-radio-id" name="reserve-type"><div class="mdc-radio__background"><div class="mdc-radio__outer-circle"></div><div class="mdc-radio__inner-circle"></div></div></div>Anormalidade</label></section><div class="row"><form class="col s12"><div class="row"><div class="input-field col s12"><textarea id="feedback-textarea-id" class="materialize-textarea"></textarea><label for="feedback-textarea-id">Dê mais informações sobre o problema</label></div></div></form></div>';
-    } else {
-        console.log('teste1');
-        document.querySelector('#description-problem').textContent = 'Caso não haja nenhum problema, clique em confirmar.';
+    document.querySelector('#problema_id').onclick = function () {
+        if (checkboxs[0].checked) {
+            console.log('teste');
+            document.querySelector('#description-problem').innerHTML = '<span class="mdc-typography--subtitle">Tipo de problema</span><section><label id="ocorrencia-radio-label-id"><div class="mdc-radio"><input class="mdc-radio__native-control" type="radio" id="ocorrencia-radio-id" name="reserve-type" checked><div class="mdc-radio__background"><div class="mdc-radio__outer-circle"></div><div class="mdc-radio__inner-circle"></div></div></div>Ocorrência</label><label id="anormalidade-radio-label-id"><div class="mdc-radio"><input class="mdc-radio__native-control" type="radio" id="anormalidade-radio-id" name="reserve-type"><div class="mdc-radio__background"><div class="mdc-radio__outer-circle"></div><div class="mdc-radio__inner-circle"></div></div></div>Anormalidade</label></section><div class="row"><form class="col s12"><div class="row"><div class="input-field col s12"><textarea id="feedback-textarea-id" class="materialize-textarea"></textarea><label for="feedback-textarea-id">Dê mais informações sobre o problema</label></div></div></form></div>';
+        } else {
+            console.log('teste1');
+            document.querySelector('#description-problem').textContent = 'Caso não haja nenhum problema, clique em confirmar.';
+        }
     }
 }
-}
 
-if(document.querySelector('#fixed-dialog') !== null){
+if (document.querySelector('#fixed-dialog') !== null) {
     var dialog4 = new MDCDialog(document.querySelector('#fixed-dialog'));
 
     dialog4.listen('MDCDialog:accept', function () {
         console.log('accepted');
     });
-    
+
     dialog4.listen('MDCDialog:cancel', function () {
         console.log('canceled');
     });
@@ -115,21 +117,41 @@ if(document.querySelector('#fixed-dialog') !== null){
             dialog4.show();
         }
     }
-}   
+}
 
 
 
 
-const select = new MDCSelect(document.querySelector('.mdc-select'));
-console.log(select);
+//const select = new MDCSelect(document.querySelector('.mdc-select'));
+//console.log(select);
 
-b.click(function () {
-    if (!b.is('glayson')) {
-        console.log('glayson existe')
-        b.attr('glayson', 'rola')
-        setTimeout(() => $('div.mui-select__menu'), 300)
-    } else {
-        b.prop('glayson', null)
-        console.log('glayson foi removido')
-    }
-});
+// b.click(function () {
+//     if (!b.is('glayson')) {
+//         console.log('glayson existe')
+//         b.attr('glayson', 'rola')
+//         setTimeout(() => $('div.mui-select__menu'), 300)
+//     } else {
+//         b.prop('glayson', null)
+//         console.log('glayson foi removido')
+//     }
+// });
+
+
+//index
+
+
+var menuEl = document.querySelector('.mdc-menu');
+if (menuEl) {
+    
+    // menu Instantiation
+    var menu = new MDCMenu(menuEl);
+    var menuButtonEl = document.querySelector('.user-menu-link');
+    
+    // Toggle menu open
+    menuButtonEl.addEventListener('click', function () {
+        console.log('a');
+        menu.open = !menu.open;
+    });
+
+}
+

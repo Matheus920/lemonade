@@ -4,9 +4,10 @@ import (
 	"net/http"
 	"io/ioutil"
 	"encoding/json"
-	"github.com/gorilla/securecookie"
 	"database/sql"
 	_ "github.com/go-sql-driver/mysql"
+	"github.com/dgrijalva/jwt-go"
+	"time"
 )
 
 type User struct {
@@ -14,11 +15,8 @@ type User struct {
 	Senha string `json:"senha"`
 }
 
-var cookieHandler = securecookie.New(
-	securecookie.GenerateRandomKey(64),
-	securecookie.GenerateRandomKey(32))
-
 var db *sql.DB
+var secret = []byte("thamiresehshow")
 
 func rowExists(query string, args ...interface{}) (bool, error){
 	var exists bool
@@ -44,31 +42,84 @@ func loginHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	if exists, err := rowExists("SELECT * FROM user WHERE prontuario=? and senha=?", user.Prontuario, user.Senha); err != nil {
+	if exists, err := rowExists("SELECT * FROM user WHERE prontuario=? and senha=? and active=1", user.Prontuario, user.Senha); err != nil {
 		w.WriteHeader(500)
 		return
 	} else {
 		if exists {
-			setSession(user, w)
-			w.Write([]byte("Chegou"))
+			token := jwt.NewWithClaims(jwt.SigningMethodHS256, jwt.MapClaims{
+				"prontuario": user.Prontuario,
+				"senha": user.Senha,
+				"iat": time.Now().Unix(),
+			})
+			if tokenStr, err := token.SignedString(secret); err == nil {
+				jsonToken := map[string]string{"token": tokenStr, "redirect": "http://localhost:8080/", "status": "302"}
+				if json, err := json.Marshal(jsonToken); err == nil {
+					w.Write(json)
+				} else {
+					w.WriteHeader(500)
+				}
+			} else {
+				w.WriteHeader(500)
+			}
 		}
 	}
 	
 }
 
-func setSession(user User, w http.ResponseWriter) {
-	value := map[string]string{"prontuario": user.Prontuario, "senha": user.Senha}
-	if encoded, err := cookieHandler.Encode("session", value); err == nil {
-		cookie := &http.Cookie {
-			Name: "session",
-			Value: encoded,
-		}
-		http.SetCookie(w, cookie)
-	}
-}
-
 func logoutHandler(w http.ResponseWriter, r *http.Request) {
-	w.WriteHeader(501)
+	if r.Method != "POST" {
+		w.WriteHeader(401)
+		return
+	}
+
+	jsonToken := make(map[string]string)
+
+	if body, _ := ioutil.ReadAll(r.Body); len(body) > 0 {
+		if err := json.Unmarshal(body, &jsonToken); err != nil {
+			w.WriteHeader(400)
+			return
+		}
+	} else {
+		w.WriteHeader(401)
+		return
+	}
+
+	token, err := jwt.Parse(jsonToken["token"], func(token *jwt.Token) (interface{}, error){
+		if _, ok := token.Method.(*jwt.SigningMethodHMAC); !ok {
+			return nil, fmt.Errorf("Unexpected signing method: %v", token.Header["alg"])
+		}
+		return secret, nil
+	})
+	if claims, ok := token.Claims.(jwt.MapClaims); ok && token.Valid {
+		if claims["prontuario"] != "" && claims["senha"] != "" && claims["iat"] != -1 {
+			if exists, err := rowExists("SELECT * FROM user WHERE prontuario=? and senha=? and active=1", claims["prontuario"], claims["senha"]); err != nil {
+				w.WriteHeader(500)
+				return
+			} else {
+				if exists {
+					token := jwt.NewWithClaims(jwt.SigningMethodHS256, jwt.MapClaims{
+						"prontuario": "",
+						"senha": "",
+						"iat": -1,
+					})
+					if tokenStr, err := token.SignedString(secret); err == nil {
+						jsonToken := map[string]string{"token": tokenStr, "redirect": "http://localhost:8080/", "status": "302"}
+						if json, err := json.Marshal(jsonToken); err == nil {
+							w.Write(json)
+						} else {
+							w.WriteHeader(500)
+						}
+					} else {
+						w.WriteHeader(500)
+					}
+				}
+			}
+		}
+	} else {
+		fmt.Println(err)
+	}
+	
 }
 
 func main() {

@@ -12,6 +12,31 @@
 </head>
 
 <body class="mdc-typography">
+
+    <div class="mdc-menu" tabindex="-1">
+        <ul class="mdc-menu__items mdc-list" role="menu" aria-hidden="true">
+            <li class="mdc-list-item" role="menuitem" tabindex="0">
+                <a class="mdc-typography--button no-link" href="reserva.html">Reserva</a>
+                <i class="material-icons big-arrow-icon mdc-button__icon">keyboard_arrow_left</i>
+            </li>
+
+            <li class="mdc-list-item" role="menuitem" tabindex="-1">
+                <a class="mdc-typography--button no-link" href="historico.html">Historico (User)</a>
+                <i class="material-icons big-arrow-icon mdc-button__icon">keyboard_arrow_right</i>
+            </li>
+
+            <li class="mdc-list-item" role="menuitem" tabindex="-2">
+                <a class="mdc-typography--button no-link" href="reserva-avulsa.html">Historico (Funcionario)</a>
+                <i class="material-icons big-arrow-icon mdc-button__icon">keyboard_arrow_right</i>
+            </li>
+
+            <li class="mdc-list-item" role="menuitem" tabindex="-3">
+                <a class="mdc-typography--button no-link" href="reserva-fixa.html">Historico (Super)</a>
+                <i class="material-icons big-arrow-icon mdc-button__icon">keyboard_arrow_right</i>
+            </li>
+        </ul>
+    </div>
+
     <header class="mdc-toolbar mdc-toolbar--fixed mdc-typography">
         <div class="mdc-toolbar__row">
             <section class="mdc-toolbar__section mdc-toolbar__section--align-start mdc-toolbar__section--shrink-to-fit">
@@ -37,22 +62,15 @@
 
 
             <section class="mdc-toolbar__section mdc-toolbar__section--align-end mdc-toolbar__section--shrink-to-fit">
+            </section>
+
+            <section class="mdc-toolbar__section mdc-toolbar__section--align-end mdc-toolbar__section--shrink-to-fit">
                 <a class="mdc-toolbar__icon mdc-typography--button no-link" href="login.html">LOGIN</a>
             </section>
 
             <section class="mdc-toolbar__section mdc-toolbar__section--align-end mdc-toolbar__section--shrink-to-fit">
                 <a class="mdc-menu-anchor user-menu-link mdc-toolbar__icon mdc-typography--button no-link" href="#">USER</a>
-                <div class="mdc-menu" tabindex="-1">
-                    <ul class="mdc-menu__items mdc-list" role="menu" aria-hidden="true">
-                        <li class="mdc-list-item" role="menuitem" tabindex="0">
-                            <a class="mdc-typography--button no-link">MENU ITEM</a>
-                        </li>
 
-                        <li class="mdc-list-item" role="menuitem" tabindex="-1">
-                            <a class="mdc-typography--button no-link">ANOTHER MENU ITEM</a>
-                        </li>
-                    </ul>
-                </div>
             </section>
         </div>
 

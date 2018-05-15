@@ -153,5 +153,13 @@ if (menuEl) {
         menu.open = !menu.open;
     });
 
+    for(var i=0; i< document.querySelectorAll('.mdc-menu .mdc-list-item').length; i++){
+        var element = document.querySelectorAll('.mdc-menu .mdc-list-item')[i];
+        element.onclick = () =>{
+            menu.open = !menu.open;
+            element.getElementsByTagName("a")[0].click(); 
+        }
+    }
+
 }
 

@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="html-resize no-v-align">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="bundle.js" async></script>
+    <link rel="stylesheet" href="style/materialize.css">
+    <link rel="stylesheet" href="bundle.css">
+    <link href="style/fontes-google.css" rel="stylesheet">
+    <link href="style/icons-google.css" rel="stylesheet">
+    <title>Fazer Reserva</title>
+
+</head>
+
+<body id="reserve-bodyId" class="mdc-typography">
+    <header class="mdc-toolbar mdc-toolbar--fixed mdc-typography">
+        <div class="mdc-toolbar__row">
+            <section class="mdc-toolbar__section mdc-toolbar__section--align-start mdc-toolbar__section--shrink-to-fit">
+                <a href="#" class="mdc-toolbar__menu-icon">
+                    <svg id="svg" version="1.1" width=max height=max viewBox="0 0 400 497.5609756097561" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <g id="svgg">
+                            <path id="path0" d="M47.200 1.000 L 47.200 2.000 43.049 2.000 C 38.622 2.000,38.320 2.122,37.848 4.100 C 37.605 5.115,37.433 5.200,35.618 5.200 C 32.826 5.200,31.726 5.716,31.405 7.176 C 31.161 8.287,30.992 8.400,29.568 8.400 C 28.005 8.400,28.000 8.405,28.000 10.000 L 28.000 11.600 26.200 11.600 L 24.400 11.600 24.400 13.200 L 24.400 14.800 21.829 14.800 C 18.984 14.800,18.000 15.373,18.000 17.029 C 18.000 17.790,17.790 18.000,17.029 18.000 C 15.753 18.000,14.801 18.994,14.797 20.329 C 14.796 21.099,14.458 21.592,13.594 22.083 C 12.207 22.872,11.600 24.195,11.600 26.426 C 11.600 27.996,11.596 28.000,10.000 28.000 L 8.400 28.000 8.400 29.600 C 8.400 31.027,8.295 31.200,7.429 31.200 C 5.773 31.200,5.200 32.184,5.200 35.029 C 5.200 37.578,5.191 37.600,4.080 37.600 C 2.311 37.600,2.000 38.240,2.000 41.880 C 2.000 45.155,1.986 45.200,1.000 45.200 L 0.000 45.200 0.000 68.800 L 0.000 92.400 0.984 92.400 C 1.940 92.400,1.971 92.493,2.084 95.700 L 2.200 99.000 3.684 99.123 L 5.167 99.246 5.284 102.323 L 5.400 105.400 6.900 105.524 C 8.358 105.645,8.400 105.692,8.400 107.224 C 8.400 108.793,8.407 108.800,9.983 108.800 L 11.566 108.800 11.683 111.900 L 11.800 115.000 13.300 115.124 C 14.699 115.240,14.800 115.335,14.800 116.544 C 14.800 118.135,15.413 118.800,16.880 118.800 C 17.840 118.800,18.000 118.960,18.000 119.920 C 18.000 121.341,18.659 122.000,20.080 122.000 C 21.040 122.000,21.200 122.160,21.200 123.120 C 21.200 124.628,21.870 125.200,23.637 125.200 C 24.871 125.200,25.154 125.361,25.360 126.183 C 25.529 126.855,26.174 127.416,27.403 127.960 C 28.391 128.397,29.200 128.949,29.200 129.186 C 29.200 129.423,29.650 129.822,30.200 130.073 C 30.750 130.323,31.200 130.770,31.200 131.064 C 31.200 131.462,32.052 131.623,34.500 131.687 C 36.315 131.735,34.200 131.870,29.800 131.987 L 21.800 132.200 21.429 133.700 L 21.059 135.200 17.929 135.200 L 14.800 135.200 14.800 136.800 L 14.800 138.400 11.600 138.400 L 8.400 138.400 8.400 139.976 C 8.400 141.508,8.358 141.555,6.900 141.676 L 5.400 141.800 5.283 144.897 C 5.170 147.894,5.132 148.001,4.083 148.252 C 3.487 148.394,2.775 148.688,2.500 148.904 C 1.860 149.408,1.760 241.716,2.398 243.394 C 2.630 244.005,3.295 244.614,3.998 244.859 C 5.057 245.228,5.200 245.464,5.200 246.839 C 5.200 248.393,5.207 248.400,6.800 248.400 L 8.400 248.400 8.400 250.200 L 8.400 252.000 10.000 252.000 L 11.600 252.000 11.600 253.600 C 11.600 254.809,11.759 255.200,12.249 255.200 C 12.712 255.200,12.785 255.344,12.504 255.700 C 12.288 255.975,11.992 256.695,11.848 257.300 C 11.667 258.056,11.329 258.400,10.766 258.400 C 8.794 258.400,8.400 259.035,8.400 262.214 L 8.400 265.200 6.800 265.200 L 5.200 265.200 5.200 266.800 C 5.200 268.227,5.095 268.400,4.229 268.400 C 1.855 268.400,2.000 265.269,2.000 316.655 C 2.000 366.700,1.938 365.200,4.014 365.200 C 5.153 365.200,5.200 365.271,5.200 367.000 L 5.200 368.800 6.800 368.800 L 8.400 368.800 8.400 371.520 C 8.400 374.933,8.663 375.192,12.180 375.233 C 14.994 375.265,14.997 375.266,13.675 375.844 C 12.846 376.206,12.198 376.859,11.944 377.589 C 11.608 378.553,11.282 378.777,10.069 378.878 L 8.600 379.000 8.483 382.100 L 8.366 385.200 6.783 385.200 L 5.200 385.200 5.200 387.000 C 5.200 388.598,5.099 388.801,4.300 388.806 C 2.058 388.821,2.209 385.512,2.095 437.039 C 1.984 487.392,1.903 485.321,3.991 485.738 C 5.146 485.969,5.166 486.019,5.282 488.886 L 5.400 491.800 6.880 492.166 C 8.207 492.494,8.372 492.679,8.480 493.966 L 8.600 495.400 11.700 495.517 C 14.471 495.621,14.800 495.717,14.800 496.417 C 14.800 497.190,15.439 497.200,66.800 497.200 C 117.994 497.200,118.800 497.188,118.800 496.424 C 118.800 495.816,119.125 495.621,120.300 495.524 C 121.719 495.407,121.807 495.319,121.924 493.900 C 122.045 492.442,122.092 492.400,123.624 492.400 L 125.200 492.400 125.200 489.200 C 125.200 486.233,125.260 486.000,126.026 486.000 C 128.615 486.000,128.400 490.429,128.400 437.029 C 128.400 384.300,128.588 388.400,126.167 388.400 C 125.225 388.400,125.200 388.318,125.200 385.200 L 125.200 382.000 123.624 382.000 C 122.092 382.000,122.045 381.958,121.924 380.500 C 121.807 379.081,121.719 378.993,120.300 378.876 C 118.946 378.764,118.800 378.641,118.800 377.609 C 118.800 376.980,118.691 376.181,118.557 375.833 C 118.357 375.312,118.641 375.200,120.157 375.200 L 122.000 375.200 122.000 373.600 L 122.000 372.000 123.600 372.000 L 125.200 372.000 125.200 368.800 C 125.200 365.678,125.224 365.600,126.171 365.600 C 128.554 365.600,128.413 368.849,128.302 316.470 L 128.200 268.600 126.800 268.400 L 125.400 268.200 125.283 265.100 L 125.166 262.000 123.606 262.000 C 122.057 262.000,122.045 261.988,121.923 260.300 C 121.804 258.650,121.756 258.596,120.300 258.476 C 119.024 258.370,118.800 258.210,118.800 257.404 C 118.800 256.883,118.527 256.184,118.193 255.850 C 117.649 255.307,117.808 255.230,119.693 255.121 L 121.800 255.000 121.923 253.523 C 122.038 252.135,122.135 252.038,123.523 251.923 L 125.000 251.800 125.116 248.500 C 125.221 245.529,125.310 245.200,126.016 245.200 C 128.578 245.200,128.414 248.742,128.302 195.898 L 128.200 148.200 126.700 148.076 L 125.200 147.952 125.200 144.776 L 125.200 141.600 123.600 141.600 L 122.000 141.600 122.000 140.000 C 122.000 138.404,121.996 138.400,120.424 138.400 C 118.892 138.400,118.845 138.358,118.724 136.900 L 118.600 135.400 115.328 135.284 L 112.057 135.169 111.791 133.960 C 111.441 132.365,110.398 132.011,105.874 131.951 L 102.200 131.902 104.600 131.558 C 106.996 131.215,108.400 130.256,108.400 128.963 C 108.400 128.662,108.895 128.307,109.500 128.174 C 111.466 127.743,111.613 127.634,111.854 126.430 C 112.066 125.369,112.269 125.229,113.746 125.121 C 115.338 125.004,115.405 124.945,115.523 123.523 C 115.638 122.135,115.735 122.038,117.123 121.923 C 118.511 121.807,118.607 121.711,118.723 120.323 C 118.838 118.935,118.935 118.838,120.323 118.723 C 121.752 118.604,121.804 118.545,121.923 116.900 C 122.045 115.208,122.054 115.200,123.623 115.200 C 125.186 115.200,125.200 115.187,125.200 113.658 C 125.200 112.261,125.322 112.081,126.500 111.745 C 127.546 111.446,127.871 111.089,128.164 109.914 C 128.426 108.863,128.797 108.387,129.490 108.213 C 130.682 107.914,131.570 105.929,131.682 103.313 C 131.727 102.261,131.862 103.740,131.982 106.600 L 132.200 111.800 133.700 111.924 L 135.200 112.048 135.200 115.238 C 135.200 118.409,136.409 120.800,138.014 120.800 C 138.226 120.800,138.400 121.070,138.400 121.400 C 138.400 121.832,138.842 122.000,139.976 122.000 C 141.508 122.000,141.555 122.042,141.676 123.500 C 141.796 124.956,141.850 125.004,143.500 125.123 C 144.976 125.230,145.200 125.368,145.200 126.174 C 145.200 128.294,142.815 128.192,194.961 128.301 C 247.195 128.410,246.875 128.421,247.873 126.400 C 248.254 125.629,248.760 125.354,250.084 125.200 C 251.731 125.008,251.805 124.941,251.923 123.523 C 252.038 122.135,252.135 122.038,253.523 121.923 L 255.000 121.800 255.211 118.400 C 255.383 115.642,255.458 115.340,255.611 116.800 C 255.795 118.552,255.840 118.603,257.300 118.724 C 258.723 118.842,258.800 118.920,258.800 120.244 C 258.800 122.128,259.798 123.934,261.007 124.238 C 261.553 124.375,262.000 124.647,262.000 124.843 C 262.000 125.040,262.715 125.200,263.589 125.200 C 265.042 125.200,265.206 125.310,265.511 126.487 C 266.005 128.393,264.080 128.321,315.100 128.355 L 362.400 128.387 362.447 127.094 C 362.473 126.382,362.473 125.665,362.447 125.500 C 362.352 124.893,364.717 125.207,364.957 125.833 C 365.305 126.738,365.278 126.796,364.500 126.832 C 364.078 126.851,363.999 126.944,364.302 127.066 C 364.579 127.177,364.703 127.433,364.579 127.634 C 364.455 127.835,364.912 128.000,365.595 128.000 C 366.817 128.000,368.800 126.527,368.800 125.618 C 368.800 125.388,369.394 125.200,370.120 125.200 C 371.727 125.200,372.400 124.593,372.400 123.144 C 372.400 122.167,372.562 122.035,373.900 121.924 L 375.400 121.800 375.516 118.500 L 375.632 115.200 377.216 115.200 L 378.800 115.200 378.800 65.243 C 378.800 10.522,378.989 14.800,376.567 14.800 C 375.723 14.800,375.595 14.609,375.560 13.300 C 375.470 9.914,373.970 8.402,370.700 8.401 C 369.217 8.400,369.200 8.382,369.200 6.800 L 369.200 5.200 367.288 5.200 C 365.542 5.200,365.337 5.098,364.934 4.032 C 364.159 1.979,364.788 2.005,315.776 2.002 C 266.918 2.000,268.996 1.912,268.728 4.000 C 268.617 4.866,268.372 5.016,266.900 5.123 C 265.774 5.204,265.200 5.434,265.200 5.802 C 265.200 7.256,263.374 8.400,261.054 8.400 L 258.800 8.400 258.800 9.976 C 258.800 11.508,258.758 11.555,257.300 11.676 L 255.800 11.800 255.565 14.000 L 255.330 16.200 255.265 13.900 L 255.200 11.600 253.600 11.600 L 252.000 11.600 252.000 10.000 C 252.000 8.404,251.996 8.400,250.424 8.400 C 248.892 8.400,248.845 8.358,248.724 6.900 C 248.604 5.449,248.546 5.396,246.932 5.279 C 245.501 5.174,245.206 4.993,244.862 4.006 C 244.563 3.147,244.071 2.746,242.930 2.429 C 240.548 1.768,149.427 1.836,148.904 2.500 C 148.688 2.775,148.392 3.495,148.248 4.100 C 147.990 5.177,147.923 5.200,145.035 5.200 C 141.886 5.200,141.600 5.386,141.600 7.433 C 141.600 8.295,141.426 8.400,140.000 8.400 L 138.400 8.400 138.400 10.000 C 138.400 11.486,138.320 11.600,137.280 11.600 C 135.429 11.600,135.200 12.182,135.200 16.880 C 135.200 21.182,135.196 21.200,134.233 21.200 C 131.960 21.200,132.006 21.028,131.927 29.743 C 131.878 35.109,131.778 36.731,131.627 34.600 L 131.400 31.400 129.900 31.276 C 128.442 31.155,128.400 31.108,128.400 29.576 C 128.400 28.004,128.396 28.000,126.800 28.000 L 125.200 28.000 125.200 24.805 L 125.200 21.609 123.600 21.354 C 122.196 21.129,122.000 20.967,122.000 20.029 C 122.000 18.657,121.327 18.000,119.920 18.000 C 118.960 18.000,118.800 17.840,118.800 16.880 C 118.800 15.312,118.121 14.800,116.042 14.800 C 114.191 14.800,112.000 13.350,112.000 12.125 C 112.000 11.779,111.454 11.600,110.400 11.600 L 108.800 11.600 108.800 10.000 C 108.800 8.404,108.796 8.400,107.224 8.400 C 105.692 8.400,105.645 8.358,105.524 6.900 L 105.400 5.400 102.367 5.284 L 99.333 5.169 98.967 3.684 L 98.600 2.200 94.100 2.087 C 89.613 1.974,89.600 1.971,89.600 0.987 L 89.600 0.000 68.400 0.000 L 47.200 0.000 47.200 1.000 M152.080 132.480 C 151.816 132.744,151.600 133.464,151.600 134.080 L 151.600 135.200 148.204 135.200 L 144.807 135.200 145.008 136.800 L 145.209 138.400 142.047 138.400 C 138.668 138.400,138.400 138.564,138.400 140.633 C 138.400 141.425,138.198 141.600,137.280 141.600 C 135.429 141.600,135.200 142.182,135.200 146.880 L 135.200 151.200 134.100 151.206 C 133.495 151.209,132.774 151.356,132.498 151.531 C 132.100 151.784,132.017 161.109,132.098 196.825 L 132.200 241.800 133.653 241.921 L 135.106 242.043 135.270 245.780 C 135.475 250.459,136.711 252.000,140.261 252.000 C 141.531 252.000,141.600 252.074,141.600 253.437 C 141.600 254.530,141.789 254.924,142.386 255.080 C 143.075 255.261,143.100 255.357,142.586 255.871 C 142.264 256.194,142.000 256.894,142.000 257.429 C 142.000 258.261,141.811 258.400,140.680 258.400 C 139.011 258.400,138.400 259.011,138.400 260.680 C 138.400 261.811,138.261 262.000,137.429 262.000 C 135.565 262.000,135.200 262.885,135.200 267.404 L 135.200 271.552 133.700 271.676 L 132.200 271.800 132.098 316.775 C 132.017 352.491,132.100 361.816,132.498 362.069 C 132.774 362.244,133.495 362.391,134.100 362.394 L 135.200 362.400 135.228 366.100 C 135.262 370.601,135.469 371.188,137.225 371.755 C 138.238 372.083,138.634 372.463,138.728 373.200 C 138.919 374.684,139.887 375.200,142.476 375.200 C 144.275 375.200,144.800 375.336,144.800 375.800 C 144.800 376.130,144.522 376.400,144.181 376.400 C 143.841 376.400,143.277 376.895,142.927 377.500 C 142.577 378.105,141.730 378.962,141.045 379.404 C 140.360 379.846,139.620 380.618,139.400 381.120 C 139.180 381.623,138.550 382.133,138.000 382.254 C 135.920 382.713,135.680 382.850,135.449 383.713 C 135.318 384.201,135.208 386.175,135.205 388.100 L 135.200 391.600 134.100 391.606 C 133.495 391.609,132.774 391.756,132.498 391.931 C 132.100 392.184,132.017 401.509,132.098 437.225 L 132.200 482.200 133.700 482.324 L 135.200 482.448 135.200 486.335 C 135.200 490.624,135.727 492.000,137.372 492.000 C 138.138 492.000,138.341 492.268,138.546 493.553 C 138.830 495.327,139.357 495.586,142.700 495.595 C 144.532 495.599,144.800 495.702,144.800 496.400 C 144.800 497.196,145.067 497.200,196.600 497.200 C 248.133 497.200,248.400 497.196,248.400 496.400 C 248.400 495.719,248.667 495.600,250.200 495.600 L 252.000 495.600 252.000 494.000 L 252.000 492.400 253.600 492.400 L 255.200 492.400 255.200 489.224 L 255.200 486.048 256.700 485.924 L 258.200 485.800 258.200 437.200 L 258.200 388.600 256.716 388.477 L 255.233 388.354 255.116 385.277 L 255.000 382.200 253.500 382.076 C 252.042 381.955,252.000 381.908,252.000 380.376 C 252.000 378.804,251.996 378.800,250.400 378.800 C 249.309 378.800,248.800 378.625,248.800 378.250 C 248.800 377.947,248.688 377.138,248.550 376.450 L 248.300 375.200 250.150 375.200 L 252.000 375.200 252.000 373.600 L 252.000 372.000 253.600 372.000 C 255.173 372.000,255.201 371.974,255.254 370.500 C 255.295 369.394,255.357 369.263,255.493 370.000 C 255.747 371.382,256.280 371.931,257.506 372.076 C 258.300 372.170,258.632 372.503,258.876 373.453 C 259.244 374.884,259.974 375.186,263.076 375.195 L 265.152 375.200 265.276 376.700 L 265.400 378.200 315.700 378.302 L 366.000 378.403 366.000 376.802 L 366.000 375.200 369.200 375.200 L 372.400 375.200 372.400 373.600 L 372.400 372.000 374.000 372.000 L 375.600 372.000 375.600 370.400 L 375.600 368.800 379.980 368.800 L 384.359 368.800 385.578 367.500 C 386.916 366.072,387.068 365.118,386.200 363.600 C 385.058 361.602,385.367 340.127,386.575 337.511 C 390.213 329.635,389.115 326.800,382.429 326.800 L 378.805 326.800 378.702 296.100 L 378.600 265.400 377.100 265.276 C 375.642 265.155,375.600 265.108,375.600 263.576 C 375.600 262.008,375.592 262.000,374.023 262.000 C 372.454 262.000,372.445 261.992,372.323 260.300 C 372.204 258.659,372.149 258.596,370.740 258.478 C 369.437 258.370,369.254 258.214,369.031 257.022 C 368.671 255.108,371.638 255.207,316.200 255.253 C 261.044 255.298,263.276 255.224,262.400 257.052 C 261.973 257.943,261.396 258.405,260.400 258.652 C 259.145 258.964,258.987 259.156,258.876 260.500 C 258.764 261.849,258.638 262.000,257.625 262.000 C 256.026 262.000,255.660 262.658,255.499 265.817 L 255.357 268.600 255.278 265.300 L 255.200 262.000 253.600 262.000 L 252.000 262.000 252.000 260.200 L 252.000 258.400 250.400 258.400 C 248.896 258.400,248.800 258.329,248.800 257.224 C 248.800 256.577,248.575 255.902,248.300 255.724 C 247.994 255.526,248.578 255.322,249.800 255.200 C 251.781 255.002,251.801 254.986,251.924 253.500 C 252.041 252.087,252.127 252.000,253.401 252.000 C 255.146 252.000,255.263 251.759,255.244 248.190 L 255.229 245.200 256.814 245.200 L 258.400 245.200 258.400 196.426 C 258.400 144.608,258.445 145.749,256.407 145.341 C 255.285 145.117,255.200 144.977,255.200 143.350 L 255.200 141.600 253.600 141.600 L 252.000 141.600 252.000 140.000 C 252.000 138.939,251.822 138.400,251.470 138.400 C 251.179 138.400,250.234 137.683,249.370 136.807 C 247.853 135.267,247.710 135.213,245.132 135.207 L 242.464 135.200 242.182 133.900 C 242.026 133.185,241.697 132.468,241.450 132.306 C 240.625 131.767,152.622 131.938,152.080 132.480 M255.482 368.100 C 255.387 368.595,255.309 368.190,255.309 367.200 C 255.309 366.210,255.387 365.805,255.482 366.300 C 255.578 366.795,255.578 367.605,255.482 368.100 "
+                                stroke="none" fill="#ffffff" fill-rule="evenodd"></path>
+                            <path id="path1" d="" stroke="none" fill="#c6fec6" fill-rule="evenodd"></path>
+                            <path id="path2" d="" stroke="none" fill="#ffff00" fill-rule="evenodd"></path>
+                            <path id="path3" d="M362.469 126.600 C 362.385 127.848,362.482 128.000,363.364 128.000 C 364.463 128.000,365.085 127.381,364.302 127.066 C 364.015 126.950,364.117 126.850,364.543 126.832 C 365.050 126.810,365.209 126.600,365.043 126.167 C 364.909 125.819,364.800 125.459,364.800 125.367 C 364.800 124.223,362.549 125.413,362.469 126.600 "
+                                stroke="none" fill="#ffff55" fill-rule="evenodd"></path>
+                            <path id="path4" d="" stroke="none" fill="#e4fee4" fill-rule="evenodd"></path>
+                        </g>
+                    </svg>
+                </a>
+
+            </section>
+
+            <section class="mdc-toolbar__section mdc-toolbar__section--align-center">
+                <span class="mdc-toolbar__title" id="title">
+                    <a href="index.html" class="no-link">LEMONADE</a>
+                </span>
+            </section>
+
+
+            <section class="mdc-toolbar__section mdc-toolbar__section--align-end mdc-toolbar__section--shrink-to-fit">
+            </section>
+
+            <section class="mdc-toolbar__section mdc-toolbar__section--align-end mdc-toolbar__section--shrink-to-fit">
+                <a class="mdc-toolbar__icon mdc-typography--button no-link" href="login.html">LOGIN</a>
+            </section>
+
+            <section class="mdc-toolbar__section mdc-toolbar__section--align-end mdc-toolbar__section--shrink-to-fit">
+                <a class="mdc-menu-anchor user-menu-link mdc-toolbar__icon mdc-typography--button no-link" href="#">USER</a>
+
+            </section>
+        </div>
+
+    </header>
+
+    <section id="reserve-form-container-id" class="form-fieldset">
+        <div id="fieldsetId">
+            <h5 class="mdc-typography--headline5">Reservar</h5>
+
+            <span class="mdc-typography--subtitle">Tipo de reserva</span>
+            <section id="reserve-type-radios-container-id">
+
+                <label id="avulse-radio-label-id">
+                    <div class="mdc-radio">
+                        <input class="mdc-radio__native-control" type="radio" id="avulse-radio-id" name="reserve-type" checked>
+                        <div class="mdc-radio__background">
+                            <div class="mdc-radio__outer-circle"></div>
+                            <div class="mdc-radio__inner-circle"></div>
+                        </div>
+                    </div>
+                    Avulsa
+                </label>
+                <label id="fixed-radio-label-id">
+                    <div class="mdc-radio">
+                        <input class="mdc-radio__native-control" type="radio" id="fixed-radio-id" name="reserve-type">
+                        <div class="mdc-radio__background">
+                            <div class="mdc-radio__outer-circle"></div>
+                            <div class="mdc-radio__inner-circle"></div>
+                        </div>
+                    </div>
+                    Fixa
+                </label>
+
+                <label id="special-radio-label-id">
+                    <div class="mdc-radio">
+                        <input class="mdc-radio__native-control" type="radio" id="special-radio-id" name="reserve-type">
+                        <div class="mdc-radio__background">
+                            <div class="mdc-radio__outer-circle"></div>
+                            <div class="mdc-radio__inner-circle"></div>
+                        </div>
+                    </div>
+                    Especial
+                </label>
+            </section>
+
+            <form class="mui-form" id="reserve-formId">
+                <div class="multiselect">
+                    <div id="multiSelectId" class="selectBox mui-select">
+                        <select style="width: 150px;">
+                            <option id="periodos-id">Períodos</option>
+                        </select>
+                        <div class="overSelect"></div>
+                    </div>
+                    <div id="checkboxes">
+                        <label class="vali">
+                            <div class="mdc-checkbox">
+                                <input type="checkbox" id="m1Id" class="mdc-checkbox__native-control" />
+                                <div class="mdc-checkbox__background">
+                                    <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                        <path class="mdc-checkbox__checkmark-path" fill="none" stroke="white" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
+                                    </svg>
+                                    <div class="mdc-checkbox__mixedmark"></div>
+                                </div>
+                            </div>
+                            <div>Matutino 1</div>
+                        </label>
+                        <label class="vali">
+                            <div class="mdc-checkbox">
+                                <input type="checkbox" id="m2Id" class="mdc-checkbox__native-control" />
+                                <div class="mdc-checkbox__background">
+                                    <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                        <path class="mdc-checkbox__checkmark-path" fill="none" stroke="white" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
+                                    </svg>
+                                    <div class="mdc-checkbox__mixedmark"></div>
+                                </div>
+                            </div>
+                            <div>Matutino 2</div>
+                        </label>
+                        <label class="vali" visible="1">
+                            <div class="mdc-checkbox">
+                                <input type="checkbox" id="m3Id" class="mdc-checkbox__native-control" />
+                                <div class="mdc-checkbox__background">
+                                    <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                        <path class="mdc-checkbox__checkmark-path" fill="none" stroke="white" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
+                                    </svg>
+                                    <div class="mdc-checkbox__mixedmark"></div>
+                                </div>
+                            </div>
+                            <div>Matutino 3</div>
+                        </label>
+                        <label class="vali">
+                            <div class="mdc-checkbox">
+                                <input type="checkbox" id="m4Id" class="mdc-checkbox__native-control" />
+                                <div class="mdc-checkbox__background">
+                                    <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                        <path class="mdc-checkbox__checkmark-path" fill="none" stroke="white" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
+                                    </svg>
+                                    <div class="mdc-checkbox__mixedmark"></div>
+                                </div>
+                            </div>
+                            <div>Matutino 4</div>
+                        </label>
+                        <label class="vali">
+                            <div class="mdc-checkbox">
+                                <input type="checkbox" id="m5Id" class="mdc-checkbox__native-control" />
+                                <div class="mdc-checkbox__background">
+                                    <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                        <path class="mdc-checkbox__checkmark-path" fill="none" stroke="white" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
+                                    </svg>
+                                    <div class="mdc-checkbox__mixedmark"></div>
+                                </div>
+                            </div>
+                            <div>Matutino 5</div>
+                        </label>
+                        <label class="vali">
+                            <div class="mdc-checkbox">
+                                <input type="checkbox" id="m6Id" class="mdc-checkbox__native-control" />
+                                <div class="mdc-checkbox__background">
+                                    <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                        <path class="mdc-checkbox__checkmark-path" fill="none" stroke="white" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
+                                    </svg>
+                                    <div class="mdc-checkbox__mixedmark"></div>
+                                </div>
+                            </div>
+                            <div>Matutino 6</div>
+                        </label>
+                        <label class="vali">
+                            <div class="mdc-checkbox">
+                                <input type="checkbox" id="v1Id" class="mdc-checkbox__native-control" />
+                                <div class="mdc-checkbox__background">
+                                    <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                        <path class="mdc-checkbox__checkmark-path" fill="none" stroke="white" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
+                                    </svg>
+                                    <div class="mdc-checkbox__mixedmark"></div>
+                                </div>
+                            </div>
+                            <div>Vespertino 1</div>
+                        </label>
+                        <label class="vali">
+                            <div class="mdc-checkbox">
+                                <input type="checkbox" id="v2Id" class="mdc-checkbox__native-control" />
+                                <div class="mdc-checkbox__background">
+                                    <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                        <path class="mdc-checkbox__checkmark-path" fill="none" stroke="white" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
+                                    </svg>
+                                    <div class="mdc-checkbox__mixedmark"></div>
+                                </div>
+                            </div>
+                            <div>Vespertino 2</div>
+                        </label>
+                        <label class="vali">
+                            <div class="mdc-checkbox">
+                                <input type="checkbox" id="v3Id" class="mdc-checkbox__native-control" />
+                                <div class="mdc-checkbox__background">
+                                    <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                        <path class="mdc-checkbox__checkmark-path" fill="none" stroke="white" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
+                                    </svg>
+                                    <div class="mdc-checkbox__mixedmark"></div>
+                                </div>
+                            </div>
+                            <div>Vespertino 3</div>
+                        </label>
+                        <label class="vali">
+                            <div class="mdc-checkbox">
+                                <input type="checkbox" id="v4Id" class="mdc-checkbox__native-control" />
+                                <div class="mdc-checkbox__background">
+                                    <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                        <path class="mdc-checkbox__checkmark-path" fill="none" stroke="white" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
+                                    </svg>
+                                    <div class="mdc-checkbox__mixedmark"></div>
+                                </div>
+                            </div>
+                            <div>Vespertino 4</div>
+                        </label>
+                        <label class="vali">
+                            <div class="mdc-checkbox">
+                                <input type="checkbox" id="v5Id" class="mdc-checkbox__native-control" />
+                                <div class="mdc-checkbox__background">
+                                    <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                        <path class="mdc-checkbox__checkmark-path" fill="none" stroke="white" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
+                                    </svg>
+                                    <div class="mdc-checkbox__mixedmark"></div>
+                                </div>
+                            </div>
+                            <div>Vespertino 5</div>
+                        </label>
+                        <label class="vali">
+                            <div class="mdc-checkbox">
+                                <input type="checkbox" id="v6Id" class="mdc-checkbox__native-control" />
+                                <div class="mdc-checkbox__background">
+                                    <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                        <path class="mdc-checkbox__checkmark-path" fill="none" stroke="white" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
+                                    </svg>
+                                    <div class="mdc-checkbox__mixedmark"></div>
+                                </div>
+                            </div>
+                            <div>Vespertino 6</div>
+                        </label>
+
+                        <label class="vali">
+                            <div class="mdc-checkbox">
+                                <input type="checkbox" id="n1Id" class="mdc-checkbox__native-control" />
+                                <div class="mdc-checkbox__background">
+                                    <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                        <path class="mdc-checkbox__checkmark-path" fill="none" stroke="white" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
+                                    </svg>
+                                    <div class="mdc-checkbox__mixedmark"></div>
+                                </div>
+                            </div>
+                            <div>Noturno 1</div>
+                        </label>
+                        <label class="vali">
+                            <div class="mdc-checkbox">
+                                <input type="checkbox" id="n2Id" class="mdc-checkbox__native-control" />
+                                <div class="mdc-checkbox__background">
+                                    <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                        <path class="mdc-checkbox__checkmark-path" fill="none" stroke="white" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
+                                    </svg>
+                                    <div class="mdc-checkbox__mixedmark"></div>
+                                </div>
+                            </div>
+                            <div>Noturno 2</div>
+                        </label>
+                        <label class="vali">
+                            <div class="mdc-checkbox">
+                                <input type="checkbox" id="n3Id" class="mdc-checkbox__native-control" />
+                                <div class="mdc-checkbox__background">
+                                    <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                        <path class="mdc-checkbox__checkmark-path" fill="none" stroke="white" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
+                                    </svg>
+                                    <div class="mdc-checkbox__mixedmark"></div>
+                                </div>
+                            </div>
+                            <div>Noturno 3</div>
+                        </label>
+                        <label class="vali">
+                            <div class="mdc-checkbox">
+                                <input type="checkbox" id="n4Id" class="mdc-checkbox__native-control" />
+                                <div class="mdc-checkbox__background">
+                                    <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                        <path class="mdc-checkbox__checkmark-path" fill="none" stroke="white" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
+                                    </svg>
+                                    <div class="mdc-checkbox__mixedmark"></div>
+                                </div>
+                            </div>
+                            <div>Noturno 4</div>
+                        </label>
+                        <label class="vali">
+                            <div class="mdc-checkbox">
+                                <input type="checkbox" id="n5Id" class="mdc-checkbox__native-control" />
+                                <div class="mdc-checkbox__background">
+                                    <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                        <path class="mdc-checkbox__checkmark-path" fill="none" stroke="white" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
+                                    </svg>
+                                    <div class="mdc-checkbox__mixedmark"></div>
+                                </div>
+                            </div>
+                            <div>Noturno 5</div>
+                        </label>
+                    </div>
+
+                </div>
+
+                <div id="select-labsId" class="avulsa mui-select fix-width">
+                    <select id="select-laboratorios" class="fix-width">
+                        <option id="selecione" value="" selected disabled>Selecione</option>
+                        <option id="lab1" value="2">Laboratório 1</option>
+                        <option id="lab2" value="3">Laboratório 2</option>
+                        <option id="lab3" value="4">Laboratório 3</option>
+                        <option id="lab4" value="5">Laboratório 4</option>
+                        <option id="lab5" value="6">Laboratório 5</option>
+                        <option id="lab6" value="7">Laboratório 6</option>
+                        <option id="lab7" value="8">Laboratório 7</option>
+                        <option id="lab8" value="9">Laboratório 8</option>
+                        <option id="lab9" value="10">Laboratório 9</option>
+                        <option id="lab10" value="11">Laboratório 10</option>
+                        <option id="lab11" value="12">Laboratório 11</option>
+                        <option id="lab12" value="13">Laboratório 12</option>
+                        <option id="lab13" value="14">Laboratório 13</option>
+                        <option id="lab14" value="15">Laboratório 14</option>
+                        <option id="lab15" value="16">Laboratório 15</option>
+                        <option id="lab16" value="17">Laboratório 16</option>
+                    </select>
+                    <label>Laboratório</label>
+                </div>
+
+                <div id="date-picker-id" class="avulsa input-field">
+                    <input type="text" class="datepicker" id="date-id">
+                    <label for="date-id">Data</label>
+                </div>
+
+                <div id="date-picker-reitoria" class="especial input-field">
+                    <input type="text" class="datepicker" id="date-reitoria-id">
+                    <label for="date-reitoria-id">Data</label>
+                </div>
+
+
+            </form>
+
+            <div id="discipline-field-container-id" class="fixa nao-especial row">
+                <div class="col s12">
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input type="text" id="discipline-field-id" class="autocomplete">
+                            <label for="disciplines-field-id">Disciplina</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="requester-name-container-id" class="especial row">
+                <form class="col s12">
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <textarea id="justification-textarea-id" class="materialize-textarea"></textarea>
+                            <label for="justification-textarea-id">Nome do requirinte da reserva</label>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div id="requester-area-container-id" class="especial row">
+                <form class="col s12">
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <textarea id="justification-textarea-id" class="materialize-textarea"></textarea>
+                            <label for="justification-textarea-id">Area do requirinte da reserva</label>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div id="justification-container-id" class="fixa row">
+                <form class="col s12">
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <textarea id="justification-textarea-id" class="materialize-textarea"></textarea>
+                            <label for="justification-textarea-id">Justificativa da reserva</label>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div id="reserve-buttonsId">
+                <button class="mdc-button mdc-button--raised dark-ripple">Confirmar</button>
+            </div>
+        </div>
+
+    </section>
+
+    <script src="script/jquery.slim.min.js"></script>
+    </script>
+    <script src="script/materialize.js"></script>
+    <script src="script/material-date.js"></script>
+</body>
+
+<script src="script/reserva.js"></script>
+
+</html>

@@ -10,7 +10,7 @@ module.exports = [{
                 {
                     loader: 'file-loader',
                     options: {
-                        name: 'bundle.css',
+                        name: './server/public/bundle.css',
                     },
 
                 },
@@ -36,7 +36,7 @@ module.exports = [{
 module.exports.push({
     entry: "./app.js",
     output: {
-      filename: "bundle.js"
+      filename: "./server/public/bundle.js"
     },
     module: {
       loaders: [{

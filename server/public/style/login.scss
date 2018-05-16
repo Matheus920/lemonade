@@ -1,0 +1,36 @@
+.html-resize{
+    width:100%;
+    height:100%;
+}
+
+
+#login-fieldset-id, .html-resize{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+#login-fieldset-id{
+    width: 300px;
+    height: max-content;
+    
+}
+
+
+#login-buttons-id{
+    width: 80% !important;
+    margin-top: 0;
+    display: flex;
+    justify-content: space-between;
+ 
+    #cadastrar-button-id{
+        @include mdc-button-container-fill-color(#fff);
+    }
+}
+
+#close-button-id{
+    color: #fff !important;
+}   

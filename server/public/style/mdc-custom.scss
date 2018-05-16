@@ -1,0 +1,228 @@
+$mdc-theme-primary: #00897b;
+
+@import "@material/theme/mdc-theme";
+
+
+@import "@material/dialog/mdc-dialog.scss";
+@import "@material/radio/mdc-radio";
+@import "@material/ripple/mdc-ripple";
+@import "@material/toolbar/mdc-toolbar";
+@import "@material/typography/mdc-typography";
+@import "@material/button/mdc-button";
+@import "@material/layout-grid/mdc-layout-grid";
+@import "@material/form-field/mdc-form-field";
+@import "@material/checkbox/mdc-checkbox";
+@import "@material/select/mdc-select";
+@import "@material/textfield/mdc-text-field";
+@import "@material/elevation/mdc-elevation";
+@import "@material/grid-list/mdc-grid-list";
+@import "@material/menu/mdc-menu";
+@import "@material/list/mdc-list";
+
+
+.material-icons.yellow500 { color: #FFEB3B; }
+.material-icons.lightgreenA700 {color: #64DD17;}
+.material-icons.redA700 {color: #D50000;}
+
+.mdc-toolbar{
+    @include mdc-toolbar-fill-color(#00897b);
+}
+
+
+.mdc-button{
+    @include mdc-button-icon-color(#00897b);
+    @include mdc-states-base-color(#00897b);
+
+    @include mdc-button-container-fill-color(#00897b);
+}
+
+
+.white-button{
+    @include mdc-button-container-fill-color(#fff);
+}
+
+.mdc-text-field{
+    @include  mdc-text-field-line-ripple-color(#00897b);
+}
+
+.mdc-floating-label--float-above{
+    @include mdc-floating-label-ink-color(#00897b);
+}
+
+.dark-ripple{
+    @include mdc-states-base-color(#000000);
+}
+
+
+
+.form-fieldset{
+    background-color: white;
+    box-shadow: 0px 0px 2px 1px rgba(105, 105, 105, 0.3);
+    border-width: 1px;
+    border-color:rgb(197, 195, 195);
+    border-style: solid;
+
+    > *{
+        padding: 15px;
+
+    }
+}
+
+.mdc-grid-tile{
+    --mdc-grid-list-tile-width: 300px;
+
+}
+.mdc-grid-list__tiles {
+    margin: 0px !important;
+
+    padding-left: 15px !important;
+}
+
+.mdc-toolbar{
+    display: flex;
+    justify-content: center;
+
+    section{
+        width: 30%;   
+    }
+
+    section:nth-child(3), section:nth-child(4),section:nth-child(5){
+        width:15%;
+    }
+
+    .toolbar-links{
+        display: inline-block;
+        width:50%;
+        height: min-content;
+        display:flex;
+        justify-content:space-between;
+    }
+
+    // work in progress
+    // @media screen and (max-width:650px){
+    //     width:100%;
+     
+    //     .mdc-menu{
+    //         width:100%;
+    //         position:absolute;
+            
+    //         top:15px;
+    //         left:0px;
+            
+            
+    //         .mdc-list-item{
+    //             height:120px;
+    //         }
+    //     }
+
+    // }
+}
+
+
+.mdc-menu{
+    position:absolute;
+    //margin-top: 45px !important;
+
+    top: 45px;
+    right:0px;
+
+    z-index: 30;
+        
+
+    a{
+        // @include mdc-list-item-primary-text-ink-color(black);
+        // @include mdc-list-item-secondary-text-ink-color(black); 
+        color:black !important;
+    }
+    .no-link:hover{
+        color: black !important;
+    }
+}
+
+body{
+    @media screen and (max-width:650px){
+
+        
+        
+        width:100%;
+        .mdc-menu{
+            animation-name: menu-web-to-mobile;
+            animation-duration: 0.1s;
+            
+            left:0px;
+            top:0px;
+
+            width:100%;
+
+            transform: scale(1.1);
+
+            .mdc-list-item{
+                display: flex;
+                justify-content: space-around;
+                height:120px;
+             
+
+
+                
+            }
+
+        }
+    }
+}
+
+@keyframes menu-web-to-mobile{
+    0%{
+        top: 45px;
+        left:50%;
+        right:0px;
+        width:100px;
+        opacity: 0;
+    }
+
+    // 15%{
+    //     transform: rotate(125deg) scale(0.1);
+    // }
+
+    // 18%{
+    //     transform: rotate(125deg) scale(2);
+    // }
+
+    // 25%{
+    //     transform: rotate(365deg) scale(12);
+    //     background-color: purple;
+    // }
+
+    // 36%{
+    //     transform: rotate(-125deg) scale(0.2);
+    //     background-color:  dimgrey;
+    // }
+
+    50%{
+        transform: scale(1.1);
+    }
+    // 55%{
+    //     transform: rotate(-125deg) scale(4);
+    //     background-color: yellowgreen;
+    // }
+
+    // 77%{
+    //     transform: rotate(125deg) scale(0.3);
+    //     background-color: black;
+    // }
+    // 87%{
+    //     transform: rotate(365deg) scale(8);
+    //     background-color: red;
+    // }
+
+    // 94%{
+    //     transform: rotate(-365deg) scale(1);
+    //     background-color: black;
+    // }
+
+    100%{
+        left:0px;
+        top:0px;
+        width:100%;
+        opacity:1;        
+    }
+}

@@ -1,0 +1,102 @@
+$small: 408px;
+
+@mixin flex($justify:center, $flow:row nowrap ){
+    display: flex;
+    flex-flow: $flow;
+    align-items: center;
+    justify-content: $justify;
+}
+
+
+.grey-section-html, .grey-section-html section{
+    background-color: rgba(0, 0, 0, 0.03);
+}
+
+
+.flex {
+    @include flex;
+    .content{
+        margin-top: 10px;
+    }
+}
+
+.wrap{
+    @include flex(flex-start);
+}
+
+.arrow-button{
+    @include mdc-button-container-fill-color(rgba(0, 137, 123, 0));
+
+
+    i{
+        transform: scale(3);
+    }
+}
+
+.breaker{
+    @include flex(space-between);
+
+    @media screen and (max-width:650px){
+        @include flex(central, column wrap);        
+    }
+}
+
+.central-container{
+    
+    @media screen and (max-width: $small) {
+        @include flex;
+    }
+}
+
+#exibirId{
+    margin-right: 10px;
+}
+
+.no-link{
+    color: #fff;
+    &:hover{
+        text-decoration: none;
+    }
+}
+
+section > *{
+    padding: 20px;
+}
+
+#lab-panel-id {
+    
+    ul{
+        
+        display: flex;
+        justify-content: center;
+    }
+    
+    li{
+        margin-right: 10px;
+        margin-bottom: 10px;
+        
+        
+        .mdc-grid-tile__primary {
+
+            
+
+
+            border-width: 1px;
+            border-color: rgba(0,0,0,0.1);
+            border-style: solid;
+            transition: all 0.3s;
+            box-shadow: 1px 3px 3px rgba(0,0,0,0.4);
+            
+            overflow-y: scroll;
+            
+            table {
+                position: relative;
+                top:50px;
+                tbody {
+                    filter: brightness(1.6);
+                }
+            }
+        }
+    }
+}
+

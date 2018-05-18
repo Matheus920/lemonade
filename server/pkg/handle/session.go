@@ -14,9 +14,9 @@ func LoginHandler(w http.ResponseWriter, r *http.Request) {
 		w.WriteHeader(401)
 		return
 	}
-	user := model.User{}
+	login := model.Login{}
 	if body, _ := ioutil.ReadAll(r.Body); len(body) > 0 {
-		if err := json.Unmarshal(body, &user); err != nil {
+		if err := json.Unmarshal(body, &login); err != nil {
 			w.WriteHeader(400)
 			return
 		}
@@ -24,22 +24,14 @@ func LoginHandler(w http.ResponseWriter, r *http.Request) {
 		w.WriteHeader(401)
 		return
 	}
-
-	if exists, err := db.RowExists("SELECT * FROM user WHERE prontuario=? and senha=? and active=1", user.Prontuario, user.Senha); err != nil {
+	if exists, err := db.RowExists("SELECT * FROM login WHERE prontuario=? and senha=? and active=1", login.Prontuario, login.Senha); err != nil {
 		w.WriteHeader(500)
 		return
 	} else {
 		if exists {
-			if tokenStr, err := user.Encode(); err == nil {
-				jsonToken := map[string]string{"token": tokenStr, "redirect": "http://localhost:8080/", "status": "302"}
-				if json, err := json.Marshal(jsonToken); err == nil {
-					w.Write(json)
-				} else {
-					w.WriteHeader(500)
-				}
-			} else {
-				w.WriteHeader(500)
-			}
+			sendToken(w, login)
+		} else {
+			w.WriteHeader(400)
 		}
 	}
 	
@@ -63,27 +55,19 @@ func LogoutHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	
-	user := &model.User{}
-	if err := user.Decode(jsonToken["token"]); err == nil {
-		if exists, err := db.RowExists("SELECT * FROM user WHERE prontuario=? and senha=? and active=1", user.Prontuario, user.Senha); err != nil {
+	login := model.Login{}
+	if err := login.Decode(jsonToken["token"]); err == nil {
+		if exists, err := db.RowExists("SELECT * FROM login WHERE prontuario=? and senha=? and active=1", login.Prontuario, login.Senha); err != nil {
 			w.WriteHeader(500)
 			return
 		} else {
 			if exists {
-				empty := &model.User{}
-				if tokenStr, err := empty.Encode(); err == nil {
-					jsonToken := map[string]string{"token": tokenStr, "redirect": "http://localhost:8080/", "status": "302"}
-					if json, err := json.Marshal(jsonToken); err == nil {
-						w.Write(json)
-					} else {
-						w.WriteHeader(500)
-					}
-				} else {
-					w.WriteHeader(500)
-				}
+				sendToken(w, model.NewLogin())
+			} else {
+				w.WriteHeader(500)
 			}
 		}
 	} else {
-		fmt.Println(err)
+		fmt.Println("session.go 80 - ",err)
 	}
 }

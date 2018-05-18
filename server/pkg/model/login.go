@@ -8,8 +8,8 @@ import (
 
 var secret = []byte("thamiresehshow")
 
-type User struct {
-	Id uint64 `json:"id"`
+type Login struct {
+	Id uint64
     Email string `json:"email"`
 	Nome string `json:"nome"`
 	Prontuario string `json:"prontuario"`
@@ -17,10 +17,10 @@ type User struct {
 	Iat int64 `json:"iat"`
 }
 
-func (user User) Encode() (string, error){
+func (login Login) Encode() (string, error){
 	token := jwt.NewWithClaims(jwt.SigningMethodHS256, jwt.MapClaims{
-		"prontuario": user.Prontuario,
-		"senha": user.Senha,
+		"prontuario": login.Prontuario,
+		"senha": login.Senha,
 		"iat": time.Now().Unix(),
 	})
 	if tokenStr, err := token.SignedString(secret); err == nil {
@@ -30,7 +30,7 @@ func (user User) Encode() (string, error){
 	}
 }
 
-func (user *User) Decode(token string) error {
+func (login *Login) Decode(token string) error {
 	tokenObj, err := jwt.Parse(token, func(token *jwt.Token) (interface{}, error){
 		if _, ok := token.Method.(*jwt.SigningMethodHMAC); !ok {
 			return nil, fmt.Errorf("Unexpected signing method: %v", token.Header["alg"])
@@ -40,9 +40,9 @@ func (user *User) Decode(token string) error {
 	if err == nil {
 		if claims, ok := tokenObj.Claims.(jwt.MapClaims); ok && tokenObj.Valid {
 			if claims["prontuario"] != "" && claims["senha"] != "" {
-				user.Prontuario = claims["prontuario"].(string)
-				user.Senha = claims["senha"].(string)
-				user.Iat = int64(claims["iat"].(float64))
+				login.Prontuario = claims["prontuario"].(string)
+				login.Senha = claims["senha"].(string)
+				login.Iat = int64(claims["iat"].(float64))
 				return nil
 			}
 		}
@@ -50,6 +50,16 @@ func (user *User) Decode(token string) error {
 	return err
 }
 
-func NewUser() *User {
-	return &User{}
+func (login Login) ToMap() map[string]interface{} {
+	return map[string]interface{}{
+		"id": login.Id, 
+		"prontuario": login.Prontuario,
+		"senha": login.Senha,
+		"email": login.Email,
+		"nome": login.Nome,
+	}
+}
+
+func NewLogin() Login {
+	return Login{}
 }

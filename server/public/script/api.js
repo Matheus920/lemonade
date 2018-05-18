@@ -1,15 +1,15 @@
 function login() {
-	var user = {prontuario: document.querySelectorAll('input')[0].value, senha: document.querySelectorAll('input')[1].value}
-	if(user.prontuario != "" && user.senha !=""){
-    	fetch("http://localhost:8080/login", {
+	var login = {prontuario: document.querySelectorAll('input')[0].value, senha: document.querySelectorAll('input')[1].value}
+	if(login.prontuario != "" && login.senha !=""){
+    	fetch("/login", {
 			method: "POST",
-			body: JSON.stringify(user)
+			body: JSON.stringify(login)
         })
         .then(function(res){
             return res.json()
         })
         .then(function(data){
-            sessionStorage.setItem("token", data.token)
+            localStorage.setItem("token", data.token)
             window.location.href = data.redirect; 
         })
 	}
@@ -18,7 +18,7 @@ function login() {
 function logout() {
     if (sessionStorage.token) {
         var token = {token: sessionStorage.token}
-        fetch("http://localhost:8080/logout", {
+        fetch("/logout", {
             method: "POST",
             body: JSON.stringify(token)
         }).then(function(res){
@@ -36,24 +36,25 @@ function logout() {
 
 function cadastrar() {
 	var inputs = $('input')
-	var user = {
+	var login = {
 		nome: inputs[0].value,
 		prontuario: inputs[1].value,
 		email: inputs[2].value,
 		senha: inputs[3].value
     }
 	var professor = {
-		user: user,
+		login: login,
 		telefone: inputs[4].value,
 		siape: inputs[5].value,
 		departamento: inputs[6].value
     }
-	fetch("http://localhost:8080/cadastrar", {
+	fetch("/cadastrar", {
 		method: "POST",
 		body: JSON.stringify(professor)    
 	}).then(function(res){
-		return res.text()
+		return res.json()
 	}).then(function(data){
-		console.log(data)
+        sessionStorage.token = data.token
+		window.location.href = data.redirect
     })
 }

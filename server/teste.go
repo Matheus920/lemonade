@@ -1,12 +1,22 @@
 package main
 import (
 	"fmt"
-	"encoding/json"
-	"./src/model"
 )
 
+func Insert(table string, campos map[string]interface{}) {
+	query := fmt.Sprintf("INSERT INTO %v(", table)
+	cam := ""
+	var values []interface{}
+	for key, value := range campos {
+		query = query + key + ","
+		cam = cam + "?,"
+		values = append(values, value)
+	}
+	
+	fmt.Println(query, values)
+}
+
 func main() {
-	professor := model.Professor{}
-	json.Unmarshal([]byte(`{"user":{"nome":"Glayson","prontuario":"1651153","email":"glayson@email.com","senha":"123456"},"telefone":"11963734856","siape":"21654","departamento":"ROLA"}`), &professor)
-	fmt.Println(professor)
+	glayson := map[string]interface{}{"prontuario": "1651153", "senha": 123}
+	Insert("login", glayson)
 }

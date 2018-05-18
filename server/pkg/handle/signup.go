@@ -6,6 +6,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"../model"
+	"../db"
 )
 
 func CadastrarHandler(w http.ResponseWriter, r *http.Request) {
@@ -16,7 +17,17 @@ func CadastrarHandler(w http.ResponseWriter, r *http.Request) {
 	professor := model.Professor{}
 	if body, _ := ioutil.ReadAll(r.Body); len(body) > 0 {
 		if err := json.Unmarshal(body, &professor); err == nil {
-			fmt.Println(professor)
+			if professor.Login.Id, err = db.Insert("login", professor.Login.ToMap()); err != nil {
+				fmt.Println(err)
+				return
+			} else {
+				if professor.Id, err = db.Insert("professor", professor.ToMap()); err != nil {
+					fmt.Println(err)
+					return
+				} else {
+					sendToken(w, professor.Login)
+				}
+			}
 		}
 	}
 }

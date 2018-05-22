@@ -2,34 +2,34 @@ function login() {
 	var login = {prontuario: document.querySelectorAll('input')[0].value, senha: document.querySelectorAll('input')[1].value}
 	if(login.prontuario != "" && login.senha !=""){
     	fetch("/login", {
-			method: "POST",
+            method: "POST",
+            credentials: "same-origin",
 			body: JSON.stringify(login)
         })
         .then(function(res){
-            return res.json()
+            return res.text()
         })
         .then(function(data){
-            localStorage.setItem("token", data.token)
-            window.location.href = data.redirect; 
+            console.log(data)
+            window.location.href = '/'; 
+        })
+        .catch(function(erro) {
+            
         })
 	}
 }
 
 function logout() {
-    if (sessionStorage.token) {
-        var token = {token: sessionStorage.token}
+    if (document.cookie) {
         fetch("/logout", {
             method: "POST",
-            body: JSON.stringify(token)
+            credentials: 'same-origin'
         }).then(function(res){
-            return res.json()
+            return res.text()
         }).then(function(data){
-            console.log(data)
+		    window.location.href = '/'
         }).catch(function(err){
             
-        }).finally(function(){
-            sessionStorage.clear()
-            window.location.href = "http://localhost:8080/"
         })
     }
 }
@@ -49,12 +49,29 @@ function cadastrar() {
 		departamento: inputs[6].value
     }
 	fetch("/cadastrar", {
-		method: "POST",
+        method: "POST",
+        credentials: 'same-origin',
 		body: JSON.stringify(professor)    
 	}).then(function(res){
-		return res.json()
+		return res.text()
 	}).then(function(data){
-        sessionStorage.token = data.token
-		window.location.href = data.redirect
+        window.location.href = '/'
     })
 }
+
+var loginLink = document.createElement('a')
+
+if(!document.cookie) {
+   loginLink.className = 'mdc-toolbar__icon mdc-typography--button no-link'
+   loginLink.setAttribute('href', 'login')
+   loginLink.innerText = 'LOGIN'
+} else {
+    loginLink.className = 'mdc-menu-anchor user-menu-link mdc-toolbar__icon mdc-typography--button no-link'
+   loginLink.innerText = 'USER'
+}
+
+var section = document.createElement('section')
+section.className = 'mdc-toolbar__section mdc-toolbar__section--align-end mdc-toolbar__section--shrink-to-fit'
+section.appendChild(loginLink)
+
+document.querySelector('div.mdc-toolbar__row').appendChild(section)

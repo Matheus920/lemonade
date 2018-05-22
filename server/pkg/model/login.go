@@ -14,14 +14,13 @@ type Login struct {
 	Nome string `json:"nome"`
 	Prontuario string `json:"prontuario"`
 	Senha string `json:"senha"`
-	Iat int64 `json:"iat"`
+	Iat time.Time
 }
 
 func (login Login) Encode() (string, error){
 	token := jwt.NewWithClaims(jwt.SigningMethodHS256, jwt.MapClaims{
 		"prontuario": login.Prontuario,
 		"senha": login.Senha,
-		"iat": time.Now().Unix(),
 	})
 	if tokenStr, err := token.SignedString(secret); err == nil {
 		return tokenStr, nil
@@ -42,7 +41,6 @@ func (login *Login) Decode(token string) error {
 			if claims["prontuario"] != "" && claims["senha"] != "" {
 				login.Prontuario = claims["prontuario"].(string)
 				login.Senha = claims["senha"].(string)
-				login.Iat = int64(claims["iat"].(float64))
 				return nil
 			}
 		}

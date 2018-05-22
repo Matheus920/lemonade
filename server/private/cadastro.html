@@ -1,46 +1,18 @@
 <!DOCTYPE html>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<html class=" grey-section-html" lang="pt-br">
+<html lang="pt-br" class="html-resize">
 
 <head>
-    <meta charset="utf-8">
-    <script src="script/jquery.slim.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="bundle.js" async></script>
     <link rel="stylesheet" href="bundle.css">
     <link href="style/fontes-google.css" rel="stylesheet">
     <link href="style/icons-google.css" rel="stylesheet">
+    <title>Login</title>
 </head>
 
 <body class="mdc-typography">
-
-    <div class="mdc-menu" tabindex="-1">
-        <ul class="mdc-menu__items mdc-list" role="menu" aria-hidden="true">
-            <li class="mdc-list-item" role="menuitem" tabindex="0">
-                <a class="mdc-typography--button no-link" href="reserva.html">Reserva</a>
-                <i class="material-icons big-arrow-icon mdc-button__icon">keyboard_arrow_left</i>
-            </li>
-
-            <li class="mdc-list-item" role="menuitem" tabindex="-1">
-                <a class="mdc-typography--button no-link" href="historico.html">Historico (User)</a>
-                <i class="material-icons big-arrow-icon mdc-button__icon">keyboard_arrow_right</i>
-            </li>
-
-            <li class="mdc-list-item" role="menuitem" tabindex="-2">
-                <a class="mdc-typography--button no-link" href="reserva-avulsa.html">Historico (Funcionario)</a>
-                <i class="material-icons big-arrow-icon mdc-button__icon">keyboard_arrow_right</i>
-            </li>
-
-            <li class="mdc-list-item" role="menuitem" tabindex="-3">
-                <a class="mdc-typography--button no-link" href="reserva-fixa.html">Historico (Super)</a>
-                <i class="material-icons big-arrow-icon mdc-button__icon">keyboard_arrow_right</i>
-            </li>
-
-            <li class="mdc-list-item" role="menuitem" tabindex="-4">
-                <a class="mdc-typography--button no-link" onclick="logout()">LOGOUT</a>
-            </li>
-        </ul>
-    </div>
-
     <header class="mdc-toolbar mdc-toolbar--fixed mdc-typography">
         <div class="mdc-toolbar__row">
             <section class="mdc-toolbar__section mdc-toolbar__section--align-start mdc-toolbar__section--shrink-to-fit">
@@ -61,7 +33,9 @@
             </section>
 
             <section class="mdc-toolbar__section mdc-toolbar__section--align-center">
-                <span class="mdc-toolbar__title" id="title">LEMONADE</span>
+                <span class="mdc-toolbar__title" id="title">
+                    <a href="index.html" class="no-link">LEMONADE</a>
+                </span>
             </section>
 
 
@@ -70,380 +44,96 @@
         </div>
 
     </header>
+    <section>
+        <div id="cadastro-fieldset-id" class="form-fieldset">
 
-    <section class="mdc-toolbar-fixed-adjust">
-        <div class="flex">
-            <div class="content">
-                <button class="mdc-button arrow-button" id="minus-day">
-                    <i class="material-icons big-arrow-icon mdc-button__icon">keyboard_arrow_left</i>
-                </button>
-                <span class="mdc-typography--headline5" id="date-label"></span>
+            <div class="pg1 mdc-form-field" id="nome-container-id">
+                <div class="mdc-text-field">
+                    <input type="text" id="nome-id" class="mdc-text-field__input" aria-controls="nome-helper-text" required minlength="7">
+                    <label class="mdc-floating-label" for="nome-id">Nome</label>
+                    <div class="mdc-line-ripple"></div>
+
+                </div>
+            </div>
+
+            <div class="pg1 mdc-form-field" id="prontuario-container-id">
+                <div class="mdc-text-field">
+                    <input type="text" id="prontuario-id" class="mdc-text-field__input" aria-controls="prontuario-helper-text" required minlength="7">
+                    <label class="mdc-floating-label" for="prontuario-id">Prontuário</label>
+                    <div class="mdc-line-ripple"></div>
+
+                </div>
+            </div>
+
+            <div class="pg1 mdc-form-field" id="email-container-id">
+                <div class="mdc-text-field">
+                    <input type="email" id="email-id" class="mdc-text-field__input" aria-controls="email-helper-text" required minlength="7">
+                    <label class="mdc-floating-label" for="email-id">Email</label>
+                    <div class="mdc-line-ripple"></div>
+
+                </div>
+            </div>
+
+            <div class="pg1 mdc-form-field" id="senha-container-id">
+                <div class="mdc-text-field">
+                    <input type="password" id="senha-id" class="mdc-text-field__input" required>
+                    <label class="mdc-floating-label" for="senha-id">Senha</label>
+                    <div class="mdc-line-ripple"></div>
+                </div>
+            </div>
+
+
+
+
+            <div class="pg1" id="botao-proximo-container-id">
                 <button class="mdc-button arrow-button" id="plus-day">
                     <i class="material-icons big-arrow-icon mdc-button__icon">chevron_right</i>
                 </button>
             </div>
-        </div>
-    </section>
 
-    <section>
-        <div class="breaker">
+            <div class="pg2" id="botao-anterior-container-id">
+                <button class="mdc-button arrow-button" id="minus-day">
+                    <i class="material-icons big-arrow-icon mdc-button__icon">keyboard_arrow_left</i>
+                </button>
 
-            <div class="central-container">
-                <div class="mdc-form-field central-container">
-                    <span class="mdc-typography--subtitle2">Horários</span>
-                    <div class="mdc-checkbox">
-                        <input type="checkbox" id="matutino_id" class="mdc-checkbox__native-control" />
-                        <div class="mdc-checkbox__background">
-                            <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
-                                <path class="mdc-checkbox__checkmark-path" fill="none" stroke="white" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
-                            </svg>
-                            <div class="mdc-checkbox__mixedmark"></div>
-                        </div>
-                    </div>
+            </div>
 
-                    <label for="matutino_id" class="checkbox-label"></label>
+            <div class="pg2 mdc-form-field" id="celular-container-id">
+                <div class="mdc-text-field">
+                    <input type="text" id="celular-id" class="mdc-text-field__input" aria-controls="celular-helper-text" required minlength="7">
+                    <label class="mdc-floating-label" for="celular-id">Telefone Celular</label>
+                    <div class="mdc-line-ripple"></div>
 
-                    <div class="mdc-checkbox">
-                        <input type="checkbox" id="vespertino_id" class="mdc-checkbox__native-control" />
-                        <div class="mdc-checkbox__background">
-                            <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
-                                <path class="mdc-checkbox__checkmark-path" fill="none" stroke="white" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
-                            </svg>
-                            <div class="mdc-checkbox__mixedmark"></div>
-                        </div>
-                    </div>
-
-                    <label for="vespertino_id" class="checkbox-label"></label>
-
-                    <div class="mdc-checkbox">
-                        <input type="checkbox" id="noturno_id" class="mdc-checkbox__native-control" />
-                        <div class="mdc-checkbox__background">
-                            <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
-                                <path class="mdc-checkbox__checkmark-path" fill="none" stroke="white" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
-                            </svg>
-                            <div class="mdc-checkbox__mixedmark"></div>
-                        </div>
-                    </div>
-                    <label for="noturno_id" class="checkbox-label"></label>
                 </div>
             </div>
 
-            <div class="wrap">
-                <span id="exibirId" class="mdc-typography--subtitle2">Exibir por</span>
+            <div class="pg2 cadastro-professor mdc-form-field" id="siape-container-id">
+                <div class="mdc-text-field">
+                    <input type="text" id="siape-id" class="mdc-text-field__input" aria-controls="siape-helper-text" required minlength="7">
+                    <label class="mdc-floating-label" for="siape-id">SIAPE</label>
+                    <div class="mdc-line-ripple"></div>
 
-                <form class="mui-form" id="form-id">
-                    <div class="mui-select">
-                        <select id="select-status">
-                            <option id="todos" value="1">Todos</option>
-                            <option id="disponiveis" value="2">Disponíveis</option>
-                            <option id="reservados" value="3">Reservados</option>
-                        </select>
-                        <label>Status</label>
-                    </div>
-                </form>
+                </div>
+            </div>
+
+            <div class="pg2 cadastro-professor mdc-form-field" id="departamento-container-id">
+                <div class="mdc-text-field">
+                    <input type="text" id="departamento-id" class="mdc-text-field__input" aria-controls="departamento-helper-text" required minlength="7">
+                    <label class="mdc-floating-label" for="departamento-id">Departamento</label>
+                    <div class="mdc-line-ripple"></div>
+
+                </div>
+            </div>
+
+            <div class="pg2" id="cadastrar-buttons-id">
+                <button class="mdc-button mdc-button--raised dark-ripple" id="cadastrar-button-id" onclick="cadastrar()">Cadastrar</button>
             </div>
         </div>
 
 
     </section>
-
-    <section id="lab-panel-id" class="mdc-grid-list mdc-grid-list--header-caption">
-        <ul class="mdc-grid-list__tiles">
-            <li class="mdc-grid-tile">
-                <div class="mdc-grid-tile__primary">
-                    <div class="mdc-grid-tile__primary-content my-tile-image">
-                        <table class="centered">
-                            <thead>
-                                <th>Período</th>
-                                <th>Nome</th>
-                                <th>Departamento</th>
-                            </thead>
-                            <tbody style="color:white;">
-                                <tr style="background: red;">
-                                    <td>
-                                        M1
-                                    </td>
-                                    <td>Glayson</td>
-                                    <td>pom</td>
-                                </tr>
-
-                                <tr style="background:green">
-                                    <td>
-                                        M2
-                                    </td>
-                                    <td>Glayson</td>
-                                    <td>pom</td>
-                                </tr>
-
-                                <tr style="background: green;">
-                                    <td>
-                                        M3
-                                    </td>
-                                    <td>Glayson</td>
-                                    <td>pom</td>
-                                </tr>
-
-                                <tr style="background:green ;">
-                                    <td>
-                                        M4
-                                    </td>
-                                    <td>Glayson</td>
-                                    <td>pom</td>
-                                </tr>
-
-                                <tr style="background:red">
-                                    <td>
-                                        M5
-                                    </td>
-                                    <td>Glayson</td>
-                                    <td>pom</td>
-                                </tr>
-
-                                <tr style="background:red">
-                                    <td>
-                                        M6
-                                    </td>
-                                    <td>Glayson</td>
-                                    <td>pom</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-
-                <div class="mdc-grid-tile__secondary">
-                    <span class="mdc-grid-tile__title">Lab 1
-                    </span>
-                </div>
-
-            </li>
-            <li class="mdc-grid-tile">
-                <div class="mdc-grid-tile__primary">
-                    <div class="mdc-grid-tile__primary-content my-tile-image">
-
-                    </div>
-                </div>
-
-                <div class="mdc-grid-tile__secondary">
-                    <span class="mdc-grid-tile__title">Lab 2
-                    </span>
-                </div>
-
-            </li>
-
-            <li class="mdc-grid-tile">
-                <div class="mdc-grid-tile__primary">
-                    <div class="mdc-grid-tile__primary-content my-tile-image">
-
-                    </div>
-                </div>
-
-                <div class="mdc-grid-tile__secondary">
-                    <span class="mdc-grid-tile__title">Lab 3
-                    </span>
-                </div>
-
-            </li>
-
-
-            <li class="mdc-grid-tile">
-                <div class="mdc-grid-tile__primary">
-                    <div class="mdc-grid-tile__primary-content my-tile-image">
-
-                    </div>
-                </div>
-
-                <div class="mdc-grid-tile__secondary">
-                    <span class="mdc-grid-tile__title">Lab 4
-                    </span>
-                </div>
-
-            </li>
-
-
-            <li class="mdc-grid-tile">
-                <div class="mdc-grid-tile__primary">
-                    <div class="mdc-grid-tile__primary-content my-tile-image">
-
-                    </div>
-                </div>
-
-                <div class="mdc-grid-tile__secondary">
-                    <span class="mdc-grid-tile__title">Lab 5
-                    </span>
-                </div>
-
-            </li>
-
-
-            <li class="mdc-grid-tile">
-                <div class="mdc-grid-tile__primary">
-                    <div class="mdc-grid-tile__primary-content my-tile-image">
-
-                    </div>
-                </div>
-
-                <div class="mdc-grid-tile__secondary">
-                    <span class="mdc-grid-tile__title">Lab 6
-                    </span>
-                </div>
-
-            </li>
-
-
-            <li class="mdc-grid-tile">
-                <div class="mdc-grid-tile__primary">
-                    <div class="mdc-grid-tile__primary-content my-tile-image">
-
-                    </div>
-                </div>
-
-                <div class="mdc-grid-tile__secondary">
-                    <span class="mdc-grid-tile__title">Lab 7
-                    </span>
-                </div>
-
-            </li>
-
-
-            <li class="mdc-grid-tile">
-                <div class="mdc-grid-tile__primary">
-                    <div class="mdc-grid-tile__primary-content my-tile-image">
-
-                    </div>
-                </div>
-
-                <div class="mdc-grid-tile__secondary">
-                    <span class="mdc-grid-tile__title">Lab 8
-                    </span>
-                </div>
-
-            </li>
-
-
-            <li class="mdc-grid-tile">
-                <div class="mdc-grid-tile__primary">
-                    <div class="mdc-grid-tile__primary-content my-tile-image">
-
-                    </div>
-                </div>
-
-                <div class="mdc-grid-tile__secondary">
-                    <span class="mdc-grid-tile__title">Lab 9
-                    </span>
-                </div>
-
-            </li>
-
-
-            <li class="mdc-grid-tile">
-                <div class="mdc-grid-tile__primary">
-                    <div class="mdc-grid-tile__primary-content my-tile-image">
-
-                    </div>
-                </div>
-
-                <div class="mdc-grid-tile__secondary">
-                    <span class="mdc-grid-tile__title">Lab 10
-                    </span>
-                </div>
-
-            </li>
-
-
-            <li class="mdc-grid-tile">
-                <div class="mdc-grid-tile__primary">
-                    <div class="mdc-grid-tile__primary-content my-tile-image">
-
-                    </div>
-                </div>
-
-                <div class="mdc-grid-tile__secondary">
-                    <span class="mdc-grid-tile__title">Lab 11
-                    </span>
-                </div>
-
-            </li>
-
-
-            <li class="mdc-grid-tile">
-                <div class="mdc-grid-tile__primary">
-                    <div class="mdc-grid-tile__primary-content my-tile-image">
-
-                    </div>
-                </div>
-
-                <div class="mdc-grid-tile__secondary">
-                    <span class="mdc-grid-tile__title">Lab 12
-                    </span>
-                </div>
-
-            </li>
-
-
-            <li class="mdc-grid-tile">
-                <div class="mdc-grid-tile__primary">
-                    <div class="mdc-grid-tile__primary-content my-tile-image">
-
-                    </div>
-                </div>
-
-                <div class="mdc-grid-tile__secondary">
-                    <span class="mdc-grid-tile__title">Lab 13
-                    </span>
-                </div>
-
-            </li>
-
-
-            <li class="mdc-grid-tile">
-                <div class="mdc-grid-tile__primary">
-                    <div class="mdc-grid-tile__primary-content my-tile-image">
-
-                    </div>
-                </div>
-
-                <div class="mdc-grid-tile__secondary">
-                    <span class="mdc-grid-tile__title">Lab 14
-                    </span>
-                </div>
-
-            </li>
-
-            <li class="mdc-grid-tile">
-                <div class="mdc-grid-tile__primary">
-                    <div class="mdc-grid-tile__primary-content my-tile-image">
-
-                    </div>
-                </div>
-
-                <div class="mdc-grid-tile__secondary">
-                    <span class="mdc-grid-tile__title">Lab 15
-                    </span>
-                </div>
-
-            </li>
-
-            <li class="mdc-grid-tile">
-                <div class="mdc-grid-tile__primary">
-                    <div class="mdc-grid-tile__primary-content my-tile-image">
-
-                    </div>
-                </div>
-
-                <div class="mdc-grid-tile__secondary">
-                    <span class="mdc-grid-tile__title">Lab 16
-                    </span>
-                </div>
-
-            </li>
-
-
-
-        </ul>
-    </section>
-
-    <script src="script/index.js"></script>
+    <script src="script/jquery.slim.min.js"></script>
+    <script src="script/cadastro.js"></script>
     <script src="script/api.js"></script>
 </body>
 

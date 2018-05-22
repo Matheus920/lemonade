@@ -1,3 +1,5 @@
+DROP DATABASE IF EXISTS koalla;
+
 CREATE DATABASE IF NOT EXISTS koalla;
 
 USE koalla;
@@ -6,9 +8,9 @@ CREATE TABLE IF NOT EXISTS login(
     id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     email VARCHAR(100) NULL,
 	nome VARCHAR(200) NULL,
-	prontuario INT(8) NULL,
+	prontuario VARCHAR(8) NULL,
     senha VARCHAR(24) NULL,
-	permissao ENUM('professor','funcionario','admin') NULL,
+	permissao ENUM('professor','funcionario','admin') DEFAULT 'professor',
 	created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 	updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 	active BOOLEAN DEFAULT TRUE
@@ -28,7 +30,7 @@ CREATE TABLE IF NOT EXISTS professor (
 	id_departamento INT NOT NULL,
 	id_login INT NOT NULL,
     siape INT(8) NULL,
-	celular INT(12) NULL,
+	telefone VARCHAR(20) NULL,
 	created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 	updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 	active BOOLEAN DEFAULT TRUE,

@@ -8,7 +8,10 @@ import (
 	"../model"
 	"../db"
 	"time"
+	"crypto/sha256"
 )
+
+const secret = "julianalinda"
 
 func loginGet(w http.ResponseWriter, r *http.Request) {
 	if _, err := r.Cookie("token"); err == nil {
@@ -32,16 +35,21 @@ func loginPost(w http.ResponseWriter, r *http.Request) {
 		w.WriteHeader(401)
 		return
 	}
-	if exists, err := db.RowExists("SELECT * FROM login WHERE prontuario=? and senha=? and active=1", login.Prontuario, login.Senha); err != nil {
-		w.WriteHeader(500)
+	var wr string
+	if err := db.Select("SELECT permissao FROM login WHERE prontuario=? and senha=? and active=1", login.Prontuario, login.Senha).Scan(&wr); err != nil {
+		w.WriteHeader(400)
 		return
 	} else {
-		if exists {
-			login.Iat = time.Now().Add(30*time.Minute)
-			sendToken(w, r, login)
-		} else {
-			w.WriteHeader(400)
+		if wr != "professor" {
+			cookie := http.Cookie{
+				Name: "Permissao",
+				Value: fmt.Sprintf("%x", sha256.Sum256([]byte(wr+secret))),
+				Expires: time.Now().Add(30*time.Minute),
+			}
+			http.SetCookie(w, &cookie)
 		}
+		login.Iat = time.Now().Add(30*time.Minute)
+		sendToken(w, login)
 	}
 }
 
@@ -58,17 +66,32 @@ func LoginHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func LogoutHandler(w http.ResponseWriter, r *http.Request) {
-	if r.Method != "POST" {
-		w.WriteHeader(401)
+	cookie, err := r.Cookie("token"); 
+	if err != nil {
+		w.WriteHeader(400)
 		return
 	}
 
-	cookie, _ := r.Cookie("token")
-
 	login := model.Login{}
-	login.Decode(cookie.Value)
+	if err = login.Decode(cookie.Value); err != nil {
+		w.WriteHeader(401)
+		return
+	}
 	login.Iat = time.Now().Add(-1)
-	sendToken(w, r, login)
+	
+	sendToken(w, login)
+
+	cookie, err = r.Cookie("Permissao"); 
+	if err != nil {
+		return
+	}
+
+	cookie = &http.Cookie{
+		Name: "Permissao",
+		Expires: login.Iat,
+	}
+	http.SetCookie(w, cookie)
+	
 	http.Redirect(w, r, "/", 302)
 
 	fmt.Println(login)

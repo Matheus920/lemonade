@@ -62,3 +62,7 @@ func Insert(table string, campos map[string]interface{}) (uint64, error){
 		}
 	}
 }
+
+func Select(query string, values ...interface{}) *sql.Row{
+	return db.QueryRow(query, values...)
+}

@@ -15,6 +15,24 @@
 </head>
 
 <body id="reserve-bodyId" class="mdc-typography">
+    <div class="mdc-menu" tabindex="-1">
+        <ul class="mdc-menu__items mdc-list" role="menu" aria-hidden="true">
+            <li class="mdc-list-item" role="menuitem" tabindex="0">
+                <a class="mdc-typography--button no-link">LOGOUT</a>
+                <i class="material-icons big-arrow-icon mdc-button__icon">keyboard_arrow_right</i>
+            </li>
+            <li class="mdc-list-item" role="menuitem" tabindex="0">
+                <a class="mdc-typography--button no-link">Reserva</a>
+                <i class="material-icons big-arrow-icon mdc-button__icon">keyboard_arrow_right</i>
+            </li>
+
+            <li class="mdc-list-item" role="menuitem" tabindex="0">
+                <a class="mdc-typography--button no-link">Historico</a>
+                <i class="material-icons big-arrow-icon mdc-button__icon">keyboard_arrow_right</i>
+            </li>
+        </ul>
+    </div>
+
     <header class="mdc-toolbar mdc-toolbar--fixed mdc-typography">
         <div class="mdc-toolbar__row">
             <section class="mdc-toolbar__section mdc-toolbar__section--align-start mdc-toolbar__section--shrink-to-fit">
@@ -42,15 +60,6 @@
 
 
             <section class="mdc-toolbar__section mdc-toolbar__section--align-end mdc-toolbar__section--shrink-to-fit">
-            </section>
-
-            <section class="mdc-toolbar__section mdc-toolbar__section--align-end mdc-toolbar__section--shrink-to-fit">
-                <a class="mdc-toolbar__icon mdc-typography--button no-link" href="login.html">LOGIN</a>
-            </section>
-
-            <section class="mdc-toolbar__section mdc-toolbar__section--align-end mdc-toolbar__section--shrink-to-fit">
-                <a class="mdc-menu-anchor user-menu-link mdc-toolbar__icon mdc-typography--button no-link" href="#">USER</a>
-
             </section>
         </div>
 
@@ -405,6 +414,7 @@
     </script>
     <script src="script/materialize.js"></script>
     <script src="script/material-date.js"></script>
+    <script src="script/api.js"></script>
 </body>
 
 <script src="script/reserva.js"></script>

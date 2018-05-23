@@ -5,7 +5,7 @@ import (
 	"net/http"
 )
 
-func sendToken(w http.ResponseWriter, r *http.Request, login model.Login) {
+func sendToken(w http.ResponseWriter, login model.Login) {
 	if tokenStr, err := login.Encode(); err == nil {
 		cookie := http.Cookie {
 			Name: "token",

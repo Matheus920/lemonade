@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="bundle.css">
     <link href="style/fontes-google.css" rel="stylesheet">
     <link href="style/icons-google.css" rel="stylesheet">
+    <script src="script/sha256.min.js"></script>
 </head>
 
 <body class="mdc-typography">
@@ -16,27 +17,17 @@
     <div class="mdc-menu" tabindex="-1">
         <ul class="mdc-menu__items mdc-list" role="menu" aria-hidden="true">
             <li class="mdc-list-item" role="menuitem" tabindex="0">
-                <a class="mdc-typography--button no-link" href="reserva.html">Reserva</a>
-                <i class="material-icons big-arrow-icon mdc-button__icon">keyboard_arrow_left</i>
+                <a class="mdc-typography--button no-link">LOGOUT</a>
+                <i class="material-icons big-arrow-icon mdc-button__icon">keyboard_arrow_right</i>
             </li>
-
-            <li class="mdc-list-item" role="menuitem" tabindex="-1">
-                <a class="mdc-typography--button no-link" href="historico.html">Historico (User)</a>
+            <li class="mdc-list-item" role="menuitem" tabindex="0">
+                <a class="mdc-typography--button no-link" href="reserva">Reserva</a>
                 <i class="material-icons big-arrow-icon mdc-button__icon">keyboard_arrow_right</i>
             </li>
 
-            <li class="mdc-list-item" role="menuitem" tabindex="-2">
-                <a class="mdc-typography--button no-link" href="reserva-avulsa.html">Historico (Funcionario)</a>
+            <li class="mdc-list-item" role="menuitem" tabindex="0">
+                <a class="mdc-typography--button no-link">Historico</a>
                 <i class="material-icons big-arrow-icon mdc-button__icon">keyboard_arrow_right</i>
-            </li>
-
-            <li class="mdc-list-item" role="menuitem" tabindex="-3">
-                <a class="mdc-typography--button no-link" href="reserva-fixa.html">Historico (Super)</a>
-                <i class="material-icons big-arrow-icon mdc-button__icon">keyboard_arrow_right</i>
-            </li>
-
-            <li class="mdc-list-item" role="menuitem" tabindex="-4">
-                <a class="mdc-typography--button no-link" onclick="logout()">LOGOUT</a>
             </li>
         </ul>
     </div>

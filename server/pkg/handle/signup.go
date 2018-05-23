@@ -12,7 +12,7 @@ import (
 
 func signupGet(w http.ResponseWriter, r *http.Request) {
 	if _, err := r.Cookie("token"); err == nil {
-		http.Redirect(w, r, "/", 400)
+		http.Redirect(w, r, "/", 302)
 		return
 	}
 
@@ -27,7 +27,7 @@ func signupPost(w http.ResponseWriter, r *http.Request) {
 	if body, _ := ioutil.ReadAll(r.Body); len(body) > 0 {
 		if err := json.Unmarshal(body, &professor); err == nil {
 			if professor.Login.Id, err = db.Insert("login", professor.Login.ToMap()); err != nil {
-				fmt.Println(err)
+				http.Redirect(w, r, "/", 302)
 				return
 			} else {
 				if professor.Id, err = db.Insert("professor", professor.ToMap()); err != nil {
@@ -35,7 +35,7 @@ func signupPost(w http.ResponseWriter, r *http.Request) {
 					return
 				} else {
 					professor.Login.Iat = time.Now().Add(30*time.Minute)
-					sendToken(w, r, professor.Login)
+					sendToken(w, professor.Login)
 				}
 			}
 		}

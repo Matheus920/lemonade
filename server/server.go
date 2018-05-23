@@ -16,6 +16,8 @@ func main() {
 	http.HandleFunc("/login", handle.LoginHandler)
 	http.HandleFunc("/logout", handle.LogoutHandler)
 	http.HandleFunc("/cadastrar", handle.SignupHandler)
+	http.HandleFunc("/reserva", handle.Reserve)
+	http.HandleFunc("/historico", handle.Historic)
 	if err := http.ListenAndServe(":8080", nil); err != nil {
 		panic(err)
 	}

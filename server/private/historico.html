@@ -11,26 +11,29 @@
     <link rel="stylesheet" href="bundle.css">
     <link href="style/fontes-google.css" rel="stylesheet">
     <link href="style/icons-google.css" rel="stylesheet">
+    <style>
+        .glc-menu {
+            display: none;
+            position: absolute;
+            background-color: white;
+            text-align: left;
+            z-index: 1;
+            right: 2px;
+            top: 57px;
+            padding: 10px;
+            box-shadow: 1px 1px 5px rgba(0,0,0,0.7);
+        }
+        .glc-menu ul {
+            margin: 0;
+            padding: 0;
+        }
+        .glc-menu ul li {
+            display: block;
+        }
+    </style>
 </head>
 
 <body class="mdc-typography">
-    <div class="mdc-menu" tabindex="-1">
-        <ul class="mdc-menu__items mdc-list" role="menu" aria-hidden="true">
-            <li class="mdc-list-item" role="menuitem" tabindex="0">
-                <a class="mdc-typography--button no-link">LOGOUT</a>
-                <i class="material-icons big-arrow-icon mdc-button__icon">keyboard_arrow_right</i>
-            </li>
-            <li class="mdc-list-item" role="menuitem" tabindex="0">
-                <a class="mdc-typography--button no-link">Reserva</a>
-                <i class="material-icons big-arrow-icon mdc-button__icon">keyboard_arrow_right</i>
-            </li>
-
-            <li class="mdc-list-item" role="menuitem" tabindex="0">
-                <a class="mdc-typography--button no-link">Historico</a>
-                <i class="material-icons big-arrow-icon mdc-button__icon">keyboard_arrow_right</i>
-            </li>
-        </ul>
-    </div>
     <header class="mdc-toolbar mdc-toolbar--fixed mdc-typography">
         <div class="mdc-toolbar__row">
             <section class="mdc-toolbar__section mdc-toolbar__section--align-start mdc-toolbar__section--shrink-to-fit">
@@ -59,8 +62,24 @@
 
             <section class="mdc-toolbar__section mdc-toolbar__section--align-end mdc-toolbar__section--shrink-to-fit">
             </section>
-        </div>
 
+            <div class="glc-menu">
+                    <ul>
+                        <li>
+                            <a href="#" onclick="logout()">LOGOUT</a>
+                        </li>
+                        <li>
+                            <a href="reserva">Reserva</a>
+                        </li>
+            
+                        <li>
+                            <a href="historico">Historico</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+        </div>
     </header>
 
     <section class="mdc-toolbar-fixed-adjust">
@@ -105,6 +124,7 @@
     </section>
 </body>
 <script src="script/historico.js"></script>
+<script src="script/sha256.min.js"></script>
 <script src="script/api.js"></script>
 
 </html>

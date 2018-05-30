@@ -6,32 +6,32 @@ import (
 	"fmt"
 )
 
-var db *sql.DB
+var Db *sql.DB
 
 func Open() error {
-	if db != nil {
+	if Db != nil {
 		return nil
 	}
-	if db1, err := sql.Open("mysql", "root@tcp(localhost:3306)/koalla"); err != nil {
+	if db, err := sql.Open("mysql", "root@tcp(localhost:3306)/koalla"); err != nil {
 		return err
 	} else {
-		if err = db1.Ping(); err != nil {
+		if err = db.Ping(); err != nil {
 			return err
 		}
-		db = db1
+		Db = db
 	}
 	return nil
 }
 
 func Close() {
-	if db != nil {
-		db.Close()
+	if Db != nil {
+		Db.Close()
 	}
 }
 
 func RowExists(query string, args ...interface{}) (bool, error){
 	var exists bool
-	if err := db.QueryRow(fmt.Sprintf("SELECT EXISTS (%s)", query), args...).Scan(&exists); err != nil {
+	if err := Db.QueryRow(fmt.Sprintf("SELECT EXISTS (%s)", query), args...).Scan(&exists); err != nil {
 		return false, err
 	}
 	return exists, nil
@@ -48,7 +48,7 @@ func Insert(table string, campos map[string]interface{}) (uint64, error){
 	}
 	query = query[:len(query)-1] + ") VALUES(" + cam[:len(cam)-1] + ")"
 
-	if stmt, err := db.Prepare(query); err != nil {
+	if stmt, err := Db.Prepare(query); err != nil {
 		return 0, err
 	} else {
 		if res, err := stmt.Exec(values...); err != nil {
@@ -64,5 +64,9 @@ func Insert(table string, campos map[string]interface{}) (uint64, error){
 }
 
 func Select(query string, values ...interface{}) *sql.Row{
-	return db.QueryRow(query, values...)
+	return Db.QueryRow(query, values...)
+}
+
+func Query(query string, values ...interface{}) (*sql.Rows, error) {
+	return Db.Query(query, values...)
 }

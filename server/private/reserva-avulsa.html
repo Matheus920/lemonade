@@ -11,6 +11,26 @@
     <link href="style/fontes-google.css" rel="stylesheet">
     <link href="style/icons-google.css" rel="stylesheet">
     <title>Reservas</title>
+    <style>
+    .glc-menu {
+        display: none;
+        position: absolute;
+        background-color: white;
+        text-align: left;
+        z-index: 1;
+        right: 2px;
+        top: 57px;
+        padding: 10px;
+        box-shadow: 1px 1px 5px rgba(0,0,0,0.7);
+    }
+    .glc-menu ul {
+        margin: 0;
+        padding: 0;
+    }
+    .glc-menu ul li {
+        display: block;
+    }
+    </style>
 </head>
 
 <body>
@@ -43,14 +63,21 @@
             <section class="mdc-toolbar__section mdc-toolbar__section--align-end mdc-toolbar__section--shrink-to-fit">
             </section>
 
-            <section class="mdc-toolbar__section mdc-toolbar__section--align-end mdc-toolbar__section--shrink-to-fit">
-                <a class="mdc-toolbar__icon mdc-typography--button no-link" href="login.html">LOGIN</a>
-            </section>
-
-            <section class="mdc-toolbar__section mdc-toolbar__section--align-end mdc-toolbar__section--shrink-to-fit">
-                <a class="mdc-menu-anchor user-menu-link mdc-toolbar__icon mdc-typography--button no-link" href="#">USER</a>
-
-            </section>
+            <div class="glc-menu">
+                    <ul>
+                        <li>
+                            <a href="#" onclick="logout()">LOGOUT</a>
+                        </li>
+                        <li>
+                            <a href="reserva">Reserva</a>
+                        </li>
+            
+                        <li>
+                            <a href="historico">Historico</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
 
     </header>
@@ -184,8 +211,7 @@
 </body>
 <script src="bundle.js" async></script>
 <script src="script/materialize.js"></script>
-<script>
-
-</script>
+<script src="script/sha256.min.js"></script>
+<script src="script/api.js"></script>
 
 </html>

@@ -90,3 +90,40 @@ $(document).ready(function () {
     });
 });
 
+setTimeout(function() {
+    document.querySelector('button.mdc-button.mdc-button--raised.dark-ripple.mdc-ripple-upgraded').addEventListener('click', function() {
+
+        var reservar = {};
+    
+        reservar.tipo = document.querySelectorAll('input[type="radio"]:checked')[0]
+                        .parentElement.parentElement.innerText.trim()
+        reservar.periodos = [];
+        for(var i = 0; i < document.querySelectorAll('input[type="checkbox"]:checked').length; i++){
+            reservar.periodos.push(document.querySelectorAll('input[type="checkbox"]:checked')[i]
+                            .getAttribute('id')
+                            .slice(document.querySelectorAll('input[type="checkbox"]:checked')[i]
+                            .getAttribute('id'), 
+                                document.querySelectorAll('input[type="checkbox"]:checked')[i]
+                                    .getAttribute('id').length-2).toUpperCase())
+        }
+        if(reservar.tipo === 'Fixa'){
+            reservar.disciplina = document.querySelector('#discipline-field-id').value
+            reservar.justificativa = document.querySelector('#justification-textarea-id').value
+        }
+        else if(reservar.tipo === 'Avulsa') {
+            reservar.lab = document.querySelectorAll('select')[1].value
+            var pattern = /(\d{2})\/(\d{2})\/(\d{4})/;
+            reservar.data = new Date(document.querySelectorAll('input[type="text"]#date-id')[0].value.replace(pattern, "$3-$2-$1")).toISOString();
+        }
+        console.log(reservar)
+        fetch("/reserva", {
+            method: 'POST',
+            credentials: 'same-origin',
+            body: JSON.stringify(reservar)
+        }).then(function(res) {
+            if(res.status == 200) {
+                window.location.href = '/'
+            }
+        })
+    })
+}, 60);

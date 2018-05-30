@@ -18,6 +18,9 @@ func main() {
 	http.HandleFunc("/cadastrar", handle.SignupHandler)
 	http.HandleFunc("/reserva", handle.Reserve)
 	http.HandleFunc("/historico", handle.Historic)
+	http.HandleFunc("/reserva-avulsa", handle.SingleBook)
+	http.HandleFunc("/reserva-fixa", handle.FixedBook)
+	http.HandleFunc("/api/", handle.Api)
 	if err := http.ListenAndServe(":8080", nil); err != nil {
 		panic(err)
 	}

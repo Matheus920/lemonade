@@ -32,7 +32,7 @@ func loginPost(w http.ResponseWriter, r *http.Request) {
 			return
 		}
 	} else {
-		w.WriteHeader(401)
+		w.WriteHeader(400)
 		return
 	}
 	var wr string

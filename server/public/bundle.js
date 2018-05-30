@@ -3611,31 +3611,6 @@ if (document.querySelector('#fixed-dialog') !== null) {
 // });
 
 
-//index
-
-var menuEl = document.querySelector('.mdc-menu');
-if (menuEl) {
-  // menu Instantiation
-  var menu = new _menu.MDCMenu(menuEl);
-  setTimeout(function() {
-      var menuButtonEl = document.querySelector('.user-menu-link');
-
-      // Toggle menu open
-      if(menuButtonEl)
-      menuButtonEl.addEventListener('click', function () {
-          menu.open = !menu.open;
-      });
-
-      for (var i = 0; i < document.querySelectorAll('.mdc-menu .mdc-list-item').length; i++) {
-          var element = document.querySelectorAll('.mdc-menu .mdc-list-item')[i];
-          element.onclick = function () {
-              menu.open = !menu.open;
-              element.getElementsByTagName("a")[0].click();
-          };
-      }
-  }, 40)
-}
-
 /***/ }),
 /* 27 */
 /***/ (function(module, exports, __webpack_require__) {

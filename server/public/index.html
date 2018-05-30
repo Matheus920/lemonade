@@ -10,27 +10,29 @@
     <link href="style/fontes-google.css" rel="stylesheet">
     <link href="style/icons-google.css" rel="stylesheet">
     <script src="script/sha256.min.js"></script>
+    <style>
+    .glc-menu {
+        display: none;
+        position: absolute;
+        background-color: white;
+        text-align: left;
+        z-index: 1;
+        right: 2px;
+        top: 57px;
+        padding: 10px;
+        box-shadow: 1px 1px 5px rgba(0,0,0,0.7);
+    }
+    .glc-menu ul {
+        margin: 0;
+        padding: 0;
+    }
+    .glc-menu ul li {
+        display: block;
+    }
+    </style>
 </head>
 
-<body class="mdc-typography">
-
-    <div class="mdc-menu" tabindex="-1">
-        <ul class="mdc-menu__items mdc-list" role="menu" aria-hidden="true">
-            <li class="mdc-list-item" role="menuitem" tabindex="0">
-                <a class="mdc-typography--button no-link">LOGOUT</a>
-                <i class="material-icons big-arrow-icon mdc-button__icon">keyboard_arrow_right</i>
-            </li>
-            <li class="mdc-list-item" role="menuitem" tabindex="0">
-                <a class="mdc-typography--button no-link" href="reserva">Reserva</a>
-                <i class="material-icons big-arrow-icon mdc-button__icon">keyboard_arrow_right</i>
-            </li>
-
-            <li class="mdc-list-item" role="menuitem" tabindex="0">
-                <a class="mdc-typography--button no-link">Historico</a>
-                <i class="material-icons big-arrow-icon mdc-button__icon">keyboard_arrow_right</i>
-            </li>
-        </ul>
-    </div>
+<body class="mdc-typography" onload="reservas()">
 
     <header class="mdc-toolbar mdc-toolbar--fixed mdc-typography">
         <div class="mdc-toolbar__row">
@@ -58,6 +60,21 @@
 
             <section class="mdc-toolbar__section mdc-toolbar__section--align-end mdc-toolbar__section--shrink-to-fit">
             </section>
+
+            <div class="glc-menu">
+                <ul>
+                    <li>
+                        <a href="#" onclick="logout()">LOGOUT</a>
+                    </li>
+                    <li>
+                        <a href="reserva">Reserva</a>
+                    </li>
+        
+                    <li>
+                        <a href="historico">Historico</a>
+                    </li>
+                </ul>
+            </div>
         </div>
 
     </header>
@@ -149,54 +166,8 @@
                                 <th>Nome</th>
                                 <th>Departamento</th>
                             </thead>
-                            <tbody style="color:white;">
-                                <tr style="background: red;">
-                                    <td>
-                                        M1
-                                    </td>
-                                    <td>Glayson</td>
-                                    <td>pom</td>
-                                </tr>
-
-                                <tr style="background:green">
-                                    <td>
-                                        M2
-                                    </td>
-                                    <td>Glayson</td>
-                                    <td>pom</td>
-                                </tr>
-
-                                <tr style="background: green;">
-                                    <td>
-                                        M3
-                                    </td>
-                                    <td>Glayson</td>
-                                    <td>pom</td>
-                                </tr>
-
-                                <tr style="background:green ;">
-                                    <td>
-                                        M4
-                                    </td>
-                                    <td>Glayson</td>
-                                    <td>pom</td>
-                                </tr>
-
-                                <tr style="background:red">
-                                    <td>
-                                        M5
-                                    </td>
-                                    <td>Glayson</td>
-                                    <td>pom</td>
-                                </tr>
-
-                                <tr style="background:red">
-                                    <td>
-                                        M6
-                                    </td>
-                                    <td>Glayson</td>
-                                    <td>pom</td>
-                                </tr>
+                            <tbody style="color:white;" id="lab1">
+                                
                             </tbody>
                         </table>
                     </div>
@@ -211,7 +182,16 @@
             <li class="mdc-grid-tile">
                 <div class="mdc-grid-tile__primary">
                     <div class="mdc-grid-tile__primary-content my-tile-image">
-
+                        <table class="centered">
+                            <thead>
+                                <th>Período</th>
+                                <th>Nome</th>
+                                <th>Departamento</th>
+                            </thead>
+                            <tbody style="color:white;" id="lab2">
+                                
+                            </tbody>
+                        </table>
                     </div>
                 </div>
 
@@ -225,7 +205,16 @@
             <li class="mdc-grid-tile">
                 <div class="mdc-grid-tile__primary">
                     <div class="mdc-grid-tile__primary-content my-tile-image">
-
+                        <table class="centered">
+                            <thead>
+                                <th>Período</th>
+                                <th>Nome</th>
+                                <th>Departamento</th>
+                            </thead>
+                            <tbody style="color:white;" id="lab3">
+                                
+                            </tbody>
+                        </table>
                     </div>
                 </div>
 
@@ -240,7 +229,16 @@
             <li class="mdc-grid-tile">
                 <div class="mdc-grid-tile__primary">
                     <div class="mdc-grid-tile__primary-content my-tile-image">
-
+                        <table class="centered">
+                            <thead>
+                                <th>Período</th>
+                                <th>Nome</th>
+                                <th>Departamento</th>
+                            </thead>
+                            <tbody style="color:white;" id="lab4">
+                                
+                            </tbody>
+                        </table>
                     </div>
                 </div>
 
@@ -255,7 +253,16 @@
             <li class="mdc-grid-tile">
                 <div class="mdc-grid-tile__primary">
                     <div class="mdc-grid-tile__primary-content my-tile-image">
-
+                        <table class="centered">
+                            <thead>
+                                <th>Período</th>
+                                <th>Nome</th>
+                                <th>Departamento</th>
+                            </thead>
+                            <tbody style="color:white;" id="lab5">
+                                
+                            </tbody>
+                        </table>
                     </div>
                 </div>
 
@@ -270,7 +277,16 @@
             <li class="mdc-grid-tile">
                 <div class="mdc-grid-tile__primary">
                     <div class="mdc-grid-tile__primary-content my-tile-image">
-
+                        <table class="centered">
+                            <thead>
+                                <th>Período</th>
+                                <th>Nome</th>
+                                <th>Departamento</th>
+                            </thead>
+                            <tbody style="color:white;" id="lab6">
+                                
+                            </tbody>
+                        </table>
                     </div>
                 </div>
 
@@ -285,7 +301,16 @@
             <li class="mdc-grid-tile">
                 <div class="mdc-grid-tile__primary">
                     <div class="mdc-grid-tile__primary-content my-tile-image">
-
+                        <table class="centered">
+                            <thead>
+                                <th>Período</th>
+                                <th>Nome</th>
+                                <th>Departamento</th>
+                            </thead>
+                            <tbody style="color:white;" id="lab7">
+                                
+                            </tbody>
+                        </table>
                     </div>
                 </div>
 
@@ -300,7 +325,16 @@
             <li class="mdc-grid-tile">
                 <div class="mdc-grid-tile__primary">
                     <div class="mdc-grid-tile__primary-content my-tile-image">
-
+                        <table class="centered">
+                            <thead>
+                                <th>Período</th>
+                                <th>Nome</th>
+                                <th>Departamento</th>
+                            </thead>
+                            <tbody style="color:white;" id="lab8">
+                                
+                            </tbody>
+                        </table>
                     </div>
                 </div>
 
@@ -315,7 +349,16 @@
             <li class="mdc-grid-tile">
                 <div class="mdc-grid-tile__primary">
                     <div class="mdc-grid-tile__primary-content my-tile-image">
-
+                        <table class="centered">
+                            <thead>
+                                <th>Período</th>
+                                <th>Nome</th>
+                                <th>Departamento</th>
+                            </thead>
+                            <tbody style="color:white;" id="lab9">
+                                
+                            </tbody>
+                        </table>
                     </div>
                 </div>
 
@@ -330,7 +373,16 @@
             <li class="mdc-grid-tile">
                 <div class="mdc-grid-tile__primary">
                     <div class="mdc-grid-tile__primary-content my-tile-image">
-
+                        <table class="centered">
+                            <thead>
+                                <th>Período</th>
+                                <th>Nome</th>
+                                <th>Departamento</th>
+                            </thead>
+                            <tbody style="color:white;" id="lab10">
+                                
+                            </tbody>
+                        </table>
                     </div>
                 </div>
 
@@ -345,7 +397,16 @@
             <li class="mdc-grid-tile">
                 <div class="mdc-grid-tile__primary">
                     <div class="mdc-grid-tile__primary-content my-tile-image">
-
+                        <table class="centered">
+                            <thead>
+                                <th>Período</th>
+                                <th>Nome</th>
+                                <th>Departamento</th>
+                            </thead>
+                            <tbody style="color:white;" id="lab11">
+                                
+                            </tbody>
+                        </table>
                     </div>
                 </div>
 
@@ -360,7 +421,16 @@
             <li class="mdc-grid-tile">
                 <div class="mdc-grid-tile__primary">
                     <div class="mdc-grid-tile__primary-content my-tile-image">
-
+                        <table class="centered">
+                            <thead>
+                                <th>Período</th>
+                                <th>Nome</th>
+                                <th>Departamento</th>
+                            </thead>
+                            <tbody style="color:white;" id="lab12">
+                                
+                            </tbody>
+                        </table>
                     </div>
                 </div>
 
@@ -375,7 +445,16 @@
             <li class="mdc-grid-tile">
                 <div class="mdc-grid-tile__primary">
                     <div class="mdc-grid-tile__primary-content my-tile-image">
-
+                        <table class="centered">
+                            <thead>
+                                <th>Período</th>
+                                <th>Nome</th>
+                                <th>Departamento</th>
+                            </thead>
+                            <tbody style="color:white;" id="lab13">
+                                
+                            </tbody>
+                        </table>
                     </div>
                 </div>
 
@@ -390,7 +469,16 @@
             <li class="mdc-grid-tile">
                 <div class="mdc-grid-tile__primary">
                     <div class="mdc-grid-tile__primary-content my-tile-image">
-
+                        <table class="centered">
+                            <thead>
+                                <th>Período</th>
+                                <th>Nome</th>
+                                <th>Departamento</th>
+                            </thead>
+                            <tbody style="color:white;" id="lab14">
+                                
+                            </tbody>
+                        </table>
                     </div>
                 </div>
 
@@ -404,7 +492,16 @@
             <li class="mdc-grid-tile">
                 <div class="mdc-grid-tile__primary">
                     <div class="mdc-grid-tile__primary-content my-tile-image">
-
+                        <table class="centered">
+                            <thead>
+                                <th>Período</th>
+                                <th>Nome</th>
+                                <th>Departamento</th>
+                            </thead>
+                            <tbody style="color:white;" id="lab15">
+                                
+                            </tbody>
+                        </table>
                     </div>
                 </div>
 
@@ -418,7 +515,16 @@
             <li class="mdc-grid-tile">
                 <div class="mdc-grid-tile__primary">
                     <div class="mdc-grid-tile__primary-content my-tile-image">
-
+                        <table class="centered">
+                            <thead>
+                                <th>Período</th>
+                                <th>Nome</th>
+                                <th>Departamento</th>
+                            </thead>
+                            <tbody style="color:white;" id="lab16">
+                                
+                            </tbody>
+                        </table>
                     </div>
                 </div>
 

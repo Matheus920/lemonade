@@ -68,7 +68,7 @@ if(!document.cookie) {
    loginLink.setAttribute('href', 'login')
    loginLink.innerText = 'LOGIN'
 } else {
-    loginLink.className = 'mdc-menu-anchor user-menu-link mdc-toolbar__icon mdc-typography--button no-link'
+    loginLink.className = 'mdc-toolbar__icon mdc-typography--button no-link btn-user'
    loginLink.innerText = 'USER'
 }
 
@@ -78,51 +78,44 @@ section.appendChild(loginLink)
 
 document.querySelector('div.mdc-toolbar__row').appendChild(section)
 
-var listitem = document.createElement('li')
-listitem.className = 'mdc-list-item'
-listitem.setAttribute('role', 'menuitem')
-listitem.setAttribute('tabindex', '0')
-
-var linkPermissao = document.createElement('a')
-linkPermissao.className = 'mdc-typography--button no-link'
-linkPermissao.innerText = 'Reserva avulsa'
-//linkPermissao.setAttribute('href', '#')
-
-var settinha = document.createElement('i')
-settinha.className = 'material-icons big-arrow-icon mdc-button__icon'
-settinha.innerText = 'keyboard_arrow_right'
+document.querySelector('html').addEventListener('click', function(e) {
+    if(e.target ==  document.querySelector('.btn-user')){
+        if(document.querySelector('.glc-menu').style.display === 'block')
+        {
+            document.querySelector('.glc-menu').style.display = 'none'
+            return
+        }
+        document.querySelector('.glc-menu').style.display = 'block';
+        return
+    }
+    if(e.target != document.querySelector('.glc-menu'))
+        if(document.querySelector('.glc-menu').style.display == 'block'){
+            document.querySelector('.glc-menu').style.display = 'none'
+        }
+})
 
 if(document.cookie.split(' ')[0].split('=')[0] === 'Permissao') {
     var permissao = document.cookie.split(' ')[0].split('=')[1]
 
-    listitem.appendChild(linkPermissao)
-    listitem.appendChild(settinha.cloneNode(true))
-    
-    document.querySelector("ul.mdc-menu__items.mdc-list").appendChild(listitem)
-    
-    if(sha256('adminjulianalinda') === permissao.slice(0, permissao.length-1)) {
-        var linkFixa =  document.createElement('a')
-        linkFixa.className = 'mdc-typography--button no-link'
-        linkFixa.innerText = 'Reserva fixa'
-        //linkFixa.setAttribute('href', '#')
-        
-        var listFixa = document.createElement('li')
-        listFixa.className = 'mdc-list-item'
-        listFixa.setAttribute('role', 'menuitem')
-        listFixa.setAttribute('tabindex', '0')
+    var reservaAvulsa = document.createElement('a')
+    reservaAvulsa.innerText = "Reserva avulsa"
+    reservaAvulsa.setAttribute('href', '/reserva-avulsa')
+    var rsvAvitm = document.createElement('li')
+    rsvAvitm.appendChild(reservaAvulsa)
 
-        listFixa.appendChild(linkFixa)
-        listFixa.appendChild(settinha.cloneNode(true))
-        document.querySelector("ul.mdc-menu__items.mdc-list").appendChild(listFixa)
+    document.querySelector('.glc-menu ul').appendChild(rsvAvitm)
+
+    if(document.querySelector('#special-radio-label-id')){
+        document.querySelector('#special-radio-label-id').style.display = 'block'
+    }
+
+    if(sha256('adminjulianalinda') === permissao.slice(0, permissao.length-1)) {
+        var reservaFixa = document.createElement('a')
+        reservaFixa.innerText = "Reserva fixa"
+        reservaFixa.setAttribute('href', '/reserva-fixa')
+        var rsvFixaitm = document.createElement('li')
+        rsvFixaitm.appendChild(reservaFixa)
+
+        document.querySelector('.glc-menu ul').appendChild(rsvFixaitm)
     }
 }
-
-document.querySelector('li.mdc-list-item').addEventListener('click', logout)
-
-document.querySelectorAll('li.mdc-list-item')[1].addEventListener('click', function() {
-    window.location.href = '/reserva'
-})
-
-document.querySelectorAll('li.mdc-list-item')[2].addEventListener('click', function() {
-    window.location.href = '/historico'
-})

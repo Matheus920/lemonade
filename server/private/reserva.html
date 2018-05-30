@@ -11,28 +11,32 @@
     <link href="style/fontes-google.css" rel="stylesheet">
     <link href="style/icons-google.css" rel="stylesheet">
     <title>Fazer Reserva</title>
-
+    <style>
+        .glc-menu {
+            display: none;
+            position: absolute;
+            background-color: white;
+            text-align: left;
+            z-index: 1;
+            right: 2px;
+            top: 57px;
+            padding: 10px;
+            box-shadow: 1px 1px 5px rgba(0,0,0,0.7);
+        }
+        .glc-menu ul {
+            margin: 0;
+            padding: 0;
+        }
+        .glc-menu ul li {
+            display: block;
+        }
+        #special-radio-label-id {
+            display:none;
+        }
+    </style>
 </head>
 
 <body id="reserve-bodyId" class="mdc-typography">
-    <div class="mdc-menu" tabindex="-1">
-        <ul class="mdc-menu__items mdc-list" role="menu" aria-hidden="true">
-            <li class="mdc-list-item" role="menuitem" tabindex="0">
-                <a class="mdc-typography--button no-link">LOGOUT</a>
-                <i class="material-icons big-arrow-icon mdc-button__icon">keyboard_arrow_right</i>
-            </li>
-            <li class="mdc-list-item" role="menuitem" tabindex="0">
-                <a class="mdc-typography--button no-link">Reserva</a>
-                <i class="material-icons big-arrow-icon mdc-button__icon">keyboard_arrow_right</i>
-            </li>
-
-            <li class="mdc-list-item" role="menuitem" tabindex="0">
-                <a class="mdc-typography--button no-link">Historico</a>
-                <i class="material-icons big-arrow-icon mdc-button__icon">keyboard_arrow_right</i>
-            </li>
-        </ul>
-    </div>
-
     <header class="mdc-toolbar mdc-toolbar--fixed mdc-typography">
         <div class="mdc-toolbar__row">
             <section class="mdc-toolbar__section mdc-toolbar__section--align-start mdc-toolbar__section--shrink-to-fit">
@@ -61,6 +65,21 @@
 
             <section class="mdc-toolbar__section mdc-toolbar__section--align-end mdc-toolbar__section--shrink-to-fit">
             </section>
+
+            <div class="glc-menu">
+                <ul>
+                    <li>
+                        <a href="#" onclick="logout()">LOGOUT</a>
+                    </li>
+                    <li>
+                        <a href="reserva">Reserva</a>
+                    </li>
+        
+                    <li>
+                        <a href="historico">Historico</a>
+                    </li>
+                </ul>
+            </div>
         </div>
 
     </header>
@@ -326,22 +345,22 @@
                 <div id="select-labsId" class="avulsa mui-select fix-width">
                     <select id="select-laboratorios" class="fix-width">
                         <option id="selecione" value="" selected disabled>Selecione</option>
-                        <option id="lab1" value="2">Laboratório 1</option>
-                        <option id="lab2" value="3">Laboratório 2</option>
-                        <option id="lab3" value="4">Laboratório 3</option>
-                        <option id="lab4" value="5">Laboratório 4</option>
-                        <option id="lab5" value="6">Laboratório 5</option>
-                        <option id="lab6" value="7">Laboratório 6</option>
-                        <option id="lab7" value="8">Laboratório 7</option>
-                        <option id="lab8" value="9">Laboratório 8</option>
-                        <option id="lab9" value="10">Laboratório 9</option>
-                        <option id="lab10" value="11">Laboratório 10</option>
-                        <option id="lab11" value="12">Laboratório 11</option>
-                        <option id="lab12" value="13">Laboratório 12</option>
-                        <option id="lab13" value="14">Laboratório 13</option>
-                        <option id="lab14" value="15">Laboratório 14</option>
-                        <option id="lab15" value="16">Laboratório 15</option>
-                        <option id="lab16" value="17">Laboratório 16</option>
+                        <option id="lab1" value="1">Laboratório 1</option>
+                        <option id="lab2" value="2">Laboratório 2</option>
+                        <option id="lab3" value="3">Laboratório 3</option>
+                        <option id="lab4" value="4">Laboratório 4</option>
+                        <option id="lab5" value="5">Laboratório 5</option>
+                        <option id="lab6" value="6">Laboratório 6</option>
+                        <option id="lab7" value="7">Laboratório 7</option>
+                        <option id="lab8" value="8">Laboratório 8</option>
+                        <option id="lab9" value="9">Laboratório 9</option>
+                        <option id="lab10" value="10">Laboratório 10</option>
+                        <option id="lab11" value="11">Laboratório 11</option>
+                        <option id="lab12" value="12">Laboratório 12</option>
+                        <option id="lab13" value="13">Laboratório 13</option>
+                        <option id="lab14" value="14">Laboratório 14</option>
+                        <option id="lab15" value="15">Laboratório 15</option>
+                        <option id="lab16" value="16">Laboratório 16</option>
                     </select>
                     <label>Laboratório</label>
                 </div>
@@ -374,7 +393,7 @@
                 <form class="col s12">
                     <div class="row">
                         <div class="input-field col s12">
-                            <textarea id="justification-textarea-id" class="materialize-textarea"></textarea>
+                            <textarea id="justification-textarea-id1" class="materialize-textarea"></textarea>
                             <label for="justification-textarea-id">Nome do requirinte da reserva</label>
                         </div>
                     </div>
@@ -385,7 +404,7 @@
                 <form class="col s12">
                     <div class="row">
                         <div class="input-field col s12">
-                            <textarea id="justification-textarea-id" class="materialize-textarea"></textarea>
+                            <textarea id="justification-textarea-id2" class="materialize-textarea"></textarea>
                             <label for="justification-textarea-id">Area do requirinte da reserva</label>
                         </div>
                     </div>
@@ -414,6 +433,7 @@
     </script>
     <script src="script/materialize.js"></script>
     <script src="script/material-date.js"></script>
+    <script src="script/sha256.min.js"></script>
     <script src="script/api.js"></script>
 </body>
 

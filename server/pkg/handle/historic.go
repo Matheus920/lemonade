@@ -17,6 +17,7 @@ func Historic(w http.ResponseWriter, r *http.Request) {
 		w.WriteHeader(401)
 		return
 	}
+	
 	data, err := ioutil.ReadFile("./private/historico.html")
 	if err != nil {
 		w.WriteHeader(500)

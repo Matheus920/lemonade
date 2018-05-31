@@ -70,3 +70,7 @@ func Select(query string, values ...interface{}) *sql.Row{
 func Query(query string, values ...interface{}) (*sql.Rows, error) {
 	return Db.Query(query, values...)
 }
+
+func Prepare(query string) (*sql.Stmt, error) {
+	return Db.Prepare(query)
+}

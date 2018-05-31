@@ -90,6 +90,14 @@ func Reserve(w http.ResponseWriter, r *http.Request) {
 }
 
 func SingleBook(w http.ResponseWriter, r *http.Request) {
+	if r.Method == "GET" {
+		singleBookGet(w, r)
+	} else if r.Method == "POST" {
+		singleBookPost(w, r)
+	}
+}
+
+func singleBookGet(w http.ResponseWriter, r *http.Request) {
 	cookie, err := r.Cookie("token")
 	if err != nil {
 		w.WriteHeader(401)
@@ -118,6 +126,58 @@ func SingleBook(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	w.WriteHeader(401)
+}
+
+func singleBookPost(w http.ResponseWriter, r *http.Request) {
+	cookie, err := r.Cookie("token")
+	if err != nil {
+		w.WriteHeader(401)
+		return
+	}
+	login := model.Login{}
+	if err = login.Decode(cookie.Value); err != nil {
+		w.WriteHeader(401)
+		return
+	}
+
+	cookie, err = r.Cookie("Permissao")
+	if err != nil {
+		w.WriteHeader(401)
+		return
+	}
+	
+	if cookie.Value != fmt.Sprintf("%x", sha256.Sum256([]byte("funcionario" + secret))) && 
+		cookie.Value != fmt.Sprintf("%x", sha256.Sum256([]byte("admin" + secret))) {
+		w.WriteHeader(401)
+		return
+	}
+
+	body, err := ioutil.ReadAll(r.Body)
+	if err != nil {
+		w.WriteHeader(400)
+		return
+	}
+	jsonB := make(map[string]interface{})
+	if err = json.Unmarshal(body, &jsonB); err != nil {
+		w.WriteHeader(400)
+		return
+	}
+	stmt, err := db.Prepare("UPDATE reserva SET status=? WHERE id=?")
+	if err != nil {
+		fmt.Println("reserve 167", err)
+		return
+	}
+	_, err = stmt.Exec(jsonB["status"], jsonB["rsv"])
+	if err != nil {
+		fmt.Println("reserve 171", err)
+		return
+	}
+
+	if err != nil {
+		fmt.Println("reserve 176", err)
+		return
+	}
+	
 }
 
 func FixedBook(w http.ResponseWriter, r *http.Request) {

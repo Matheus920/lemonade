@@ -170,7 +170,7 @@ func reservaAvulsaApi(w http.ResponseWriter, r *http.Request) {
 	
 	if cookie.Value != fmt.Sprintf("%x", sha256.Sum256([]byte("funcionario" + secret))) &&
 		cookie.Value != fmt.Sprintf("%x", sha256.Sum256([]byte("admin" + secret))) {
-		w.WriteHeader(400)
+		w.WriteHeader(401)
 		return
 	}
 	
@@ -179,7 +179,7 @@ func reservaAvulsaApi(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	rows, err := db.Query("select reserva.id, reserva.lab, login.nome, departamento.nome, reserva.tipo, horario_reserva.dia, reserva.status from reserva inner join login on login.id = reserva.id_login inner join professor on professor.id_login = login.id inner join departamento on departamento.id = professor.id_departamento inner join horario_reserva on horario_reserva.id_reserva=reserva.id where reserva.active=1 group by reserva.id")
+	rows, err := db.Query("select reserva.id, reserva.lab, login.nome, departamento.nome, reserva.tipo, horario_reserva.dia, reserva.status from reserva inner join login on login.id = reserva.id_login inner join professor on professor.id_login = login.id inner join departamento on departamento.id = professor.id_departamento inner join horario_reserva on horario_reserva.id_reserva=reserva.id where reserva.active=1 and reserva.status='andamento' group by reserva.id")
 	
 	if err != nil {
 		w.WriteHeader(500)
@@ -223,6 +223,7 @@ func reservaAvulsaApi(w http.ResponseWriter, r *http.Request) {
 			"tipo": tipo,
 			"data": string(dia),
 			"status": status,
+			"rsv": rsv,
 			},
 		)
 	}

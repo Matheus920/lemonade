@@ -113,6 +113,7 @@ function reservas() {
         for(var i = 1; i <= 16; i++) {
             var tr
             document.querySelector('#lab' + i).innerHTML = ""
+            var flag = false
             for(var k in horarios) {
                 if(labs[i] != null) {
                     for(var l in labs[i]) {
@@ -135,10 +136,15 @@ function reservas() {
                             tr.appendChild(td2)
 
                             document.querySelector('#lab' + i).appendChild(tr.cloneNode(true))
-                            continue
+                            flag = true;
+                            break;
                         }
                     }
-                }       
+                }
+                if(flag) {
+                    flag = !flag;
+                    continue
+                }
                 tr = document.createElement('tr')
                 tr.className = horarios[k]
                 tr.style.background = 'green';

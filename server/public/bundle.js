@@ -3531,6 +3531,9 @@ if (document.querySelector('#evaluation-dialog') !== null) {
 
     dialog.listen('MDCDialog:cancel', function () {
         console.log('canceled');
+        if (document.querySelector('tr[active="1"]')) {
+            document.querySelector('tr[active="1"]').removeAttribute('active');
+        }
     });
 
     dialog2.listen('MDCDialog:accept', function () {
@@ -3539,6 +3542,9 @@ if (document.querySelector('#evaluation-dialog') !== null) {
 
     dialog2.listen('MDCDialog:cancel', function () {
         console.log('canceled');
+        if (document.querySelector('tr[active="1"]')) {
+            document.querySelector('tr[active="1"]').removeAttribute('active');
+        }
     });
 
     dialog3.listen('MDCDialog:accept', function () {
@@ -3547,6 +3553,9 @@ if (document.querySelector('#evaluation-dialog') !== null) {
 
     dialog3.listen('MDCDialog:cancel', function () {
         console.log('canceled');
+        if (document.querySelector('tr[active="1"]')) {
+            document.querySelector('tr[active="1"]').removeAttribute('active');
+        }
     });
 
     for (var le = 0; le < document.querySelectorAll('.button-confirm').length; le++) {
@@ -3610,6 +3619,31 @@ if (document.querySelector('#fixed-dialog') !== null) {
 //     }
 // });
 
+
+//index
+
+
+var menuEl = document.querySelector('.mdc-menu');
+if (menuEl) {
+
+    // menu Instantiation
+    var menu = new _menu.MDCMenu(menuEl);
+    var menuButtonEl = document.querySelector('.user-menu-link');
+
+    // Toggle menu open
+    menuButtonEl.addEventListener('click', function () {
+        console.log('a');
+        menu.open = !menu.open;
+    });
+
+    for (var i = 0; i < document.querySelectorAll('.mdc-menu .mdc-list-item').length; i++) {
+        var element = document.querySelectorAll('.mdc-menu .mdc-list-item')[i];
+        element.onclick = function () {
+            menu.open = !menu.open;
+            element.getElementsByTagName("a")[0].click();
+        };
+    }
+}
 
 /***/ }),
 /* 27 */

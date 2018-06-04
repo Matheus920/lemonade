@@ -128,8 +128,8 @@ function reservas() {
                             var td2 = document.createElement('td')
 
                             td.innerText = horarios[k]
-                            td2.innerText = labs[i][l]['nome']
-                            td1.innerText = labs[i][l]['departamento']
+                            td1.innerText = labs[i][l]['nome']
+                            td2.innerText = labs[i][l]['departamento']
 
                             tr.appendChild(td)
                             tr.appendChild(td1)

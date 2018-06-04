@@ -23,7 +23,10 @@
         td = document.createElement('td')
         var button = document.createElement('button')
         button.className = "mdc-button button-confirm mdc-button--raised dark-ripple"
-        button.innerText = 'Avaliar'
+        if(data[k]['status'] === 'andamento')
+            button.innerText = 'Avaliar'
+        else
+            button.innerText = 'Feedback'
         td.appendChild(button)
         tr.appendChild(td)
         td = document.createElement('td')
@@ -52,6 +55,61 @@ document.querySelector('html').addEventListener('click', function(e) {
     var oks = document.querySelectorAll('.mdc-button.white-button.mdc-dialog__footer__button.mdc-dialog__footer__button--accept.mdc-ripple-upgraded')
     for(var i = 0; i < oks.length; i++) {
         if(e.target == oks[i]) {
+            if(oks[i].innerText == 'CONFIRMAR') {
+                console.log('CONFIRMAR')
+                if(document.querySelector('input[type="checkbox"]:checked')) {
+                    var radio = document.querySelectorAll('input[type="radio"]:checked')[0].id;
+                    radio = radio.slice(0, radio.length-9)
+                    var problema = document.querySelector('textarea').value
+                    if(problema) {
+                        var tds = document.querySelector('tr[active="1"]').children;
+                        var rsv = {
+                            'lab': parseInt(tds[0].innerText),
+                            'professor': tds[1].innerText,
+                            'departamento': tds[2].innerText,
+                            'periodos': tds[3].innerText.split(', '),
+                            'tipo': tds[4].innerText,
+                            'dia': tds[5].innerText.replace(/(\d{2})\/(\d{2})\/(\d{4})/, '$3-$2-$1'),
+                            'status': 'FECHADO',
+                            'rsv': parseInt(tds[7].innerText),
+                            'problema': radio,
+                            'descricao': problema
+                        }
+                        fetch('/reserva-avulsa', {
+                            method: 'POST', 
+                            credentials: 'same-origin',
+                            body: JSON.stringify(rsv)
+                        }).then(function(res) {
+                            if(res.status == 200) {
+                                window.location.reload()
+                            }
+                        })
+                    }
+                    break
+                } else {
+                    var tds = document.querySelector('tr[active="1"]').children;
+                    var rsv = {
+                        'lab': parseInt(tds[0].innerText),
+                        'professor': tds[1].innerText,
+                        'departamento': tds[2].innerText,
+                        'periodos': tds[3].innerText.split(', '),
+                        'tipo': tds[4].innerText,
+                        'dia': tds[5].innerText.replace(/(\d{2})\/(\d{2})\/(\d{4})/, '$3-$2-$1'),
+                        'status': 'FECHADO',
+                        'rsv': parseInt(tds[7].innerText)
+                    }
+                    fetch('/reserva-avulsa', {
+                        method: 'POST', 
+                        credentials: 'same-origin',
+                        body: JSON.stringify(rsv)
+                    }).then(function(res) {
+                        if(res.status == 200) {
+                            window.location.reload()
+                        }
+                    })
+                    break
+                }
+            }
             console.log('ok')
             var tds = document.querySelector('tr[active="1"]').children;
             var rsv = {
@@ -105,9 +163,5 @@ document.querySelector('html').addEventListener('click', function(e) {
             })
             break
         }
-    }
-
-    if(document.querySelector('tr[active="1"]') != null) {
-        document.querySelector('tr[active="1"]').removeAttribute('active')
     }
 })

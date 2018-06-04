@@ -53,6 +53,9 @@ if (document.querySelector('#evaluation-dialog') !== null) {
 
     dialog.listen('MDCDialog:cancel', function () {
         console.log('canceled');
+        if(document.querySelector('tr[active="1"]')) {
+            document.querySelector('tr[active="1"]').removeAttribute('active')
+        }
     });
 
     dialog2.listen('MDCDialog:accept', function () {
@@ -61,6 +64,9 @@ if (document.querySelector('#evaluation-dialog') !== null) {
 
     dialog2.listen('MDCDialog:cancel', function () {
         console.log('canceled');
+        if(document.querySelector('tr[active="1"]')) {
+            document.querySelector('tr[active="1"]').removeAttribute('active')
+        }
     });
 
     dialog3.listen('MDCDialog:accept', function () {
@@ -69,6 +75,9 @@ if (document.querySelector('#evaluation-dialog') !== null) {
 
     dialog3.listen('MDCDialog:cancel', function () {
         console.log('canceled');
+        if(document.querySelector('tr[active="1"]')) {
+            document.querySelector('tr[active="1"]').removeAttribute('active')
+        }
     });
 
     for (var le = 0; le < document.querySelectorAll('.button-confirm').length; le++) {

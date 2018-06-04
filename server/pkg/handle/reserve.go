@@ -173,10 +173,17 @@ func singleBookPost(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	if err != nil {
-		fmt.Println("reserve 176", err)
-		return
-	}
+	if _, ok := jsonB["problema"]; ok {
+		evaluation := make(map[string]interface{})
+		evaluation["tipo"] = jsonB["problema"]
+		evaluation["descricao"] = jsonB["descricao"]
+		evaluation["id_reserva"] = jsonB["rsv"]
+		if _, err = db.Insert("avaliacao", evaluation); err != nil {
+			w.WriteHeader(500)
+			fmt.Println("reserve 183", err)
+			return
+		}
+	}	
 	
 }
 

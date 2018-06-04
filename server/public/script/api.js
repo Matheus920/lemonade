@@ -55,10 +55,9 @@ function cadastrar() {
         credentials: 'same-origin',
 		body: JSON.stringify(professor)    
 	}).then(function(res){
-		return res.text()
-	}).then(function(data){
-        window.location.href = '/'
-    })
+        if(res.status == 200)
+            window.location.href = '/'
+	})
 }
 
 var loginLink = document.createElement('a')

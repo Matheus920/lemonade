@@ -32,6 +32,7 @@ func signupPost(w http.ResponseWriter, r *http.Request) {
 			} else {
 				if professor.Id, err = db.Insert("professor", professor.ToMap()); err != nil {
 					fmt.Println("signup 25", err)
+					w.WriteHeader(400)
 					return
 				} else {
 					professor.Login.Iat = time.Now().Add(30*time.Minute)

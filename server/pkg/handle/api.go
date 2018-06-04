@@ -179,7 +179,7 @@ func reservaAvulsaApi(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	rows, err := db.Query("select reserva.id, reserva.lab, login.nome, departamento.nome, reserva.tipo, horario_reserva.dia, reserva.status from reserva inner join login on login.id = reserva.id_login inner join professor on professor.id_login = login.id inner join departamento on departamento.id = professor.id_departamento inner join horario_reserva on horario_reserva.id_reserva=reserva.id where reserva.active=1 and reserva.status='andamento' group by reserva.id")
+	rows, err := db.Query("select reserva.id, reserva.lab, login.nome, departamento.nome, reserva.tipo, horario_reserva.dia, reserva.status from reserva  inner join login on login.id = reserva.id_login inner join professor on professor.id_login = login.id  inner join departamento on departamento.id = professor.id_departamento  inner join horario_reserva on horario_reserva.id_reserva=reserva.id where reserva.active=1 and (reserva.status='andamento' or reserva.id in  (select reserva.id from reserva  inner join horario_reserva on horario_reserva.id_reserva = reserva.id  inner join horario on horario.id=horario_reserva.id_horario where reserva.status='aprovado' group by reserva.id having max(time(horario.dt_fim)) < time(now()))) group by reserva.id")
 	
 	if err != nil {
 		w.WriteHeader(500)
